@@ -13,7 +13,7 @@
 					<div class="logo_bas">
 						<a href="/">
 							<!--retour à l'accueil-->
-							<img src="Icon/logo.png" alt="logo_lilt"> 
+							<img src="Images/Icon/logo.png" alt="logo_lilt"> 
 						</a> 
 
 					</div>
@@ -32,10 +32,10 @@
 
 					follow us on :
 					<p>
-						<a href="https://fr-fr.facebook.com/"> <img src="Icon/facebook-logo-button.png" alt="facebook_link"> </a>
-						<a href="https://fr.linkedin.com/"> <img src="Icon/linkedin-button.png" alt="linkedin_link"> </a>
-						<a href="https://twitter.com/?lang=fr"> <img src="Icon/twitter-logo-button.png" alt="twitter_link"> </a>
-						<a href="https://www.instagram.com/?hl=fr"> <img src="Icon/instagram-logo (1).png" alt="instagram_link"> </a>
+						<a href="https://fr-fr.facebook.com/"> <img src="Images/Icon/facebook-logo-button.png" alt="facebook_link"> </a>
+						<a href="https://fr.linkedin.com/"> <img src="Images/Icon/linkedin-button.png" alt="linkedin_link"> </a>
+						<a href="https://twitter.com/?lang=fr"> <img src="Images/Icon/twitter-logo-button.png" alt="twitter_link"> </a>
+						<a href="https://www.instagram.com/?hl=fr"> <img src="Images/Icon/instagram-logo (1).png" alt="instagram_link"> </a>
 
 					</p>
 					

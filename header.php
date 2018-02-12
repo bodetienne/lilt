@@ -13,7 +13,7 @@
 	<div class="inner1">
 
 	<div class="logo">
-		<a href="index_home.php"><img src="Icon/logo Lilt.png" alt="logo site" class="logo"></a>
+		<a href="index_home.php"><img src="Images/Icon/logo Lilt.png" alt="logo site" class="logo"></a>
 	</div>
 		
 	<div class="nav-block">
@@ -28,7 +28,7 @@
 	</div>
 		
 	<div>
-		<img src="Icon/search.png" alt="search" class="search2">
+		<img src="Images/Icon/search.png" alt="search" class="search2">
 	</div>
 		
 	<div class="button_box2">
@@ -39,7 +39,7 @@
 	</div>
 		
 	<div class="id-content">
-		<a href="index_profile.php"><img src="Icon/user.png" alt="logo site" class="id-photo"></a>
+		<a href="index_profile.php"><img src="Images/Icon/user.png" alt="logo site" class="id-photo"></a>
 		<p class="id-name"><a href="index_profile.php">          
 			<?php
                 session_start();
@@ -53,7 +53,7 @@
 			
 		</a>
 		
-		<span class="deco"><a href="php/deconnexion.php"><img src="Icon/powerOnOff.png" alt="déconnexion" width="20" height="20"></a></span></p>
+		<span class="deco"><a href="php/deconnexion.php"><img src="Images/Icon/powerOnOff.png" alt="déconnexion" width="20" height="20"></a></span></p>
 	</div>
 		
 	</div>
