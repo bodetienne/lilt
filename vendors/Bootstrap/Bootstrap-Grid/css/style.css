@@ -1,0 +1,139 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway|Roboto);
+
+/*------------------------------------------------
+RESET
+------------------------------------------------*/
+
+html {
+    font-size: 100%;
+}
+body {
+    font: .9rem/1 Arial, sans-serif;
+}
+a {
+    text-decoration: none;
+}
+h1, h2, h3, h4, h5, h6, ul, ol, p {
+    padding: 0;
+    margin: 0;
+    font-weight: normal;
+}
+li {
+    list-style: none;
+}
+
+/*------------------------------------------------
+HEADER
+------------------------------------------------*/
+
+.block-header {
+    background: white;
+    padding: 1.5em 0;
+    border-bottom: 1px solid #aaa;
+}
+.block-header .title {
+    font: italic 3.5rem/1 Raleway, Tahoma, sans-serif;
+}
+.block-header .title span {
+    font-style: normal;
+    font-weight: bold;
+    color: #563d7c;
+}
+.block-header .screen-info {
+    font: italic 2rem Raleway, Tahoma, sans-serif;
+    color: #555;
+}
+.block-header .info {
+    display: none;
+}
+.block-header .info span {
+    font-weight: bold;
+    font-style: normal;
+}
+@media (max-width: 575px) {
+    .block-header .info-xs {
+        display: block;
+    }
+}
+@media (min-width: 576px) and (max-width: 767px) {
+    .block-header .info-sm {
+        display: block;
+    }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+    .block-header .info-md {
+        display: block;
+    }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+    .block-header .info-lg {
+        display: block;
+    }
+}
+@media (min-width: 1200px) {
+    .block-header .info-xl {
+        display: block;
+    }
+}
+
+/*------------------------------------------------
+MAIN
+------------------------------------------------*/
+
+/*Extra small devices (portrait phones, less than 576px)*/
+/*No media query since this is the default in Bootstrap*/
+.block-main {
+    padding: 1.5rem 0;
+}
+.block-main .container {
+    margin-bottom: 2rem;
+}
+.block-main [class^=col] {
+    display: flex;
+}
+.block-main [class^=col] > .inner {
+    font: 1rem/1.2 Roboto, Arial, sans-serif;
+    padding: 1rem;
+    background: #c2e9e4;
+    transition: background-color 1s ease-out;
+	flex-basis: 100%;
+}
+
+/*Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) {
+    .block-main [class^=col] > .inner {
+        background: #e8c2c2;
+    }
+}
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+    .block-main [class^=col] > .inner {
+        background: #e9c2d4;
+    }
+}
+/*Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {
+    .block-main [class^=col] > .inner {
+        background: #c2e9c8;
+    }
+}
+/*Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {
+    .block-main [class^=col] > .inner {
+        background: #f2e9e3;
+    }
+}
+
+/*------------------------------------------------
+FOOTER
+------------------------------------------------*/
+
+.block-footer {
+    background: #444;
+}
+.block-footer > .inner {
+    font: italic .9rem Raleway, Tahoma, sans-serif;
+    color: white;
+    padding: 1.5em;
+    text-align: center;
+}

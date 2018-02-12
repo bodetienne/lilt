@@ -1,0 +1,214 @@
+/*----------------------------------------------------------- 
+RESET
+-----------------------------------------------------------*/
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+
+h1,h2,h3,h4,h5,h6{
+	margin: 0;
+}
+ul, ol {
+	margin: 0;
+	padding: 0;
+}
+a {
+	text-decoration: none;
+}
+
+/*----------------------------------------------------------- 
+UPLOAD-CLICK
+-----------------------------------------------------------*/
+
+
+.container{
+	background-image: url(../img/slt.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 80%;
+	height: 80%;
+	display: flex;
+	flex-direction: column;
+}
+
+.song {
+	margin: 0 auto;
+	margin-top: 7%;
+	margin-bottom: 7%;
+}
+
+.song input {
+	background: none;
+	border-top : hidden;
+	border-left: hidden;
+	border-right: hidden;
+	border-bottom-color: #e40750;
+	padding: 0 10rem;
+	text-align: center;
+	color: white;
+	font-size: 1.7rem;
+}
+
+
+.song input[type=text]:focus {
+	background: none;
+	color: white;
+}
+
+.song input::-webkit-input-placeholder {
+	color: white;
+}
+
+.btn-upload {
+	margin: auto;
+	margin-bottom: 7%;
+	margin-top: 10%;
+}
+
+.select-tags {
+	border-bottom: solid .1rem #e40750;
+	background: none;
+	border-top : hidden;
+	border-left: hidden;
+	border-right: hidden;
+	padding: 0 10rem;
+	text-align: center;
+	color: white;
+	font-size: 1.7rem;
+}
+
+.select-tags OPTION{
+	color: #4b4b4b;
+	padding: 0;
+}
+
+/*----------------------------------------------------------- 
+CLICKED
+-----------------------------------------------------------*/
+.big{
+	display: flex;
+	flex-direction: column;
+	background: #68b8a5;
+}
+
+.elements{
+	background: #68b8a5;
+	text-align: center;
+	color: white;
+	font-size: 1.5rem;
+}
+
+.proud-picture {
+	background-image: url('../img/glasses.jpg');
+	height: 50%;
+	width: 60rem;
+	background-repeat: no-repeat;
+	display: flex;
+	margin: auto;
+	border: thin 1rem white;
+}
+
+.proud-picture p{
+	font-size: 4rem;
+	margin: auto;
+	color: white; 
+	text-shadow: .1rem .1rem #e40750;
+}
+
+
+/*----------------------------------------------------------- 
+PLAYLIST (LECTEUR)
+-----------------------------------------------------------*/
+	
+.grand-container{
+	display: flex;
+}
+
+h2{
+	margin: 0 auto;
+}
+
+.inner{
+	display: flex;
+}
+
+.list{
+	display: flex;
+	margin: 0 auto;
+	border: .1rem solid #4b4b4b;
+	width: 80rem;
+}
+
+#playlist{
+	width: 100%;
+}
+
+#playlist li {
+	list-style-type:none;
+	margin: 0 auto 0 auto;
+	padding-top: .5rem;
+	padding-bottom: .5rem;
+	border-bottom: .05rem solid #4b4b4b;
+	display: flex;
+	justify-content: space-between;
+}
+
+#playlist > li > a {
+	color: #4b4b4b;
+	margin: 0 auto;
+	width: 100%;
+	padding-left: 1rem;
+}
+
+
+#playlist > li:hover{
+	background: #e40750;
+}
+
+#playlist > li > a:hover {
+	color: white;
+}
+
+.play-logo {
+	width: 1.5rem;
+	height: 1.5rem;
+	margin-right: .5rem;
+}
+
+p .duree-column {
+	float: right;
+}
+
+
+/**********Others*************/
+.choice{
+	border: .1rem solid #4b4b4b;
+	color: white;
+	width: 15rem;
+	height: 10rem;
+	display: flex;
+	margin-left: 12rem;
+	margin-top: 3rem;
+}
+
+.choice h2{
+	margin: auto;
+}
+
+.first-choice{
+	background-image: url('../img/div-calm.jpg');
+}
+
+.second-choice{
+	background-image: url('../img/div-run.jpg');
+}
+
+.third-choice{
+	background-image: url('../img/div-rock.jpg');
+}
+
+.select-tags{
+	color: #4b4b4b;
+}

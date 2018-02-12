@@ -1,0 +1,148 @@
+@import "https://fonts.googleapis.com/css?family=Arsenal|Open+Sans";
+
+/* ------------------------------------------------
+Custom reset
+-------------------------------------------------*/
+h1, h2, h3, h4, h5, h6, ul, ol {
+  padding: 0;
+  margin: 0;
+  font-weight: normal;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+figure {
+  margin: 0;
+}
+
+/* ------------------------------------------------
+ExtraSmall
+-------------------------------------------------*/
+ /* ------------------------------------------------
+HEADER
+-------------------------------------------------*/
+.block-header .inner {
+	background: #234567;
+	text-transform: uppercase;
+	color: white;
+}
+
+h1.site-title{
+	padding: 1rem;
+}
+
+.nav {
+	padding-bottom: .5rem;
+}
+
+.block-header .nav a{
+	color: white;
+}
+
+.block-header .nav {
+	margin-left: 1rem;
+}
+
+ /* ------------------------------------------------
+BREADCRUMB
+-------------------------------------------------*/
+nav .breadcrumb{
+	background: white;
+}
+ /* ------------------------------------------------
+BODY
+-------------------------------------------------*/
+body{
+	background: #f0f0f0;
+}
+
+div.first{
+	background-image: url(../images/photo-6.jpg);
+	color: white;
+	padding: 1.5rem;
+	margin-bottom: 2rem;
+}
+
+div.first h1{
+	text-transform: uppercase;
+	font-size: 2.1rem;
+	margin-bottom: 1rem;
+}
+
+div.card{
+	margin-top: 1rem;
+	width: 100%;
+	margin-bottom: 1rem;
+	padding-top: 1rem;
+}
+
+div.carousel {
+	margin-top: 1rem;
+	border-top: solid .1rem #dfdfdf;
+}
+
+div.carousel-inner {
+	background : white;
+	padding-top: 2rem;
+}
+
+ /* ------------------------------------------------
+FOOTER
+-------------------------------------------------*/
+
+.footer {
+	background: #151515;
+	color: white; 
+	margin-top: 2rem;
+	padding-top: 1rem;
+	padding-bottom: .5rem;
+	text-align: center;
+	font-size: .7rem;
+}
+
+
+
+
+
+
+
+ /* ------------------------------------------------
+TABLETS
+-------------------------------------------------*/
+@media (min-width:768px){
+ /* ------------------------------------------------
+HEADER
+-------------------------------------------------*/
+	.block-header .inner {
+		padding: 1.5rem;
+	}
+	
+	h1.site-title{
+		display: inline;
+	}
+	
+	nav.nav{
+		display: inline-block;
+		float:right;
+		padding-top: .5rem;
+		padding-right: 3rem;
+	}
+	
+ /* ------------------------------------------------
+BODY
+-------------------------------------------------*/
+	div.first{
+		padding-right: 4rem;
+		padding-left: 4rem;
+	}
+	
+	div.first button{
+		margin-top: 1rem;
+	}
+}

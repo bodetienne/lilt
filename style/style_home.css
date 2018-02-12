@@ -1,0 +1,44 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*   FOOTER   */
+
+.block-footer{
+	background: #4B4B4B;
+	color: white;
+	display: flex;
+}
+
+.block-footer .container .Title img{
+
+	width: 50px;
+	height: 50px;
+}
+
+.block-footer .social_media {
+	text-align: center;
+	flex: none;
+}
+.block-footer .social_media{
+	font-weight: bold;
+	margin: 20px;
+}
+
+.block-footer .social_media img{
+	width: 20px;
+	height: 20px;
+}
+
+.block-footer .footer_right a{
+	color: white;
+
+}
+
+.footer_right{
+	margin: 20px;
+	text-align: right;
+}
+
+.footer_right p{
+	font-size: 12px;
+}

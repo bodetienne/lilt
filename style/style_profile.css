@@ -1,0 +1,97 @@
+@charset "utf-8";
+/* CSS Document */
+
+.header_profile{
+	background-color: #B4B4B4;
+}
+
+.photo_profile img{
+	width: 200px;
+	height: 200px;
+	border-radius: 100px;
+	overflow: hidden;
+	float: left;
+	padding: 15px;
+	margin: 50px 50px 0px 15px;
+	box-shadow: 5px 5px 2px 1px grey;
+
+
+}
+
+
+.info {
+	text-align: left;
+	padding: 15px 0px 15px 50px;
+}
+.info p:last-child{
+	color: #e40750;
+}
+
+
+.about_me {
+	background: #4B4B4B;
+	text-align: right;
+	padding: 15px 50px 15px 0px;
+	color: white;
+	font-weight: 100;
+}
+
+.block-trophy {
+	background:#D3D3D3;
+}
+.block-trophy img{
+	width: 50px;
+	margin: 10px 10px 10px 150px;
+}
+
+.block-trophy p{
+	margin-left: 25px;
+	font-weight: 500;
+}
+
+
+
+
+
+
+
+/*	CONTENTS   */
+
+.inner{
+	display: block;
+}
+
+.container {
+	display:flex;
+	max-width: 50%;
+	margin: 0px;
+	padding: 0px;
+}
+
+
+
+.container img{
+	max-width: 50vw;
+	height: 100%;
+
+}
+.container img:last-child{
+	height: 100%;
+	max-width: 50vw;
+}
+
+
+.container h1{
+    position:relative;
+    left: 180px;
+    top: 250px;
+	color: white;
+	text-shadow: 4px 5px black;
+}
+
+
+a:hover{
+	text-decoration: none;
+}
+
+

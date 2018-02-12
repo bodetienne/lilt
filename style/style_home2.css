@@ -1,0 +1,226 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+
+/*	SEARCH BAR	*/
+
+
+.searchbar{
+	text-align: center;
+	background-image: url("Images/turntable-1109588_1280.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-color: #4B4B4B;
+	height:500px;
+	padding-top: 250px;
+	margin:100px auto;
+}
+
+
+input[type=text] {
+    width: 130px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url("Icon/magnifying-glass.png");
+	background-size: 20px;
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus {
+    width: 50%;
+}
+
+
+
+/*	SEARCH BUTTON	*/
+
+.button {
+  border-radius: 4px;
+  background-color: #e40750;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 20px;
+  padding: 10px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  overflow: visible;
+}
+
+.button:hover{
+	background: #68B8A5;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+	padding-right: 25px;
+
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+
+/*	Browse  */
+
+.title_contents h1{
+	font-family:"Raleway Regular","Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", "sans-serif";
+	font-size: 35px;
+	padding-left: 10px;
+	margin: 100px 200px 30px 200px;
+	border-bottom:medium solid #000000;
+
+}
+
+.hashtag {
+	color: #e40750;
+	font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+/*	CONTEST Bas de page	*/
+
+.contest{
+	margin-top: 100px;
+	padding: 80px 0px 80px 0px;
+	background-image: url(Images/music.jpg);
+	background-size:cover;
+	background-position: bottom;
+	background-repeat: no-repeat;
+}
+
+.contest .contenu_contest {
+	padding-top: 0px;
+	margin: 0;
+	text-align: center;
+	color: white;
+	text-shadow: 3px 3px 3px black;
+	font-size: 30px;
+}
+
+.contenu_contest h1{
+	border-bottom: none;
+	padding-left:  0px;
+	text-shadow: 3px 3px 2px black;
+	font-size:80px;
+	color: #e40750;
+}
+
+.contenu_contest .button_contest{
+
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color:#68B8A5;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 9px #999;
+}
+
+.button_contest:hover {background-color:#e40750}
+
+.button_contest:active {
+  background-color: #68B8A5;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+
+
+
+
+
+
+/*   FOOTER   */
+
+.container_footer{
+	display: flex;
+	margin: auto;
+}
+.block-footer .inner{
+	margin: auto;
+}
+
+.block-footer{
+	background: #4B4B4B;
+	color: white;
+	display: flex;
+	margin: auto;
+}
+
+.block-footer .container_footer .logo_bas img{
+	margin: 20px;
+	width: 50px;
+	height: 50%;
+}
+
+.block-footer .social_media {
+	text-align: center;
+	font-weight: bold;
+	margin: 20px;
+
+	
+}
+
+.block-footer .social_media img{
+	width: 20px;
+	height: 20px;
+	
+}
+
+.block-footer .footer_right a{
+	color: white;
+}
+
+.footer_right{
+	margin: 20px;
+	text-align: right;
+}
+
+.footer_right p{
+	font-size: 12px;
+}
+
+
+
+
