@@ -99,10 +99,12 @@ input[type=text]:focus {
 }
 .lecteur_compo li{
 	display: inline-block;
+	margin: 10px;
+	text-align: center;
 }
 .lecteur_compo img{
 	width: 40px;
-	margin: 10px;
+	margin-right: 40px;
 }
 .lecteur_compo li:first-of-type > img{
 	width: 60px;
