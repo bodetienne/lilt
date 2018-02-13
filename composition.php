@@ -9,10 +9,11 @@
 	<link rel="stylesheet" href="vendors/Bootstrap/vendors/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="style/style_home2.css">
 	<link rel="stylesheet" href="style/style2.css">
-	<script src="js/emmajs.js"></script>
+	<link rel="stylesheet" href="style/style_profile.css">
 	
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	
 
+	<script src="js/emmajs.js"></script>
 </head>
 
 <body>
@@ -26,12 +27,51 @@
 
 <?php include("header.php")?>
 	
+	
+	
+	<div class="header_profile">
+	<div class="photo_profile">
+		<img src="Images/people-2563491_1280.jpg" alt="photo_de_profil">
+	</div>
+	<div class="info">
+		<h2> <!--On appelle le nom de l'utilisateur -->
+			<?php
+                if($_SESSION['nom_utilisateur'] !== ""){
+                    $user = $_SESSION['nom_utilisateur'];
+                    // afficher un message: ici le nom d'user
+                    echo "$user";
+                }
+            ?>  </h2>
+		
+		<p> "Nothing's gonna change my world" </p>
+		<p> 104 | followers 20 | following </p>	
+	</div>
+	<div class="about_me">
+		<h3>About me</h3>
+		<p>22 yo</p>
+		<p>Play piano and sing sometimes</p>
+	</div>
+</div>
+
+<div class="block-trophy">
+	<p>My trophies <img src="Images/Icon/cup.png"> 22/12/2017 </p>
+</div>
+	
 <!----------------------------------------------------
 	CONTENTS
 ----------------------------------------------------->
 <!-- style dans : -->
 	
 	<div class="page_compo">
+		
+		<!-- Bannière -->
+		<div class="headCompo">
+			<h3> My Compositions</h3><!-- image en background dans style2.css-->
+		</div>
+		
+		
+		
+		<!-- Lecteurs -->
 		<div class="lecteur_compo">
 			<ul>
 				
@@ -88,7 +128,7 @@
 								<h2>Options</h2>
 							</div>
 							<div class="modal-body">
-							  <p><img src="Images/Icon/coeurVide.png">Ajouter aux favoris</p>
+							  <p><img id="coeurVide" src="Images/Icon/coeurVide.png" alt="coeurVide">Ajouter aux favoris</p>
 							  <p>Ajouter à la playlist</p>
 							</div>
 							<div class="modal-footer">
@@ -131,6 +171,7 @@
 					</script>
 				</div>
 				</li>
+
 				
 			</ul>
 		</div>

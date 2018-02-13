@@ -66,7 +66,7 @@
 <div class="container">
 	<div class="inner">
 		
-		<a href="#"><h1>My compositions</h1><img src="Images/Rectangle.png" alt="djembé" width="800" height="400"></a>
+		<a href="composition.php"><h1>My compositions</h1><img src="Images/Rectangle.png" alt="djembé" width="800" height="400"></a>
 	</div>
 	<div class="inner">
 		<a href="#"><h1>My playlists</h1><img src="Images/Rectangle 7.png" alt="ipod" width="800" height="400"></a>
