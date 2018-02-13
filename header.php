@@ -46,7 +46,7 @@
                 if($_SESSION['nom_utilisateur'] !== ""){
                     $user = $_SESSION['nom_utilisateur'];
                     // afficher un message
-                    echo "$user";
+                    echo $user;
                 }
             ?> 
 			
