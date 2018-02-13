@@ -3,20 +3,25 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Lecteur</title>
-	<link rel="stylesheet" href="../../../../Users/etbodet/Documents/Site sans nom 2/bootstrap-grid.min.css">
-	<link rel="stylesheet" href="../css/style.css">
+	
+	<title>Lecteur</title>
+	
+	<link rel="stylesheet" href="../vendors/Bootstrap/Bootstrap-Grid/vendors/bootsrap/css/bootstrap-grid.css">
+	<link rel="stylesheet" href="../style/style_home2.css">
+	<link rel="stylesheet" href="../style/style.css">
 </head>
 
 <body>
+
 	
 	
-	<!-- HEADER	-->	
 	
 	<?php include('../header.php');	?>
 	
-<!--	CONTENTS 	-->	
 
+	
+					
+					
 
 	<div class="song select-tags">
 		<form method="POST">
@@ -32,6 +37,8 @@
 			<button type="submit" class="submit-playlist"> Listen Music </button>
 			</form>
 	</div>
+	
+			
 <?php 
 
 	
@@ -43,12 +50,13 @@
 			<div class="list">
 				<ul id="playlist">';
 					
-					
-					$link = mysqli_connect ( "localhost", "Jacquo", "4", "tilt"); //accès à la base de donnée
+		
+
+					$link = mysqli_connect ( "localhost", "root", "", "tilt"); //accès à la base de donnée
 					
 					
 					//valeur des différentes playlists dans les variables pour éviter les fautes de frappes dans l'algorithme
-					$rock = "Rock";
+					/*$rock = "Rock";
 					$rap = "Rap";
 					$soul = "Soul";
 					$pop = "Pop";
@@ -62,12 +70,12 @@
 							if ($stmt = mysqli_prepare($link, $query_select)){ //variable = fonction de preparation de la requette avant l'éxécution
 								mysqli_stmt_execute($stmt); //exécution de la fonction
 
-								mysqli_stmt_bind_result($stmt,$idChanson, $nomChanson, $dureeChanson, $tag); //bind = lier, on cible les colonnes de la tab en question 
+								mysqli_stmt_bind_result($stmt,$idChanson, $nomChanson, $dureeChanson, $tag, $mp3); //bind = lier, on cible les colonnes de la tab en question 
 
 								echo('<div class"succes">');
 
 								while(mysqli_stmt_fetch($stmt)){ //renvoie les résultats de la requette
-									echo('<p>Song name = ' . $nomChanson . ', duration = ' . $dureeChanson . '</p>');
+									echo('<p>Song name = ' . $nomChanson . ', duration = ' . $dureeChanson . ' </p>');
 								}
 							}
 
@@ -79,7 +87,7 @@
 							if ($stmt = mysqli_prepare($link, $query_select)){
 								mysqli_stmt_execute($stmt);
 
-								mysqli_stmt_bind_result($stmt,$idChanson, $nomChanson, $dureeChanson, $tag);
+								mysqli_stmt_bind_result($stmt,$idChanson, $nomChanson, $dureeChanson, $tag, $mp3);
 
 								echo('<div class"succes">');
 
@@ -96,7 +104,7 @@
 							if ($stmt = mysqli_prepare($link, $query_select)){
 								mysqli_stmt_execute($stmt);
 
-								mysqli_stmt_bind_result($stmt,$idChanson, $nomChanson, $dureeChanson, $tag);
+								mysqli_stmt_bind_result($stmt,$idChanson, $nomChanson, $dureeChanson, $tag, $mp3);
 
 								echo('<div class"succes">');
 
@@ -113,7 +121,7 @@
 							if ($stmt = mysqli_prepare($link, $query_select)){
 								mysqli_stmt_execute($stmt);
 
-								mysqli_stmt_bind_result($stmt,$idChanson, $nomChanson, $dureeChanson, $tag);
+								mysqli_stmt_bind_result($stmt,$idChanson, $nomChanson, $dureeChanson, $tag, $mp3);
 
 								echo('<div class"succes">');
 
@@ -131,12 +139,14 @@
 							if ($stmt = mysqli_prepare($link, $query_select)){
 								mysqli_stmt_execute($stmt);
 
-								mysqli_stmt_bind_result($stmt,$idChanson, $nomChanson, $dureeChanson, $tag);
+								mysqli_stmt_bind_result($stmt,$idChanson, $nomChanson, $dureeChanson, $tag, $mp3);
 
 								echo('<div class"succes">');
 
 								while(mysqli_stmt_fetch($stmt)){
-									echo('<p>Song name = ' . $nomChanson . ', duration = ' . $dureeChanson . '</p>');
+									echo('<p>Song name = ' . $nomChanson . ', duration = ' . $dureeChanson . ' <audio controls="">
+												<source src="'. $mp3 .'" type="audio/mpeg"/>
+											</audio> </p>');
 								}
 							 }  
 							} else if ($_POST["tag"] == $notag ) {
@@ -146,7 +156,7 @@
 							if ($stmt = mysqli_prepare($link, $query_select)){
 								mysqli_stmt_execute($stmt);
 
-								mysqli_stmt_bind_result($stmt,$idChanson, $nomChanson, $dureeChanson, $tag);
+								mysqli_stmt_bind_result($stmt,$idChanson, $nomChanson, $dureeChanson, $tag, $mp3);
 
 								echo('<div class"succes">');
 
@@ -154,7 +164,35 @@
 									echo('<p>Song name = ' . $nomChanson . ', duration = ' . $dureeChanson . '</p>');
 								}
 							 }
-							} 
+							} */
+						
+					
+
+					//Fonction à améliorer 
+							function triTag () {
+								
+								$tag = $_POST["tag"];
+								
+								$query_select = "SELECT * FROM chanson WHERE tag='" . $tag . "'";
+								$link = mysqli_connect ( "localhost", "root", "", "tilt"); //accès à la base de donnée
+								
+								if ($stmt = mysqli_prepare($link, $query_select)){
+									mysqli_stmt_execute($stmt);
+
+									mysqli_stmt_bind_result($stmt,$idChanson, $nomChanson, $dureeChanson, $tag, $mp3Link);
+
+									echo('<div class"succes">');
+
+									while(mysqli_stmt_fetch($stmt)){
+										echo('<p>Song name = ' . $nomChanson . ', duration = ' . $dureeChanson . '</p> 	<audio controls="">
+												<source src="'. $mp3Link .'" type="audio/mpeg"/>
+											</audio>');
+									}
+								}
+							}
+					
+						echo triTag();
+							 
 
 
 							
