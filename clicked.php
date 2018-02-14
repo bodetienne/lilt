@@ -1,19 +1,19 @@
-<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="style/style.css">
 
 
 <!-- HEADER	-->	
 	
-	<?php include('../header.php');	?>
+	<?php include('header.php');	?>
 	
 <!--	CONTENTS 	-->	
 
 <?php
-	$link = mysqli_connect ( "localhost", "Jacquo", "4", "tilt"); //accès à la base de donnée
+	$link = mysqli_connect ( "localhost", "root", "", "lilt"); //accès à la base de donnée
 
 	echo '
 	<div class="big">
 		<div class="elements">
-			<p class="element"> Your song <strong>' . $_POST["name"] . '</strong> has been upload with succeed !</p>
+			<p class="element"> Your song <strong>' . $_POST["name"] . '</strong> has been upload with success !</p>
 			<p class="element"> You can listen it in the playlist #' . $_POST["tag"] . '</p>
 		</div>
 		<div class="proud-picture">

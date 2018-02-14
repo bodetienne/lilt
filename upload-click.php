@@ -5,20 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <title>Upload</title>
-	<link rel="stylesheet" href="../Bootstrap/Bootstrap-Design/vendors/bootstrap/css/bootstrap-grid.min.css">
-    <link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="vendors/Bootstrap/Bootstrap-Design/vendors/bootstrap/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="style/style.css">
 </head>
 
 <body>
 	
 <!-- HEADER	-->	
 	
-	<?php include('../header.php');	?>
+	<?php include('header.php');	?>
 	
 <!--	CONTENTS 	-->	
 	
 	<form action="clicked.php" method="POST"> <!--envoie du formulaire en méthode post-->
-	<form>
 		<div class="container">
 			<div class="song song-name">
 				<input type="text" name="name" placeholder="Give a name to your song" class="text-input"> <!--name permet de récupérer la valeur avec la méthode POST-->
@@ -44,8 +43,8 @@
 
 	
 
-	<script src="../Bootstrap/Bootstrap-Design/vendors/jquery/jquery.min.js"></script>
-	<script src="../Bootstrap/Bootstrap-Design/vendors/popper/popper.min.js"></script>
-	<script src="../Bootstrap/Bootstrap-Design/vendors/bootstrap/js/bootstrap.min.js"></script>
+	<script src="Bootstrap/Bootstrap-Design/vendors/jquery/jquery.min.js"></script>
+	<script src="Bootstrap/Bootstrap-Design/vendors/popper/popper.min.js"></script>
+	<script src="Bootstrap/Bootstrap-Design/vendors/bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>

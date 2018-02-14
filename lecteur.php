@@ -6,9 +6,8 @@
 	
 	<title>Lecteur</title>
 	
-	<link rel="stylesheet" href="../vendors/Bootstrap/Bootstrap-Grid/vendors/bootsrap/css/bootstrap-grid.css">
-	<link rel="stylesheet" href="../style/style_home2.css">
-	<link rel="stylesheet" href="../style/style.css">
+	<link rel="stylesheet" href="vendors/Bootstrap/Bootstrap-Grid/vendors/bootsrap/css/bootstrap-grid.css">
+	<link rel="stylesheet" href="style/style.css">
 </head>
 
 <body>
@@ -16,7 +15,7 @@
 	
 	
 	
-	<?php include('../header.php');	?>
+	<?php include('header.php');	?>
 	
 
 	
@@ -52,7 +51,6 @@
 					
 		
 
-					$link = mysqli_connect ( "localhost", "root", "", "tilt"); //accès à la base de donnée
 					
 					
 					//valeur des différentes playlists dans les variables pour éviter les fautes de frappes dans l'algorithme
@@ -174,19 +172,19 @@
 								$tag = $_POST["tag"];
 								
 								$query_select = "SELECT * FROM chanson WHERE tag='" . $tag . "'";
-								$link = mysqli_connect ( "localhost", "root", "", "tilt"); //accès à la base de donnée
+								$link = mysqli_connect ( "localhost", "root", "", "lilt"); //accès à la base de donnée
 								
 								if ($stmt = mysqli_prepare($link, $query_select)){
 									mysqli_stmt_execute($stmt);
 
-									mysqli_stmt_bind_result($stmt,$idChanson, $nomChanson, $dureeChanson, $tag, $mp3Link);
+									mysqli_stmt_bind_result($stmt,$idChanson, $nomChanson, $dureeChanson, $tag, $fichierMp3, $jaime, $idArtiste);
 
 									echo('<div class"succes">');
 
 									while(mysqli_stmt_fetch($stmt)){
 										echo('<p>Song name = ' . $nomChanson . ', duration = ' . $dureeChanson . '</p> 	<audio controls="">
-												<source src="'. $mp3Link .'" type="audio/mpeg"/>
-											</audio>');
+												<source src="'. $fichierMp3 .'" type="audio/mpeg"/> 
+											</audio>'); /*type change en fonction du firmat de l'audio*/
 									}
 								}
 							}

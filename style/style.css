@@ -22,13 +22,16 @@ a {
 UPLOAD-CLICK
 -----------------------------------------------------------*/
 
+body {
+	background: whitesmoke;
+}
 
 .container{
-	background-image: url(../img/slt.jpg);
+	background-image: url(../Images/slt.jpg);
 	background-repeat: no-repeat;
 	background-position: center;
-	width: 80%;
-	height: 80%;
+	width: 100%;
+	height: 100%;
 	display: flex;
 	flex-direction: column;
 }
@@ -75,14 +78,11 @@ UPLOAD-CLICK
 	border-right: hidden;
 	padding: 0 10rem;
 	text-align: center;
-	color: white;
+	color: whitesmoke;
 	font-size: 1.7rem;
 }
 
-.select-tags OPTION{
-	color: #4b4b4b;
-	padding: 0;
-}
+
 
 /*----------------------------------------------------------- 
 CLICKED
@@ -101,7 +101,7 @@ CLICKED
 }
 
 .proud-picture {
-	background-image: url('../img/glasses.jpg');
+	background-image: url('Images/glasses.jpg');
 	height: 50%;
 	width: 60rem;
 	background-repeat: no-repeat;
