@@ -15,7 +15,7 @@
 ---------------------------------------->
 	
 	<div class="header_connexion">
-		<img src="../Icon/logo Lilt.png"alt='logoLilt'>
+		<img src="../Images/Icon/logo Lilt.png"alt='logoLilt'>
 		<p> Listen, Intone, Like and Tune.</p>
 	</div>
 	

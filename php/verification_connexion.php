@@ -16,10 +16,10 @@ if(isset($_POST['nom_utilisateur']) && isset($_POST['mot_de_passe']))
 {
     // connexion à la base de données
     $db_username = 'nom_utilisateur';
-    $db_password = 'mot_de_passe';
-    $db_name     = 'profile';
+    $db_password = 'mdp_utilisateur';
+    $db_name     = 'lilt';
     $db_host     = 'localhost';
-    $db = mysqli_connect('127.0.0.1','emma','Hipz9893','profile')
+    $db = mysqli_connect('127.0.0.1','emma','Hipz9893','lilt')
            or die('could not connect to database');
     
     // on applique les deux fonctions mysqli_real_escape_string et htmlspecialchars
@@ -29,8 +29,8 @@ if(isset($_POST['nom_utilisateur']) && isset($_POST['mot_de_passe']))
     
     if($username !== "" && $password !== "")
     {
-        $requete = "SELECT count(*) FROM utiliateur where 
-              nom_utilisateur = '".$username."' and mot_de_passe = '".$password."' ";
+        $requete = "SELECT count(*) FROM utilisateur where 
+              nom_utilisateur = '".$username."' and mdp_utilisateur = '".$password."' ";
         $exec_requete = mysqli_query($db,$requete);
         $reponse      = mysqli_fetch_array($exec_requete);
         $count = $reponse['count(*)'];

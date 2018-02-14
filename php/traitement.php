@@ -98,7 +98,7 @@ if (isset($_FILES['avatar']) AND $_FILES['avatar']['error']==0){
 // Inscription 
 //Connexion à la base de donnée
 
-$link = mysqli_connect ( "localhost", "emma", "Hipz9893", "profile");
+$link = mysqli_connect ( "localhost", "emma", "Hipz9893", "lilt");
 
 if (!$link) {
     echo "Error: Unable to connect to MySQL." . PHP_EOL;
@@ -134,15 +134,26 @@ if ($stmt = mysqli_prepare($link, $query)){
 }
 
 // Il faut insérer les informations rentrées dans la base de données
-$sql = "INSERT INTO utiliateur (nom_utilisateur, mot_de_passe, adresse_email, avatar) VALUES ('" . $_POST['nom_utilisateur'] . "', '" . $_POST['mot_de_passe'] ."', '" . $_POST['email']."', '" . $_POST['avatar']."')";
+$sql = "INSERT INTO utilisateur (
+									nom_utilisateur, 
+									email_utilisateur,
+									mdp_utilisateur,
+									avatar) VALUES (
+														'" . $_POST['nom_utilisateur'] . "',
+														'" . $_POST['email'] ."',
+														'" . $_POST['mot_de_passe']."',
+														'" . $_POST['avatar'] ."')";
+	
  
 if (mysqli_query($link, $sql)) {
     echo "New record created successfully";
+	header('Location: ../index_home.php');
 } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($link);
 
 }
 
+	
 
 
 	
