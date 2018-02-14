@@ -22,7 +22,7 @@
 	
 <h1> Join us ! </h1>
 
-<div class="logo_inscription"> <img src="../Icon/logo Lilt.png"></div>
+<div class="logo_inscription"> <img src="../Images/Icon/logo Lilt.png"></div>
 
 
 <form method="post" action="traitement.php">

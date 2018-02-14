@@ -26,6 +26,7 @@ if(isset($_POST['nom_utilisateur']) && isset($_POST['mot_de_passe']))
     // pour éliminer toute attaque de type injection SQL et XSS
     $username = mysqli_real_escape_string($db,htmlspecialchars($_POST['nom_utilisateur'])); 
     $password = mysqli_real_escape_string($db,htmlspecialchars($_POST['mot_de_passe']));
+	
     
     if($username !== "" && $password !== "")
     {
