@@ -40,29 +40,31 @@
 	
 	/* requette permettant d'insérer les infos dans la tab artiste*/
 	$nomArtiste = $_POST['artist'];
-	$verif = "SELECT 'idArtiste' FROM 'artiste' WHERE 'nomArtiste'='$nomArtiste' AND 'idUtilisateur'='$idUtilisateur'"; //vérifie si l'artiste rentré existe
+	$verif = "SELECT `idArtiste` FROM `artiste` WHERE `nomArtiste`='$nomArtiste' AND `idUtilisateur`='$idUtilisateur'"; //vérifie si l'artiste rentré existe
+	echo $verif;
 	if ($stmt = mysqli_prepare($link, $verif)) {
 		mysqli_stmt_execute($stmt);
 		
+		$tabVerif = [];
 		mysqli_stmt_bind_result($stmt, $idArtiste);
 			while(mysqli_stmt_fetch($stmt)){
-			echo " <br>";
+			$tabVerif[] = $idArtiste;
 		}
-	
-	//si l'artiste existe, il ne se passe rien
-	if ($idArtiste != null){	
-	
-	//si il n'existe pas, on créer la chanson
-	} else {
-		$sql = "INSERT INTO artiste (nomArtiste, idUtilisateur) VALUES ('" .  $nomArtiste .  "', '" . $idUtilisateur . "')";
-		if (mysqli_query($link, $sql)) {
-		
-		echo "Vous êtes désormais un artiste";
+		print_r($tabVerif);
+		//si l'artiste existe, il ne se passe rien
+		if (sizeof($tabVerif) > 0){	
+
+		//si il n'existe pas, on créer la chanson
 		} else {
-			echo "Il y a une erreur au moment de la création de votre identifiant d'artiste dans" . $sql . "<br>" . mysqli_error($link);
-	}
-		
-	}
+			$sql = "INSERT INTO artiste (nomArtiste, idUtilisateur) VALUES ('" .  $nomArtiste .  "', '" . $idUtilisateur . "')";
+			if (mysqli_query($link, $sql)) {
+
+			echo "Vous êtes désormais un artiste";
+			} else {
+				echo "Il y a une erreur au moment de la création de votre identifiant d'artiste dans" . $sql . "<br>" . mysqli_error($link);
+			}
+
+		}
 	}
 	
 	

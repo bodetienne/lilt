@@ -164,10 +164,41 @@
 							 }
 							} */
 						
+					require 'PDO/includes/pdo.php';
 					
+						$tag = $_POST["tag"];
+					
+					try {
+						$query_select = "SELECT * FROM chanson WHERE tag=:tag";
+						$stmt = $connexion->prepare($query_select);
+						$stmt -> bindValue(':tag', $tag); //bind = lier
+						$stmt -> execute();
+					
+						/*$query_artiste = "SELECT * FROM artite WHERE tag=:id";
+						$stmt = $connexion->prepare($query_select);
+						$stmt -> bindValue(':id', $idUtilisateur); //bind = lier
+						$stmt -> execute();*/
+					
+						while($chanson = $stmt -> fetch()) {
+						echo "<div class='lecteur'> <p>" . $chanson -> nomChanson . "</p>";
+							/*while($artiste = $stmt -> fetch()) {
+								
+							}*/
+
+
+						echo "</div>";
+						}
+					
+					} catch(Exception $e) {
+						echo '<p> Erreur n° : ' . $e->getCode() . ' : ' . $e->getMessage(). '</p>';
+						echo '<p>Dans '. $e->getFile(). '('. $e->getLine() .')';
+						echo "<pre>";
+						var_dump ($e -> getTrace());
+						echo "</pre>";
+					}
 
 					//Fonction à améliorer 
-							function triTag () {
+						/*	function triTag () {
 								
 								$tag = $_POST["tag"];
 								
@@ -185,11 +216,12 @@
 										echo('<p>Song name = ' . $nomChanson . ', duration = ' . $dureeChanson . '</p> 	<audio controls="">
 												<source src="'. $fichierMp3 .'" type="audio/mpeg"/> 
 											</audio>'); /*type change en fonction du firmat de l'audio*/
-									}
+						/*			}
 								}
 							}
 					
-						echo triTag();
+						echo triTag();*/
+					
 							 
 
 
