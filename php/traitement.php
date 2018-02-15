@@ -23,6 +23,7 @@
 	$email = $_POST['email'];
 	$mdp = $_POST['mot_de_passe'];
 	$comfirm_mdp = $_POST['confirm_pass'];
+	$mdp = sha1($mdp);
 	
 	//Vérification de l'email
 	$point = strpos($email,".");
@@ -132,6 +133,7 @@ if ($stmt = mysqli_prepare($link, $query)){
 } else {
 	echo'Cela ne fonctionne pas';
 }
+	
 
 // Il faut insérer les informations rentrées dans la base de données
 $sql = "INSERT INTO utilisateur (
@@ -141,13 +143,13 @@ $sql = "INSERT INTO utilisateur (
 									avatar) VALUES (
 														'" . $_POST['nom_utilisateur'] . "',
 														'" . $_POST['email'] ."',
-														'" . $_POST['mot_de_passe']."',
+														'" . sha1($_POST['mot_de_passe'])."',
 														'" . $_POST['avatar'] ."')";
-	
+
  
 if (mysqli_query($link, $sql)) {
     echo "New record created successfully";
-	header('Location: ../index_home.php');
+	header('Location: connexion.php');
 } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($link);
 
