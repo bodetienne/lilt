@@ -110,6 +110,30 @@ include('connexionBdd.php');
 	$mdp2 = $_POST['confirm_pass'];
 	$avatar = $_POST['avatar'];
 	
+<<<<<<< HEAD
+=======
+
+// Il faut insérer les informations rentrées dans la base de données
+$sql = "INSERT INTO utilisateur (
+									nom_utilisateur, 
+									email_utilisateur,
+									mdp_utilisateur,
+									avatar) VALUES (
+														'" . $_POST['nom_utilisateur'] . "',
+														'" . $_POST['email'] ."',
+														'" . /*sha1*/($_POST['mot_de_passe'])."',
+														'" . $_POST['avatar'] ."')";
+
+ 
+if (mysqli_query($link, $sql)) {
+    echo "New record created successfully";
+	header('Location: connexion.php');
+} else {
+    echo "Error: " . $sql . "<br>" . mysqli_error($link);
+
+}
+
+>>>>>>> b39df7a29c268e54892bc22ee6271be8e55d3aeb
 	
 	
 	$hashpass=$_POST['mot_de_passe'] . $salt;	
