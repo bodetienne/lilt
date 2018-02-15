@@ -22,7 +22,10 @@
 
 <body>
 
-	
+	<?php
+	// Tout début du code PHP. Situé en haut de la page web : permet de cacher les erreurs aux visiteurs
+	ini_set("display_errors",0);error_reporting(0);
+	?>
 	
 	
 	

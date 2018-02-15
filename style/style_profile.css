@@ -1,4 +1,4 @@
-@charset "utf-8";
+""@charset "utf-8";
 /* CSS Document */
 
 .header_profile{
@@ -57,36 +57,38 @@
 
 /*	CONTENTS   */
 
-.inner{
+.photosCompoPlaylist .inner{
 	display: block;
-}
-
-.container {
-	display:flex;
 	max-width: 50%;
-	margin: 0px;
-	padding: 0px;
+}
+
+
+.photosCompoPlaylist{
+	display: flex;
+	overflow: hidden;
+}
+
+.photosCompoPlaylist img{
+	height: 500px;
 }
 
 
 
-.container img{
-	max-width: 50vw;
-	height: 100%;
-
-}
-.container img:last-child{
-	height: 100%;
-	max-width: 50vw;
-}
-
-
-.container h1{
+.photosCompoPlaylist h1{
+	overflow:hidden;
     position:relative;
     left: 180px;
     top: 250px;
 	color: white;
 	text-shadow: 4px 5px black;
+}
+
+@media all and (max-width: 980px){
+	.photosCompoPlaylist h1{
+		font-size: 20px;
+		left: 180px;
+		text-shadow: 2px 3px black;
+	}
 }
 
 

@@ -11,7 +11,11 @@
 </head>
 
 <body>
-
+	
+	<?php
+	// Tout début du code PHP. Situé en haut de la page web : permet de cacher les erreurs aux visiteurs
+	ini_set("display_errors",0);error_reporting(0);
+	?>
 
 	<script src="Bootstrap/vendors/jquery/jquery.min.js"></script>
 	<script src="Bootstrap/vendors/popper/popper.min.js"></script>
@@ -36,7 +40,12 @@
                     $user = $_SESSION['nom_utilisateur'];
                     // afficher un message: ici le nom d'user
                     echo "$user";
-                }
+                }else {
+					echo "";
+				};
+			
+					
+				
             ?>  </h2>
 		
 		<p> "Nothing's gonna change my world" </p>
@@ -63,7 +72,7 @@
 <div class="title_playlists">
 	<a href='#'><h1>My playlists</h1></a>
 </div>	-->
-<div class="container">
+<div class="photosCompoPlaylist">
 	<div class="inner">
 		
 		<a href="composition.php"><h1>My compositions</h1><img src="Images/Rectangle.png" alt="djembé" width="800" height="400"></a>
