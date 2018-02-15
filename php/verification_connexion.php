@@ -19,7 +19,7 @@ if(isset($_POST['nom_utilisateur']) && isset($_POST['mot_de_passe']))
     $db_password = 'mdp_utilisateur';
     $db_name     = 'lilt';
     $db_host     = 'localhost';
-    $db = mysqli_connect('127.0.0.1','emma','Hipz9893','lilt')
+    $db = mysqli_connect('127.0.0.1','root','','lilt')
            or die('could not connect to database');
     
     // on applique les deux fonctions mysqli_real_escape_string et htmlspecialchars

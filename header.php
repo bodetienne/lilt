@@ -50,7 +50,6 @@
                 }
             ?> 
 			
-			
 		</a>
 		
 		<span class="deco"><a href="php/deconnexion.php"><img src="Images/Icon/powerOnOff.png" alt="déconnexion" width="20" height="20"></a></span></p>

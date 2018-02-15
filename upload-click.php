@@ -40,7 +40,7 @@
 		</div>
 	</form>
 		
-
+	<?php echo $user; ?> 
 	
 
 	<script src="Bootstrap/Bootstrap-Design/vendors/jquery/jquery.min.js"></script>

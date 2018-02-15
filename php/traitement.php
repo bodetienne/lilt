@@ -98,7 +98,7 @@ if (isset($_FILES['avatar']) AND $_FILES['avatar']['error']==0){
 // Inscription 
 //Connexion à la base de donnée
 
-$link = mysqli_connect ( "localhost", "emma", "Hipz9893", "lilt");
+$link = mysqli_connect ( "localhost", "root", "", "lilt");
 
 if (!$link) {
     echo "Error: Unable to connect to MySQL." . PHP_EOL;
