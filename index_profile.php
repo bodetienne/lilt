@@ -72,7 +72,7 @@
 <div class="title_playlists">
 	<a href='#'><h1>My playlists</h1></a>
 </div>	-->
-<div class="container">
+<div class="photosCompoPlaylist">
 	<div class="inner">
 		
 		<a href="composition.php"><h1>My compositions</h1><img src="Images/Rectangle.png" alt="djembé" width="800" height="400"></a>
