@@ -10,51 +10,46 @@
 <body>
 	
 	<?php
-session_start();
+
 	
-if(isset($_POST['nom_utilisateur']) && isset($_POST['mot_de_passe']))
-{
-    // connexion à la base de données
-    $db_username = 'nom_utilisateur';
-    $db_password = 'mdp_utilisateur';
-    $db_name     = 'lilt';
-    $db_host     = 'localhost';
-    $db = mysqli_connect('127.0.0.1','root','','lilt')
-           or die('could not connect to database');
-    
-    // on applique les deux fonctions mysqli_real_escape_string et htmlspecialchars
-    // pour éliminer toute attaque de type injection SQL et XSS
-    $username = mysqli_real_escape_string($db,htmlspecialchars($_POST['nom_utilisateur'])); 
-    $password = mysqli_real_escape_string($db,htmlspecialchars($_POST['mot_de_passe']));
+	include('connexionBdd.php');
 	
-    
-    if($username !== "" && $password !== "")
-    {
-        $requete = "SELECT count(*) FROM utilisateur where 
-              nom_utilisateur = '".$username."' and mdp_utilisateur = '".$password."' ";
-        $exec_requete = mysqli_query($db,$requete);
-        $reponse      = mysqli_fetch_array($exec_requete);
-        $count = $reponse['count(*)'];
-        if($count!=0) // nom d'utilisateur et mot de passe correctes
-        {
-           $_SESSION['nom_utilisateur'] = $username;
-           header('Location: principale.php');
-        }
-        else
-        {
-         header('Location: connexion.php?erreur=1'); // utilisateur ou mot de passe incorrect
-        }
-    }
-    else
-    {
-      header('Location: connexion.php?erreur=2'); // utilisateur ou mot de passe vide
-    }
-}
-else
+
+	$hashpass=$_POST['mot_de_passe'] . $salt;	
+	$hashpass=sha1($hashpass);
+	$salt = "oeiez2201";
+
+ 	$query='SELECT * FROM utilisateur WHERE nom_utilisateur =\''.$_POST['nom_utilisateur'].'\' AND mdp_utilisateur=\''.$hashpass.'\'';
+	
+	echo $query;
+//Je choisis le champ login
+$reponse_login = $connexion->query($query); // Je choisis de la base de donné login le champ login
+ 
+
+							 
+							 
+while ($donnees = $reponse_login->fetch())
+
 {
-  header('Location: connexion.php');
-}
-mysqli_close($db); // fermer la connexion
+   if($donnees !== false){
+	   
+	   $idUtilisateur=$_POST['idUtilisateur'];
+	   
+	   	session_start();
+	    $_SESSION['id']=$idUtilisateur;
+        header("location: ../index_home.php");
+	   
+	   	
+   }else{
+    
+echo"Votre email et/ou votre mot de passe sont incorrects";}}
+	
+$reponse_login->closeCursor(); 
+	
+	
+	
+	
+	
 ?>
 	
 	

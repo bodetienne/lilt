@@ -23,7 +23,7 @@
 	$email = $_POST['email'];
 	$mdp = $_POST['mot_de_passe'];
 	$comfirm_mdp = $_POST['confirm_pass'];
-	$mdp = sha1($mdp);
+	
 	
 	//Vérification de l'email
 	$point = strpos($email,".");
@@ -94,80 +94,60 @@ if (isset($_FILES['avatar']) AND $_FILES['avatar']['error']==0){
 	
 ?>
 
-
+	
 <?php
-// Inscription 
-//Connexion à la base de donnée
-
-$link = mysqli_connect ( "localhost", "root", "", "lilt");
-
-if (!$link) {
-    echo "Error: Unable to connect to MySQL." . PHP_EOL;
-    echo "Debugging errno: " . mysqli_connect_errno() . PHP_EOL;
-    echo "Debugging error: " . mysqli_connect_error() . PHP_EOL;
-    exit;
-}
-
-echo "Success: A proper connection to MySQL was made! The my_db database is great." . PHP_EOL;// Message: si la connexion s'est bien faite à la base de données
-echo "Host information: " . mysqli_get_host_info($link) . PHP_EOL;
-
-$query="select messageAlerte from alerte ";
-
+		
+include('connexionBdd.php');	
 	
 	
-
-if ($stmt = mysqli_prepare($link, $query)){
-	echo'execution de la requete';
-	/* execute la déclaration*/
-	mysqli_stmt_execute($stmt);
-	
-	echo ' association des colonnes et variables ';
-	/*lier le résultat des variables*/
-	mysqli_stmt_bind_result($stmt,$alerte);
-	
-	/* chercher les valeurs */
-	
-	while (mysqli_stmt_fetch($stmt)){
-		echo"<p> Alerte! ", $alerte, "<p>";
-	}
-} else {
-	echo'Cela ne fonctionne pas';
-}
-	
-
-// Il faut insérer les informations rentrées dans la base de données
-$sql = "INSERT INTO utilisateur (
-									nom_utilisateur, 
-									email_utilisateur,
-									mdp_utilisateur,
-									avatar) VALUES (
-														'" . $_POST['nom_utilisateur'] . "',
-														'" . $_POST['email'] ."',
-														'" . sha1($_POST['mot_de_passe'])."',
-														'" . $_POST['avatar'] ."')";
-
- 
-if (mysqli_query($link, $sql)) {
-    echo "New record created successfully";
-	header('Location: connexion.php');
-} else {
-    echo "Error: " . $sql . "<br>" . mysqli_error($link);
-
-}
-
-	
-
-
 	
 	
-
-mysqli_close($link);
+	
+		
+	$nom = $_POST['nom_utilisateur'];
+	$email = $_POST['email'];
+	$mdp = $_POST['mot_de_passe'];
+	$mdp2 = $_POST['confirm_pass'];
+	$avatar = $_POST['avatar'];
 	
 	
+	
+	$hashpass=$_POST['mot_de_passe'] . $salt;	
+	$hashpass=sha1($hashpass);
+	$salt = "oeiez2201";
+	
+	
+	
+	if(isset($nom) && isset($email) && isset($mdp) && isset($mdp2) && isset($avatar) ){
+		
+		if($nom!="" && $email!="" && $mdp!="" && $mdp2!=""){
+			
+          if($mdp==$mdp2){
+             
+          
+        $query = $connexion->prepare( 'INSERT INTO utilisateur( 	
+														nom_utilisateur,
+														email_utilisateur,
+														mdp_utilisateur) 
+																			VALUES (:nom_utilisateur, 
+																					:email, 
+																					:mot_de_passe)' );
+			  
+        $query->bindValue(':nom_utilisateur', $nom, PDO::PARAM_STR);
+        $query->bindValue(':email', $email, PDO::PARAM_STR);
+        $query->bindValue(':mot_de_passe', $hashpass, PDO::PARAM_STR);
+        $query->execute();
+			  
+			 echo header("Location: connexion.php");
+			  
+							}else echo"les 2 password doivent etre identique";
+         
+  
+						} else echo"Veuillez saisir tous les champs";
+     
+    				} else echo "erreur"
+		
 ?>	
-
-	
-
 	
 	
 

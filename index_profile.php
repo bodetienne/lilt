@@ -14,7 +14,7 @@
 	
 	<?php
 	// Tout début du code PHP. Situé en haut de la page web : permet de cacher les erreurs aux visiteurs
-	ini_set("display_errors",0);error_reporting(0);
+	/*ini_set("display_errors",0);error_reporting(0);*/
 	?>
 
 	<script src="Bootstrap/vendors/jquery/jquery.min.js"></script>
@@ -36,16 +36,13 @@
 	<div class="info">
 		<h2> <!--On appelle le nom de l'utilisateur -->
 			<?php
-                if($_SESSION['nom_utilisateur'] !== ""){
-                    $user = $_SESSION['nom_utilisateur'];
-                    // afficher un message: ici le nom d'user
-                    echo "$user";
-                }else {
-					echo "";
-				};
-			
-					
-				
+			require_once("php/pdoModel.php");
+	
+			PDOModel::connectDB("127.0.0.1", "root", "", "lilt");	
+ 			$output = PDOModel::getSQL("utilisateur", "*", "`idUtilisateur` =". $_POST['idUtilisateur']);
+			echo $output->nom_utilisateur;
+
+
             ?>  </h2>
 		
 		<p> "Nothing's gonna change my world" </p>
