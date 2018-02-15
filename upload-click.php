@@ -22,6 +22,9 @@
 			<div class="song song-name">
 				<input type="text" name="name" placeholder="Give a name to your song" class="text-input"> <!--name permet de récupérer la valeur avec la méthode POST-->
 			</div>
+			<div class="song song-name">
+				<input type="text" name="artist" placeholder="Give your artist name" class="text-input"> <!--name permet de récupérer la valeur avec la méthode POST-->
+			</div>
 			<div class="song song-duree">
 				<input type="time" step="2" name="duree" placeholder="Give the duration of your song" class="duree-input">
 			</div>
@@ -40,7 +43,7 @@
 		</div>
 	</form>
 		
-	<?php echo $user; ?> 
+	
 	
 
 	<script src="Bootstrap/Bootstrap-Design/vendors/jquery/jquery.min.js"></script>

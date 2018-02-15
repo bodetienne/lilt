@@ -143,7 +143,7 @@ $sql = "INSERT INTO utilisateur (
 									avatar) VALUES (
 														'" . $_POST['nom_utilisateur'] . "',
 														'" . $_POST['email'] ."',
-														'" . sha1($_POST['mot_de_passe'])."',
+														'" . /*sha1*/($_POST['mot_de_passe'])."',
 														'" . $_POST['avatar'] ."')";
 
  
