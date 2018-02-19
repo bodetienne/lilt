@@ -171,6 +171,22 @@ h2{
 	color: white;
 }
 
+.song {
+	border-bottom: none;
+}
+
+.song .submit-playlist {
+	border: none;
+	background: none;
+	padding: 1rem;
+	color: #4b4b4b;
+	font-size: 1.3rem;
+}
+
+.song .submit-playlist:hover {
+	color: #e40750;
+}
+
 .play-logo {
 	width: 1.5rem;
 	height: 1.5rem;
@@ -181,7 +197,10 @@ p .duree-column {
 	float: right;
 }
 
-
+.lecteur {
+	color: #4b4b4b;
+	margin-left: 2rem;
+}
 /**********Others*************/
 .choice{
 	border: .1rem solid #4b4b4b;

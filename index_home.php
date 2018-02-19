@@ -446,7 +446,18 @@
     </div>
     <script type="text/javascript">jssor_3_slider_init();</script>	
 	
+<!---------------------------------------------------
+	CONTEST
+---------------------------------------------------->	
 	
+		<a href="lecteur.php">
+			<div class="container-playlist">
+				<div class="lien-playlist">
+					<h3>Check our playlist now</h3>
+				</div>
+			</div>
+		</a>
+		
 <!---------------------------------------------------
 	CONTEST
 ---------------------------------------------------->

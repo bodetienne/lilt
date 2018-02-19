@@ -19,7 +19,7 @@
 	<div class="nav-block">
 		<ul class="nav">
 		<li class="nav-item">
-		<a class="nav-link" href="#">Playlists</a>
+		<a class="nav-link" href="lecteur.php">Playlists</a>
 		</li>
 		<li class="nav-item">
 		<a class="nav-link" href="#">Charts</a>
