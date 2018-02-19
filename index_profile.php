@@ -39,7 +39,7 @@
 			require_once("php/pdoModel.php");
 	
 			PDOModel::connectDB("127.0.0.1", "root", "", "lilt");	
- 			$output = PDOModel::getSQL("utilisateur", "*", "`idUtilisateur` =". $_POST['idUtilisateur']);
+ 			$output = PDOModel::getSQL("utilisateur", "*", "`idUtilisateur` = ");
 			echo $output->nom_utilisateur;
 
 
