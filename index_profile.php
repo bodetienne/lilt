@@ -7,7 +7,10 @@
 	
 	<link rel="stylesheet" href="vendors/Bootstrap/vendors/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="style/style_profile.css">
+	<script src="js/jquery.min.js"></script>
+	<script src="js/emmajs.js"></script>
 	
+
 </head>
 
 <body>
@@ -36,17 +39,21 @@
 	<div class="info">
 		<h2> <!--On appelle le nom de l'utilisateur -->
 			<?php
-			require_once("php/pdoModel.php");
+/*			require_once("php/pdoModel.php");
 	
 			PDOModel::connectDB("127.0.0.1", "root", "", "lilt");	
  			$output = PDOModel::getSQL("utilisateur", "*", "`idUtilisateur` = ");
-			echo $output->nom_utilisateur;
+			echo $output->nom_utilisateur;*/
 
 
             ?>  </h2>
-		
+		<div class="imgSettings" id="imgSetting">
+			<img src="Images/Icon/settings.png" alt="settings" id="parametres">
+			<?php include('modification_profil.php')?>
+		</div>			
 		<p> "Nothing's gonna change my world" </p>
 		<p> 104 | followers 20 | following </p>	
+
 	</div>
 	<div class="about_me">
 		<h3>About me</h3>
@@ -79,9 +86,41 @@
 	</div>
 </div>
   	
-
 	
+	
+	
+<!---------------Modifications Profile-------------------->
 
+
+
+<script>	
+
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("parametres");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
 
 	
 

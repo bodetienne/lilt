@@ -19,7 +19,7 @@
 }
 
 
-input[type=text] {
+.form-wrapper-2 input[type=text] {
     width: 130px;
     box-sizing: border-box;
     border: 2px solid #ccc;
@@ -35,7 +35,7 @@ input[type=text] {
     transition: width 0.4s ease-in-out;
 }
 
-input[type=text]:focus {
+.form-wrapper-2 input[type=text]:focus {
     width: 50%;
 }
 

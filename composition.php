@@ -12,7 +12,7 @@
 	<link rel="stylesheet" href="style/style_profile.css">
 	
 	
-
+	<script src="js/jquery.min.js"></script>
 	<script src="js/emmajs.js"></script>
 </head>
 
@@ -36,11 +36,11 @@
 	<div class="info">
 		<h2> <!--On appelle le nom de l'utilisateur -->
 			<?php
-                if($_SESSION['nom_utilisateur'] !== ""){
+           /*     if($_SESSION['nom_utilisateur'] !== ""){
                     $user = $_SESSION['nom_utilisateur'];
                     // afficher un message: ici le nom d'user
                     echo "$user";
-                }
+                }*/
             ?>  </h2>
 		
 		<p> "Nothing's gonna change my world" </p>
@@ -84,11 +84,11 @@
 			
 					<p> Can I stay | <?php
 	
-								if($_SESSION['nom_utilisateur'] !== ""){
+								/*if($_SESSION['nom_utilisateur'] !== ""){
 								$user = $_SESSION['nom_utilisateur'];
 									// afficher un message: ici le nom d'user
 								echo "$user";
-								}
+								}*/
            					?>  
 					</p>
 				

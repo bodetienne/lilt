@@ -42,12 +42,12 @@
 		<a href="index_profile.php"><img src="Images/Icon/user.png" alt="logo site" class="id-photo"></a>
 		<p class="id-name"><a href="index_profile.php">          
 			<?php
-                session_start();
+/*                session_start();
                 if($_SESSION['nom_utilisateur'] !== ""){
                     $user = $_SESSION['nom_utilisateur'];
                     // afficher un message
                     echo $user;
-                }
+                }*/
             ?> 
 			
 		</a>

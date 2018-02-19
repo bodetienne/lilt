@@ -50,7 +50,7 @@
 		</p>
 			
 		<p>
-			<label for="icone"> Your profile picture (JPG) | max 15 Ko </label>
+			<label for="icone"> Your profile picture </label>
 			<input type="file" name="avatar" id="avatar" accept="image/jpg">
 		</p>
 		<p>
