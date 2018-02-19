@@ -31,7 +31,15 @@
 
 <div class="header_profile">
 	<div class="photo_profile">
-		<img src="Images/people-2563491_1280.jpg" alt="photo_de_profil">
+		<img src="<?php
+			require_once("php/pdoModel.php");
+	
+			PDOModel::connectDB("127.0.0.1", "root", "", "lilt");	
+ 			$output = PDOModel::getSQL("utilisateur", "*", "`idUtilisateur` =". $_POST['idUtilisateur']);
+			echo $output->avatar;
+
+
+            ?>" alt="photo_de_profil">
 	</div>
 	<div class="info">
 		<h2> <!--On appelle le nom de l'utilisateur -->
@@ -39,7 +47,7 @@
 			require_once("php/pdoModel.php");
 	
 			PDOModel::connectDB("127.0.0.1", "root", "", "lilt");	
- 			$output = PDOModel::getSQL("utilisateur", "*", "`idUtilisateur` = ");
+ 			$output = PDOModel::getSQL("utilisateur", "*", "`idUtilisateur` =". $_POST['idUtilisateur']);
 			echo $output->nom_utilisateur;
 
 

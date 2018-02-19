@@ -12,16 +12,11 @@
 
 <body>
 
-	
-	
-	
-	<?php include('header.php');	?>
+		
+	<?php include('header.php'); ?>
 	
 
 	
-					
-					
-
 	<div class="song select-tags">
 		<form method="POST">
 			<SELECT name="tag" size="1" class="select-tags">
@@ -197,30 +192,7 @@
 						echo "</pre>";
 					}
 
-					//Fonction à améliorer 
-						/*	function triTag () {
-								
-								$tag = $_POST["tag"];
-								
-								$query_select = "SELECT * FROM chanson WHERE tag='" . $tag . "'";
-								$link = mysqli_connect ( "localhost", "root", "", "lilt"); //accès à la base de donnée
-								
-								if ($stmt = mysqli_prepare($link, $query_select)){
-									mysqli_stmt_execute($stmt);
-
-									mysqli_stmt_bind_result($stmt,$idChanson, $nomChanson, $dureeChanson, $tag, $fichierMp3, $jaime, $idArtiste);
-
-									echo('<div class"succes">');
-
-									while(mysqli_stmt_fetch($stmt)){
-										echo('<p>Song name = ' . $nomChanson . ', duration = ' . $dureeChanson . '</p> 	<audio controls="">
-												<source src="'. $fichierMp3 .'" type="audio/mpeg"/> 
-											</audio>'); /*type change en fonction du firmat de l'audio*/
-						/*			}
-								}
-							}
 					
-						echo triTag();*/
 					
 							 
 
