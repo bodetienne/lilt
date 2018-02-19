@@ -110,8 +110,7 @@ include('connexionBdd.php');
 	$mdp2 = $_POST['confirm_pass'];
 	$avatar = $_POST['avatar'];
 	
-<<<<<<< HEAD
-=======
+
 
 // Il faut insérer les informations rentrées dans la base de données
 $sql = "INSERT INTO utilisateur (
@@ -133,7 +132,7 @@ if (mysqli_query($link, $sql)) {
 
 }
 
->>>>>>> b39df7a29c268e54892bc22ee6271be8e55d3aeb
+
 	
 	
 	$hashpass=$_POST['mot_de_passe'] . $salt;	
