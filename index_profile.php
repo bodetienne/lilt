@@ -34,32 +34,11 @@
 
 <div class="header_profile">
 	<div class="photo_profile">
-		<img src="<?php
-			require_once("php/pdoModel.php");
-	
-			PDOModel::connectDB("127.0.0.1", "root", "", "lilt");	
- 			$output = PDOModel::getSQL("utilisateur", "*", "`idUtilisateur` =". $_POST['idUtilisateur']);
-			echo $output->avatar;
-
-
-            ?>" alt="photo_de_profil">
+		<img src="Images/people-2563491_1280.jpg" alt="photo_de_profil">
 	</div>
 	<div class="info">
-		<h2> <!--On appelle le nom de l'utilisateur -->
-			<?php
-/*			require_once("php/pdoModel.php");
-	
-			PDOModel::connectDB("127.0.0.1", "root", "", "lilt");	
-<<<<<<< HEAD
- 			$output = PDOModel::getSQL("utilisateur", "*", "`idUtilisateur` = ");
-			echo $output->nom_utilisateur;*/
-=======
- 			$output = PDOModel::getSQL("utilisateur", "*", "`idUtilisateur` =". $_POST['idUtilisateur']);
-			echo $output->nom_utilisateur;
->>>>>>> 0a022900f649d9abe2d96e81716a9b2994025674
-
-
-            ?>  </h2>
+		<h2> <!--On appelle le nom de l'utilisateur -->	</h2>
+		
 		<div class="imgSettings" id="imgSetting">
 			<img src="Images/Icon/settings.png" alt="settings" id="parametres">
 			<?php include('modification_profil.php')?>
