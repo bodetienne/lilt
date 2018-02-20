@@ -16,7 +16,6 @@
 	<?php include('header.php'); ?>
 	
 
-	
 	<div class="song select-tags">
 		<form method="POST">
 			<SELECT name="tag" size="1" class="select-tags">
@@ -35,40 +34,53 @@
 			
 <?php 
 
-	require 'PDO/includes/pdo.php';		
+	require 'PDO/includes/pdo.php';
 
 	echo'
 	<div class="grand-container">
 		<h2 class="title">' . $_POST["tag"] . '</h2>';
 		echo '<div class="inner">
 			<div class="list">
-				<ul id="playlist">'; 	
+				<ul id="playlist">';
 						
 					
 						$tag = $_POST["tag"];
-					
 					try {
-						$recupId = "SELECT `idUtilisateur` FROM `utilisateur` WHERE `nom_utilisateur`= '$user'";
-						$stmt = $connexion -> prepare($recupId);
-						$stmt -> execute();
+						/*if (!isset($user)){
+							echo "Vous devez être connecté pour voir les playlists";
 						
-						$query_select = "SELECT * FROM chanson WHERE tag=:tag";
-						$stmt = $connexion->prepare($query_select);
-						$stmt -> bindValue(':tag', $tag); //bind = lier
-						$stmt -> execute();
+						} else {*/
+							
+							/*$recupId = "SELECT `idUtilisateur` FROM `utilisateur` WHERE `nom_utilisateur`= '$name'";
+							$stmt = $connexion -> prepare($recupId);
+							$stmt -> execute();*/
+							
+							
+							
+							$query_select = "SELECT * FROM chanson WHERE tag=:tag";
+							$stmt = $connexion->prepare($query_select);
+							$stmt -> bindValue(':tag', $tag); //bind = lier
+							$stmt -> execute();	
 					
-						$query_artiste = "SELECT * FROM artiste WHERE idUtilisateur= '$recupId'";
-						$stmt = $connexion -> prepare($query_artiste);
-						$stmt -> execute();
-					
-						while($chanson = $stmt -> fetch()) {
-						echo "<div class='lecteur'> <p>" . $chanson -> nomChanson . "</p>";
-							while($artiste = $stmt -> fetch()) {
-								echo "<p>". $artiste -> nomArtiste ."</p>";
+							while($chanson = $stmt -> fetch()) {
+							echo "<div class='lecteur'>  <span>" . $chanson -> nomChanson . "</span>";
+							$idArtiste = $chanson -> idArtiste;
+							
+							$query_artiste = "SELECT * FROM artiste WHERE idArtiste= '$idArtiste'";
+							$stmt = $connexion -> prepare($query_artiste);
+							$stmt -> execute();
+								
+								while($artiste = $stmt -> fetch()) {
+									echo "<span>". $artiste -> nomArtiste ."</span>
+									<audio controls='controls'>
+										<source src=" . $chanson -> fichierMp3 . "type ='audio/mp3
+									</audio>";
+								}
+							echo " </div>";
 							}
-						echo "</div>";
-						}
 					
+					/*}*/
+						
 					} catch(Exception $e) {
 						echo '<p> Erreur n° : ' . $e->getCode() . ' : ' . $e->getMessage(). '</p>';
 						echo '<p>Dans '. $e->getFile(). '('. $e->getLine() .')';
@@ -81,8 +93,6 @@
 			</div>
 		</div>
 	</div>';
-	
-		
 	?>
 
 </body>

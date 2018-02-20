@@ -32,7 +32,7 @@
 		mysqli_stmt_bind_result($stmt, $idUtilisateur);
 		while(mysqli_stmt_fetch($stmt)){
 			echo "on a l'id de l'user <br>";
-/*			echo $idUtilisateur;*/
+			/*echo $idUtilisateur;*/
 		}
 	} else {
 		echo "pas d'id user dans " . $recupId . "<br>" . mysqli_error($link);
@@ -66,7 +66,6 @@
 
 		}
 	}
-	
 	
 	
 	

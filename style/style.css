@@ -200,7 +200,14 @@ p .duree-column {
 .lecteur {
 	color: #4b4b4b;
 	margin-left: 2rem;
+	display: flex;
 }
+
+.lecteur span  {
+	margin: auto;
+}
+
+
 /**********Others*************/
 .choice{
 	border: .1rem solid #4b4b4b;
