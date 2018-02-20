@@ -27,7 +27,7 @@
 	<div id="container_connexion">
             <!-- zone de connexion -->
             
-            <form action="verification_connexion.php" method="post">
+            <form action="../verification_connexion.php" method="post">
                 <h1>Connexion</h1>
                 
                 <label><b>Username</b></label>
