@@ -26,6 +26,7 @@
 $reponse_login = $connexion->query($query); // Je choisis de la base de donné login le champ login
  
 
+
 							 
 							 
 while ($donnees = $reponse_login->fetch())
@@ -36,7 +37,7 @@ while ($donnees = $reponse_login->fetch())
 	   $idUtilisateur=$_POST['idUtilisateur'];
 	   
 	   	session_start();
-	    $_SESSION['id']=$idUtilisateur;
+	    $_SESSION['idUtilisateur']=$idUtilisateur;
         header("location: ../index_home.php");
 	   
 	   	
