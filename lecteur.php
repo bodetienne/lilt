@@ -57,27 +57,26 @@
 							
 							
 							
-							$query_select = "SELECT * FROM chanson WHERE tag=:tag";
+							$query_select = "SELECT * FROM chanson WHERE tag='$tag'";
 							$stmt = $connexion->prepare($query_select);
-							$stmt -> bindValue(':tag', $tag); //bind = lier
 							$stmt -> execute();	
-					
-							while($chanson = $stmt -> fetch()) {
-							echo "<div class='lecteur'>  <span>" . $chanson -> nomChanson . "</span>";
-							$idArtiste = $chanson -> idArtiste;
 							
-							$query_artiste = "SELECT * FROM artiste WHERE idArtiste= '$idArtiste'";
-							$stmt = $connexion -> prepare($query_artiste);
-							$stmt -> execute();
-								
+							while($chanson = $stmt -> fetch()) {
+								echo "<div class='lecteur'>  <span>" . $chanson -> nomChanson . "</span>";
+								$idArtiste = $chanson -> idArtiste;
+
+								$query_artiste = "SELECT * FROM artiste WHERE idArtiste= '$idArtiste'";
+								$stmt = $connexion -> prepare($query_artiste);
+								$stmt -> execute();
+
 								while($artiste = $stmt -> fetch()) {
 									echo "<span>". $artiste -> nomArtiste ."</span>
 									<audio controls='controls'>
-										<source src=" . $chanson -> fichierMp3 . "type ='audio/mp3
+										<source src=" . $chanson -> fichierMp3 . "type ='audio/mp3'
 									</audio>";
 								}
-							echo " </div>";
 							}
+							echo " </div>";
 					
 					/*}*/
 						
