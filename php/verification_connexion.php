@@ -14,7 +14,6 @@
 
 	include('connexionBdd.php');
 
-
 	$hashpass=$_POST['mot_de_passe'] . $salt;
 	$hashpass=sha1($hashpass);
 	$salt = "oeiez2201";
@@ -42,9 +41,6 @@ while ($donnees = $reponse_login->fetch()){
 }
 
 $reponse_login->closeCursor();
-
-
-
 
 
 ?>

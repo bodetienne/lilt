@@ -82,9 +82,9 @@
 
 .photosCompoPlaylist h1{
 	overflow:hidden;
-    position:relative;
-    left: 180px;
-    top: 250px;
+  position:relative;
+  left: 180px;
+  top: 250px;
 	color: white;
 	text-shadow: 4px 5px black;
 }
@@ -127,7 +127,7 @@ a:hover{
     margin: auto;
     padding: 0;
     border: 1px solid #888;
-    width: 80%;
+    width: 35%;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
     -webkit-animation-name: animatetop;
     -webkit-animation-duration: 0.4s;
@@ -137,7 +137,7 @@ a:hover{
 
 /* Add Animation */
 @-webkit-keyframes animatetop {
-    from {top:-300px; opacity:0} 
+    from {top:-300px; opacity:0}
     to {top:0; opacity:1}
 }
 
@@ -162,27 +162,38 @@ a:hover{
 }
 
 .modal-header {
-    padding: 2px 16px;
+    padding: 41px 16px;
     background-color: #68B8A5;
     color: white;
 }
 
 
-.modal-body {
-	padding: 2px 16px;
+.modal-body h3{
+	background-color: darkslategrey;
+  color: white;
+	padding: 16px;
 }
 .modal-body form{
 	font-size: 15px;
-	padding: 10px;
-}.modal-body form,label{
-	padding-right: 20px;
-}.modal-body form,label:nth-of-type(2){
-	padding-right: 75px;
-}.modal-body form,label:nth-of-type(1){
-	padding-right: 50px;
+}
+.modal-body label,input{
+	margin: 20px 19px;
+}
+.modal-body input{
+	position: absolute;
+	width: 70%;
 }
 
-
+.modal-body input:nth-of-type(4){
+	margin-left: 0;
+}
+.modal-body label{
+	position: relative;
+	width: 13%;
+}
+.modal-body label:last-of-type{
+	width: 30%;
+}
 .modal-footer {
     padding: 2px 16px;
     background-color: #68B8A5;
@@ -192,7 +203,7 @@ a:hover{
 
 
 .modal-footer .submit{
-    background-color: #E40750; 
+    background-color: #E40750;
     border: none;
     color: white;
     padding: 15px 32px;
@@ -207,4 +218,3 @@ a:hover{
 	background-color: #B4053F;
 }
 /*--------------------------------------*/
-
