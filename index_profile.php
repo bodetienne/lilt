@@ -40,7 +40,9 @@
 		<h2>
 			<?php
 				include('php/connexionBdd.php');
-				
+				return 'SELECT * FROM utilisateur';
+				echo "nom_utilisateur";
+
 			?> <!--On appelle le nom de l'utilisateur -->
 		</h2>
 
