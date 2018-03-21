@@ -32,9 +32,9 @@
     </div>
     <div class="modal-body">
 		<h3>Personal informations</h3>
-     		<form action="post">
+     		<form method="post" action="modif.php" >
 				<label for="nom_utilisateur">Username</label>
-				<input type="text" name="nom_utilisateur" id="nom_utilisateur" maxlength="32">
+				<input type="text" name="nom_utilisateur" id="nom_utilisateur" value="<?php if(isset($_SESSION['nom_utilisateur'])) ?>" maxlength="32">
 				</br>
 				<label for="email">E-mail</label>
 				<input type="text" name="email" id="adresse_email" maxlength="128">

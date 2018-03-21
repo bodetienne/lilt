@@ -41,11 +41,10 @@
 	SEARCH
 ----------------------------------------------------->
 	
-<form class="searchbar">
-	<input type="text" name="search">
+<div class="searchbar">
+	<input type="text" name="search" id="search-bar">
 	<button class="button"><span> Search ! </span></button>
-</form>
-
+</div>
 <!---------------------------------------------------
 	BROWSE
 ---------------------------------------------------->

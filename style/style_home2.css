@@ -6,7 +6,7 @@
 /*	SEARCH BAR	*/
 
 
-.searchbar{
+.searchbar {
 	text-align: center;
 	background-image: url("../Images/turntable-1109588_1280.jpg");
 	background-position: center;
@@ -19,7 +19,7 @@
 }
 
 
-.form-wrapper-2 input[type=text] {
+.searchbar #search-bar, input [type=text] {
     width: 130px;
     box-sizing: border-box;
     border: 2px solid #ccc;
@@ -35,7 +35,7 @@
     transition: width 0.4s ease-in-out;
 }
 
-.form-wrapper-2 input[type=text]:focus {
+ .searchbar #search-bar, input[type=text]:focus {
     width: 50%;
 }
 
@@ -62,7 +62,7 @@
 	background: #68B8A5;
 }
 
-.button span {
+.research-bar .button span {
   cursor: pointer;
   display: inline-block;
   position: relative;
@@ -82,7 +82,6 @@
 	padding-right: 25px;
 
 }
-
 .button:hover span:after {
   opacity: 1;
   right: 0;
