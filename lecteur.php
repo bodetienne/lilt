@@ -3,18 +3,18 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	
+
 	<title>Lecteur</title>
-	
+
 	<link rel="stylesheet" href="vendors/Bootstrap/Bootstrap-Grid/vendors/bootsrap/css/bootstrap-grid.css">
 	<link rel="stylesheet" href="style/style.css">
 </head>
 
 <body>
 
-		
+
 	<?php include('header.php'); ?>
-	
+
 
 	<div class="song select-tags">
 		<form method="POST">
@@ -30,9 +30,9 @@
 			<button type="submit" class="submit-playlist"> Listen Music </button>
 			</form>
 	</div>
-	
-			
-<?php 
+
+
+<?php
 
 	require 'PDO/includes/pdo.php';
 
@@ -40,55 +40,58 @@
 	<div class="grand-container">
 		<h2 class="title">' . $_POST["tag"] . '</h2>';
 		echo '<div class="inner">
-			<div class="list">
-				<ul id="playlist">';
-						
-					
+			<div class="list">';
+
+
 						$tag = $_POST["tag"];
 					try {
-						/*if (!isset($user)){
-							echo "Vous devez être connecté pour voir les playlists";
-						
-						} else {*/
-							
-							/*$recupId = "SELECT `idUtilisateur` FROM `utilisateur` WHERE `nom_utilisateur`= '$name'";
-							$stmt = $connexion -> prepare($recupId);
-							$stmt -> execute();*/
-							
-							
-							
-							$query_select = "SELECT * FROM chanson WHERE tag='$tag'";
-							$stmt = $connexion->prepare($query_select);
-							$stmt -> execute();	
-							
-							while($chanson = $stmt -> fetch()) {
-								echo "<div class='lecteur'>  <span>" . $chanson -> nomChanson . "</span>";
-								$idArtiste = $chanson -> idArtiste;
+	
 
-								$query_artiste = "SELECT * FROM artiste WHERE idArtiste= '$idArtiste'";
+
+
+							$query_select = "SELECT * FROM `chanson` WHERE `tag`='$tag'";
+							$stmt = $connexion->prepare($query_select);
+							$stmt -> execute();
+
+							$leschansons = Array();
+							$temp  = $stmt->fetch();
+
+							while($temp != false){
+									array_push($leschansons, $temp);
+									$temp  = $stmt->fetch();
+							}
+
+
+							for ($i=0; $i<sizeof($leschansons); $i++){
+
+								//récupérer nom artiste à partir de l'id
+								$query_artiste = "SELECT * FROM artiste WHERE idArtiste= '" . $leschansons[$i] -> idArtiste ."'";
 								$stmt = $connexion -> prepare($query_artiste);
 								$stmt -> execute();
 
-								while($artiste = $stmt -> fetch()) {
-									echo "<span>". $artiste -> nomArtiste ."</span>
-									<audio controls='controls'>
-										<source src=" . $chanson -> fichierMp3 . "type ='audio/mp3'
-									</audio>";
-								}
+								$lesartistes = Array();
+								$tempo = $stmt -> fetch();
+								array_push($lesartistes, $tempo);
+
+
+								// echo "Je rentre dans la boucle et je suis à la ligne" . $i;
+								echo "<div class='big-player'>";
+									echo "<div class='song-name song-name-" . $i . "''>" . $leschansons[$i] -> nomChanson . "</div>";
+									echo "<div class='artist-name artist-name-" . $i . "''>" . $lesartistes[0] -> nomArtiste . "</div>";
+									echo "<div class='mp3-name mp3-name-" . $i . "''>" . $leschansons[$i] -> fichierMp3 . "</div>";
+								echo "</div>";
 							}
-							echo " </div>";
-					
-					/*}*/
-						
+
+
 					} catch(Exception $e) {
 						echo '<p> Erreur n° : ' . $e->getCode() . ' : ' . $e->getMessage(). '</p>';
 						echo '<p>Dans '. $e->getFile(). '('. $e->getLine() .')';
 						echo "<pre>";
 						var_dump ($e -> getTrace());
 						echo "</pre>";
-					}				
-							
-				echo '</ul>
+					}
+
+				echo '
 			</div>
 		</div>
 	</div>';
