@@ -32,7 +32,7 @@
 				<input type="file" name="mp3-file" class="btn-import" accept=".mp3"/>
 			</div>
 
-			<!-- <div class="song">
+			<div class="song">
 				<SELECT name="tag" size="1" class="select-tags">
 					<OPTION selected disabled>Add a tag
 					<OPTION>Rock
@@ -42,7 +42,7 @@
 					<OPTION>Reggae
 					<OPTION>No tag
 				</SELECT>
-			</div> -->
+			</div>
 				<input type="submit" id="submit">
 		</div>
 	</form>

@@ -58,6 +58,9 @@
 									$temp  = $stmt->fetch();
 							}
 
+							//faire en sorte que les chansons soient accessibles à tout le monde
+							
+
 
 							for ($i=0; $i<sizeof($leschansons); $i++){
 
