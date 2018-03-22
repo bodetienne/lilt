@@ -45,9 +45,6 @@
 
 						$tag = $_POST["tag"];
 					try {
-	
-
-
 
 							$query_select = "SELECT * FROM `chanson` WHERE `tag`='$tag'";
 							$stmt = $connexion->prepare($query_select);
@@ -78,7 +75,13 @@
 								echo "<div class='big-player'>";
 									echo "<div class='song-name song-name-" . $i . "''>" . $leschansons[$i] -> nomChanson . "</div>";
 									echo "<div class='artist-name artist-name-" . $i . "''>" . $lesartistes[0] -> nomArtiste . "</div>";
-									echo "<div class='mp3-name mp3-name-" . $i . "''>" . $leschansons[$i] -> fichierMp3 . "</div>";
+									echo "<div class='mp3-name mp3-name-" . $i . "''>
+																<audio controls='controls' preload='metadata'>
+															  <source src='". $leschansons[$i] -> fichierMp3 . "' type='audio/mp3' />
+															  Votre navigateur n'est pas compatible
+																</audio>
+												</div>";
+												//mp3 est le seul format à pouvoir être lu sur IE, chrome, Firefox, Safari et Opera
 								echo "</div>";
 							}
 
