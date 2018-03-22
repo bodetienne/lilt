@@ -39,9 +39,9 @@
 	<div class="info">
 		<h2>
 			<?php
-				include('connexionBdd.php');
-				$utilisateur = $connexion -> query("SELECT nom_utilisateur FROM utilisateur");
-				echo $utilisateur;
+			include('php/connexionBdd.php');
+
+
 			?> <!--On appelle le nom de l'utilisateur -->
 		</h2>
 

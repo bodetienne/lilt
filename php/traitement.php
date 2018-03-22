@@ -133,9 +133,9 @@ if (mysqli_query($link, $sql)) {
 }
 
 
-	$hashpass=$_POST['mot_de_passe'] . $salt;
+	$hashpass=$_POST['mot_de_passe'] /*. $salt*/;
 	$hashpass=sha1($hashpass);
-	$salt = "oeiez2201";
+	//$salt = "oeiez2201";
 
 
 
