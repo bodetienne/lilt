@@ -1,11 +1,11 @@
 <link rel="stylesheet" href="style/style.css">
 
 
-<!-- HEADER	-->	
-	
+<!-- HEADER	-->
+
 	<?php include('header.php');	?>
-	
-<!--	CONTENTS 	-->	
+
+<!--	CONTENTS 	-->
 
 <?php
 	$link = mysqli_connect ( "localhost", "root", "", "lilt"); //accès à la base de donnée
@@ -15,36 +15,66 @@
 		<div class="elements">
 			<p class="element"> Your song <strong>' . $_POST["name"] . '</strong> has been upload with success !</p>
 			<p class="element"> You can listen it in the playlist #' . $_POST["tag"] . '</p>
-		</div>
-		<div class="proud-picture">
+g		<div class="proud-picture">
 			<p>'. $_POST["name"] .'</p>
 		</div>
 	</div>
 	';
-	
-
 
 	/* requette permettant  de recup l'id utilisateur*/
-	$recupId = "SELECT `idUtilisateur` FROM `utilisateur` WHERE `nom_utilisateur`= '$user'";
-	if ($stmt = mysqli_prepare($link, $recupId)) {
-		mysqli_stmt_execute($stmt);
-		
-		mysqli_stmt_bind_result($stmt, $idUtilisateur);
-		while(mysqli_stmt_fetch($stmt)){
-			echo "on a l'id de l'user <br>";
-			/*echo $idUtilisateur;*/
-		}
+	// /!\ $idUser n'est pas la bonne variable, il fauudra trouver l'id de user en PDO (voir connexion)
+	$recupId = $recupId = "SELECT `idUtilisateur` FROM `utilisateur` WHERE `nom_utilisateur`= '$idUser'";
+	$stmt = $connexion-> prepare($recupId);
+	$stmt -> execute();
+	$temp1 = $stmt-> fetch()
+
+	if ($temp1 != false){
+			echo "l'id de l'user est : ". $idUser;
 	} else {
-		echo "pas d'id user dans " . $recupId . "<br>" . mysqli_error($link);
+		echo "Vous devez être connecté pour importer une chanson";
 	}
-	
+
+	/* requette permettant d'insérer les infos dans la tab artiste*/
+	$nomArtiste = $_POST['artist'];
+	$verif = "SELECT `idArtiste` FROM `artiste` WHERE `nomArtiste`='$nomArtiste' AND `idUtilisateur`='$idUser'"; //vérifie si l'artiste rentré existe
+	$stmt = $connexion-> prepare($verif);
+	$stmt -> execute();
+	if () {
+	//si l'artiste existe, il ne se passe rien
+
+} else {
+		//si il n'existe pas, on créer l'artiste
+
+}
+
+	/* requette permettant de recup l'id artiste*/
+
+	/* requette permettant d'insérer les valeurs écrites et recup dans la tab chanson */
+
+	/* requette permettant  de recup l'id utilisateur*/
+
+
+
+	// $recupId = "SELECT `idUtilisateur` FROM `utilisateur` WHERE `nom_utilisateur`= '$user'";
+	// if ($stmt = mysqli_prepare($link, $recupId)) {
+	// 	mysqli_stmt_execute($stmt);
+	//
+	// 	mysqli_stmt_bind_result($stmt, $idUtilisateur);
+	// 	while(mysqli_stmt_fetch($stmt)){
+	// 		echo "on a l'id de l'user <br>";
+	// 		/*echo $idUtilisateur;*/
+	// 	}
+	// } else {
+	// 	echo "pas d'id user dans " . $recupId . "<br>" . mysqli_error($link);
+	// }
+
 	/* requette permettant d'insérer les infos dans la tab artiste*/
 	$nomArtiste = $_POST['artist'];
 	$verif = "SELECT `idArtiste` FROM `artiste` WHERE `nomArtiste`='$nomArtiste' AND `idUtilisateur`='$idUtilisateur'"; //vérifie si l'artiste rentré existe
 	echo $verif;
 	if ($stmt = mysqli_prepare($link, $verif)) {
 		mysqli_stmt_execute($stmt);
-		
+
 		$tabVerif = [];
 		mysqli_stmt_bind_result($stmt, $idArtiste);
 			while(mysqli_stmt_fetch($stmt)){
@@ -52,9 +82,9 @@
 		}
 		print_r($tabVerif);
 		//si l'artiste existe, il ne se passe rien
-		if (sizeof($tabVerif) > 0){	
+		if (sizeof($tabVerif) > 0){
 
-		//si il n'existe pas, on créer la chanson
+		//si il n'existe pas, on créer l'artiste
 		} else {
 			$sql = "INSERT INTO artiste (nomArtiste, idUtilisateur) VALUES ('" .  $nomArtiste .  "', '" . $idUtilisateur . "')";
 			if (mysqli_query($link, $sql)) {
@@ -66,14 +96,14 @@
 
 		}
 	}
-	
-	
-	
+
+
+
 	/* requette permettant de recup l'id artiste*/
 	$recupIdArtiste = "SELECT `idArtiste` FROM `artiste` WHERE `nomArtiste`= '$nomArtiste' ";
 	if ($stmt = mysqli_prepare($link, $recupIdArtiste)) {
 		mysqli_stmt_execute($stmt);
-		
+
 		mysqli_stmt_bind_result($stmt, $idArtiste);
 		while(mysqli_stmt_fetch($stmt)){
 			echo "on a l'id de l'artiste <br>";
@@ -87,7 +117,7 @@
 
 	/* requette permettant d'insérer les valeurs écrites et recup dans la tab chanson */
 	$sql = "INSERT INTO chanson (nomChanson, dureeChanson, tag, idArtiste)
-	VALUES ('" .  $_POST['name'] .  "', '" . $_POST['duree'] ."', '" . $_POST['tag'] ."' , '" . $idArtiste . "')"; 
+	VALUES ('" .  $_POST['name'] .  "', '" . $_POST['duree'] ."', '" . $_POST['tag'] ."' , '" . $idArtiste . "')";
 
 	if (mysqli_query($link, $sql)) {
 		echo "La chanson est importée !! ";
@@ -95,11 +125,6 @@
 		echo "L'import de votre chanson n'a pas pu être réalisé. Veuillez réessayer. " . $sql . "<br>" . mysqli_error($link);
 	}
 
- 
-		
-		
-		
-		
-		
-		
+	$cheminUpload = "lecteur/music/" . $_POST["mp3-file"];
+	echo $cheminUpload;
 ?>
