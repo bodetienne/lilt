@@ -11,7 +11,7 @@
 
 	<?php
 
-
+ session_start();
 	include('connexionBdd.php');
 
 	$hashpass=$_POST['mot_de_passe'] . $salt;
@@ -25,14 +25,17 @@
 //Je choisis le champ login
 $reponse_login = $connexion->query($query); // Je choisis de la base de donné login le champ login
 
+
 while ($donnees = $reponse_login->fetch()){
    if($donnees !== false){
 
 	   $idUtilisateur=$_POST['idUtilisateur'];
 
-	   	session_start();
-	    $_SESSION['idUtilisateur']=$idUtilisateur;
+
+		 if (!isset($_SESSION["idUtilisateur"])){
+
       header("location: ../index_home.php");
+			}
 
 
    }else{

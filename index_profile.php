@@ -17,7 +17,7 @@
 
 	<?php
 	// Tout début du code PHP. Situé en haut de la page web : permet de cacher les erreurs aux visiteurs
-	/*ini_set("display_errors",0);error_reporting(0);*/
+	/*ini_set("display_errors",0);error_reporting(0);*/			session_start();
 	?>
 
 	<script src="Bootstrap/vendors/jquery/jquery.min.js"></script>
@@ -25,7 +25,7 @@
 	<script src="Bootstrap/vendors/bootstrap/js/bootstrap.min.js"></script>
 
 
-<?php include("header.php")?>
+<?php include("header.php");?>
 
 
 <!-----------------------------------------------
@@ -39,10 +39,9 @@
 	<div class="info">
 		<h2>
 			<?php
-				include('php/connexionBdd.php');
-				return 'SELECT * FROM utilisateur';
-				echo "nom_utilisateur";
-
+				include('connexionBdd.php');
+				$utilisateur = $connexion -> query("SELECT nom_utilisateur FROM utilisateur");
+				echo $utilisateur;
 			?> <!--On appelle le nom de l'utilisateur -->
 		</h2>
 
