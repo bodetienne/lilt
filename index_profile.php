@@ -17,7 +17,7 @@
 
 	<?php
 	// Tout début du code PHP. Situé en haut de la page web : permet de cacher les erreurs aux visiteurs
-	/*ini_set("display_errors",0);error_reporting(0);*/			session_start();
+	/*ini_set("display_errors",0);error_reporting(0);*/
 	?>
 
 	<script src="Bootstrap/vendors/jquery/jquery.min.js"></script>
@@ -25,7 +25,13 @@
 	<script src="Bootstrap/vendors/bootstrap/js/bootstrap.min.js"></script>
 
 
-<?php include("header.php");?>
+<?php
+session_start();
+include("header.php");
+$connexionStr=new PDO("mysql:host=localhost;dbname=lilt;charset=utf8",'root','');
+$nom = $connexionStr->query("SELECT * FROM utilisateur WHERE idUtilisateur=" . $_SESSION['id']);
+while ($donnees = $nom ->fetch()){
+?>
 
 
 <!-----------------------------------------------
@@ -39,7 +45,7 @@
 	<div class="info">
 		<h2>
 			<?php
-			include('php/connexionBdd.php');
+			echo $donnees['nom_utilisateur'];
 
 
 			?> <!--On appelle le nom de l'utilisateur -->
@@ -121,7 +127,12 @@ window.onclick = function(event) {
 ----------------------------------------------->
 
 
-<?php include("footer.php");?>
+<?php
+}
+$nom->closeCursor();
+ include("footer.php");
+
+?>
 
 <style>
 

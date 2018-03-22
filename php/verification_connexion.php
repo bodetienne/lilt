@@ -50,21 +50,21 @@
 	$name = $_POST['nom_utilisateur'];
 
 	$connexionStr = new PDO('mysql:host=localhost;dbname=lilt', 'root', '');
-
-	$req = $connexionStr->prepare('SELECT * FROM utilisateur WHERE nom_utilisateur =\''.$name.'\' AND mdp_utilisateur=\''.$hashpass.'\'');
-	$req->execute(array(
-	    'nom_utilisateur' => $name));
+echo('Query = ' . 'SELECT idUtilisateur FROM utilisateur WHERE nom_utilisateur="'.$name.'" AND mdp_utilisateur="'.$hashpass.'"');
+	$req = $connexionStr->prepare('SELECT idUtilisateur FROM utilisateur WHERE nom_utilisateur="'.$name.'" AND mdp_utilisateur="'.$hashpass.'"');
+	$req->execute();
 	$resultat = $req->fetch();
-
 
 	//$isPasswordCorrect = password_verify($_POST['mot_de_passe'], $hashpass);
 	if (!$resultat) {
 		echo' mauvais id ou mdp 1';
 	}else{
-		if (!isset($_SESSION["idUtilisateur"])){
+		if (!isset($_SESSION["idUtilisateur"]) AND $_SESSION['idUtilisateur'] = $resultat['idUtilisateur'] ){
+			session_start();
 
+			$_SESSION['id'] = $resultat[0];
 	    header("location: ../index_home.php");
-			echo "Vous êtes connecté !";
+			echo "Vous êtes connecté ! idd = " . $resultat[0] . " / session = " . $_SESSION['id'];
 	 	}
 		else{
 			echo "mauvais id ou mdp" . ' / nom utilisateur : '  ;

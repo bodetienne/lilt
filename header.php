@@ -22,7 +22,7 @@
 		<a class="nav-link" href="lecteur.php">Playlists</a>
 		</li>
 		<li class="nav-item">
-		<a class="nav-link" href="#">Charts</a>
+		<a class="nav-link" href="charts.php">Charts</a>
 		</li>
 		</ul>
 	</div>

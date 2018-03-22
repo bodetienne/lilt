@@ -67,28 +67,6 @@
 // AVATAR
 
 
-// Testons si le fichier a bien été envoyé et s'il n'y a pas d'erreur
-if (isset($_FILES['avatar']) AND $_FILES['avatar']['error']==0){
-	//Testons si le fichier n'est pas trop gros
-	if ($_FILES['avatar']['size']<= 15000){
-
-		// Testons si l'extension est autorisée
-		$infofichier = pathinfo($_FILES['avatar']['name']);
-		$extension_upload = $infofichier['extension'];
-		$extensions_autorisees = array('jpg', 'jpeg', 'gif', 'png');
-		if(in_array($extension_upload,$extensions_autorisees)){
-			// On peut valider le fichier et le stocker définitivement
-			move_uploaded_file($_FILES['avatar']['tmp_name'], 'uploads/'. basename($_FILES['avatar']['name']));
-				echo "L'envoi à bien été effectué ! ";
-		}
-	}
-
-
-
-}
-
-
-
 
 
 
@@ -157,6 +135,7 @@ if (mysqli_query($link, $sql)) {
         $query->bindValue(':nom_utilisateur', $nom, PDO::PARAM_STR);
         $query->bindValue(':email', $email, PDO::PARAM_STR);
         $query->bindValue(':mot_de_passe', $hashpass, PDO::PARAM_STR);
+
         $query->execute();
 
 			 echo header("Location: connexion.php");
