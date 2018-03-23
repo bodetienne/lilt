@@ -4,13 +4,13 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	
+
 	<title> LILT Home Page</title>
-	
+
 	<link rel="stylesheet" href="Bootstrap/vendors/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="style/style_home2.css">
-	
-	
+
+
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 </head>
 
@@ -26,10 +26,10 @@
 	// Tout début du code PHP. Situé en haut de la page web : permet de cacher les erreurs aux visiteurs
 	ini_set("display_errors",0);error_reporting(0);
 	?>
-	
-	
-	
-				
+
+
+
+
 
 <!----------------------------------------------------
 	HEADER
@@ -40,11 +40,25 @@
 <!----------------------------------------------------
 	SEARCH
 ----------------------------------------------------->
-	
+
 <div class="searchbar">
 	<input type="text" name="search" id="search-bar">
 	<button class="button"><span> Search ! </span></button>
 </div>
+
+
+<!---------------------------------------------------
+	PLAYLIST
+---------------------------------------------------->
+
+		<a href="lecteur.php">
+			<div class="container-playlist">
+				<div class="lien-playlist">
+					<h3>Check our playlist now</h3>
+				</div>
+			</div>
+		</a>
+
 <!---------------------------------------------------
 	BROWSE
 ---------------------------------------------------->
@@ -53,14 +67,14 @@
 	<div class="title_contents"><h1> <span class="hashtag">#</span>BROWSE </h1></div>
 
 
-	
+
 
 
  <script src="js/jssor.slider-26.7.0.min.js" type="text/javascript"></script>
-	
+
  <script type="text/javascript">
-	 
-// Création d'une fonction qui initialise un slider: avec les conditions de départs. 
+
+// Création d'une fonction qui initialise un slider: avec les conditions de départs.
         jssor_1_slider_init = function() {
 
             var jssor_1_options = {
@@ -86,7 +100,7 @@
 
             var MAX_WIDTH = 980;
 
-            function ScaleSlider() { //nouvelle fonction 
+            function ScaleSlider() { //nouvelle fonction
                 var containerElement = jssor_1_slider.$Elmt.parentNode;
                 var containerWidth = containerElement.clientWidth;
 
@@ -109,12 +123,12 @@
             /*Fin du code responsive*/
         };
     </script>
-	
-	
-	
+
+
+
 <style>
-		
-         jssor slider loading skin spin css 
+
+         jssor slider loading skin spin css
         .jssorl-009-spin img {
             animation-name: jssorl-009-spin;
             animation-duration: 1.6s;
@@ -144,11 +158,11 @@
         .jssora073:hover {opacity:.8;}
         .jssora073.jssora073dn {opacity:.4;}
         .jssora073.jssora073ds {opacity:.3;pointer-events:none;}
-		
-  </style> 
-	
-	
-	
+
+  </style>
+
+
+
     <div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:0px;width:980px;height:150px;overflow:hidden;visibility:hidden;">
         <!-- Loading Screen -->
         <div data-u="loading" class="jssorl-009-spin" style="position:absolute;top:0px;left:0px;width:100%;height:100%;text-align:center;background-color:rgba(0,0,0,0.7);">
@@ -182,7 +196,7 @@
             <div data-p="43.75">
                 <a href="#"> <img data-u="image" src="Images/Kids.png" /></a>
             </div>
- 
+
         </div>
         <!-- Bullet Navigator -->
         <div data-u="navigator" class="jssorb057" style="position:absolute;bottom:12px;right:12px;" data-autocenter="1" data-scale="0.5" data-scale-bottom="0.75">
@@ -212,10 +226,10 @@
 	NEW RELEASES
 ---------------------------------------------------->
 
-	
+
 	<div class="title_contents"><h1> <span class="hashtag">#</span>NEW RELEASES </h1></div>
-	
-	
+
+
 	 <script type="text/javascript">
         jssor_2_slider_init = function() {
 
@@ -265,8 +279,8 @@
             /*#endregion responsive code end*/
         };
     </script>
-	
-	
+
+
     <div id="jssor_2" style="position:relative;margin:0 auto;top:0px;left:0px;width:980px;height:150px;overflow:hidden;visibility:hidden;">
         <!-- Loading Screen -->
         <div data-u="loading" class="jssorl-009-spin" style="position:absolute;top:0px;left:0px;width:100%;height:100%;text-align:center;background-color:rgba(0,0,0,0.7);">
@@ -300,7 +314,7 @@
             <div data-p="43.75">
                 <a href="#"> <img data-u="image" src="Images/elvis-presley-1482026_1280.jpg" /></a>
             </div>
- 
+
         </div>
         <!-- Bullet Navigator -->
         <div data-u="navigator" class="jssorb057" style="position:absolute;bottom:12px;right:12px;" data-autocenter="1" data-scale="0.5" data-scale-bottom="0.75">
@@ -324,19 +338,19 @@
     </div>
     <script type="text/javascript">jssor_2_slider_init();</script>
 
-	
-	
-	
+
+
+
 <!---------------------------------------------------
 	MY PLAYLISTS
 ---------------------------------------------------->
 
-	
-<div class="title_contents"><h1> <span class="hashtag">#</span>MY PLAYLISTS </h1></div>	
-	
 
-	
-	
+<div class="title_contents"><h1> <span class="hashtag">#</span>MY PLAYLISTS </h1></div>
+
+
+
+
 <script type="text/javascript">
         jssor_3_slider_init = function() {
 
@@ -385,9 +399,9 @@
             $Jssor$.$AddEvent(window, "orientationchange", ScaleSlider);
             /*#endregion responsive code end*/
         };
-    </script>	
-	
-	
+    </script>
+
+
     <div id="jssor_3" style="position:relative;margin:0 auto;top:0px;left:0px;width:980px;height:150px;overflow:hidden;visibility:hidden;">
         <!-- Loading Screen -->
         <div data-u="loading" class="jssorl-009-spin" style="position:absolute;top:0px;left:0px;width:100%;height:100%;text-align:center;background-color:rgba(0,0,0,0.7);">
@@ -421,7 +435,7 @@
             <div data-p="43.75">
                 <a href="#"> <img data-u="image" src="Images/elvis-presley-1482026_1280.jpg" /></a>
             </div>
- 
+
         </div>
         <!-- Bullet Navigator -->
         <div data-u="navigator" class="jssorb057" style="position:absolute;bottom:12px;right:12px;" data-autocenter="1" data-scale="0.5" data-scale-bottom="0.75">
@@ -443,20 +457,19 @@
             </svg>
         </div>
     </div>
-    <script type="text/javascript">jssor_3_slider_init();</script>	
-	
+    <script type="text/javascript">jssor_3_slider_init();</script>
+
 <!---------------------------------------------------
-	CONTEST
----------------------------------------------------->	
-	
-		<a href="lecteur.php">
-			<div class="container-playlist">
-				<div class="lien-playlist">
-					<h3>Check our playlist now</h3>
+Upload upload-link
+---------------------------------------------------->
+		<a href="upload-click.php">
+			<div class="upload-container">
+				<div class="upload-link">
+					<h3>Upload your song</h3>
 				</div>
 			</div>
 		</a>
-		
+
 <!---------------------------------------------------
 	CONTEST
 ---------------------------------------------------->
@@ -468,8 +481,8 @@
 			<button class="button_contest">For more informations ></button>
 		</div>
 	</div>
-	
-	
+
+
 <!---------------------------------------------------
 	FOOTER
 ---------------------------------------------------->
