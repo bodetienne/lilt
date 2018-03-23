@@ -45,6 +45,20 @@
 	<input type="text" name="search" id="search-bar">
 	<button class="button"><span> Search ! </span></button>
 </div>
+
+
+<!---------------------------------------------------
+	PLAYLIST
+---------------------------------------------------->
+
+		<a href="lecteur.php">
+			<div class="container-playlist">
+				<div class="lien-playlist">
+					<h3>Check our playlist now</h3>
+				</div>
+			</div>
+		</a>
+
 <!---------------------------------------------------
 	BROWSE
 ---------------------------------------------------->
@@ -446,13 +460,12 @@
     <script type="text/javascript">jssor_3_slider_init();</script>
 
 <!---------------------------------------------------
-	PLAYLIST
+Upload upload-link
 ---------------------------------------------------->
-
-		<a href="lecteur.php">
-			<div class="container-playlist">
-				<div class="lien-playlist">
-					<h3>Check our playlist now</h3>
+		<a href="upload-click.php">
+			<div class="upload-container">
+				<div class="upload-link">
+					<h3>Upload your song</h3>
 				</div>
 			</div>
 		</a>
