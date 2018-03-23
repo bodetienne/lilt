@@ -1,26 +1,32 @@
 <?php
 		// Connexion à la base de données
 session_start();
-		require_once "php/connexionBdd.php";
-		
-		
-		// récupération des variables POST: 
-		$ID=isset($_POST['idUtilisateur'])?$_POST['idUtilisateur']:'';
-		$nom=isset($_POST['nom_utilisateur'])?$_POST['nom_utilisateur']:'';
-		$email=isset($_POST['email'])?$_POST['email']:'';
-		$mdp=isset($_POST['mot_de_passe'])?$_POST['mot_de_passe']:'';
-		
-		$date_du_jour = date ("d-m-Y");
-		$heure_courante = date ("H:i");
-		echo 'Nous sommes le : ';
-		echo $date_du_jour;
-		echo ' Et il est : ';
-		echo $heure_courante;
+		     try
+		    {
+		        $bdd = new PDO('mysql:host=localhost;dbname=lilt;charset=utf8', 'root', '');
+		        $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		        $bdd->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
+		    }
+		    catch(Exception $e)
+		    {
+		            die('Erreur : '.$e->getMessage());
+		    }
 
-		//Requete modification 
-		$sql = "UPDATE utilisateur SET nom_utilisateur='?', email_utilisateur='?', mdp_utilisateur='?' WHERE utilisateur.idUtilisateur='?'";
-		$req = $connexion->prepare($sql);
-		$req->execute (array('idUtilisateur' => $ID, 'nom_utilisateur' => $nom, 'email' => $email, 'mot_de_passe' => $mdp));
+				$hashpass=$_POST['mdp_utilisateur'] /*. $salt*/;
+				$hashpass=sha1($hashpass);
 
-		print_r($_SESSION)
-?>	
+		    $req = $bdd->prepare('UPDATE utilisateur SET nom_utilisateur = :nom_utilisateur, email_utilisateur = :email_utilisateur, mdp_utilisateur = :mdp_utilisateur WHERE idUtilisateur=' . $_SESSION['id']);
+
+		    $req->bindValue('nom_utilisateur',$_POST['nom_utilisateur']);
+				$req->bindValue('email_utilisateur',$_POST['email_utilisateur']);
+		    $req->bindValue('mdp_utilisateur',$hashpass);
+
+
+		    if (!$req->execute()) {
+		        echo 'Erreur';
+		    } else {
+						header("location: ../index_profile.php");
+		        //echo 'Modifi&eacute;';
+		    }
+
+?>
