@@ -134,65 +134,9 @@ window.onclick = function(event) {
 
 <?php
 $nom->closeCursor();
- include("footer.php");
+ //include("footer_lilt.php");
 
 ?>
-
-<style>
-
-
-.container_footer{
-
-	display: flex;
-	margin: auto;
-}
-.block-footer .inner{
-	margin: auto;
-}
-
-.block-footer{
-	padding-top: 50px;
-	background: #4B4B4B;
-	color: white;
-	display: flex;
-	margin: auto;
-}
-
-.block-footer .container_footer .logo_bas img{
-
-	margin: 20px;
-	width: 50px;
-	height: 50%;
-}
-
-.block-footer .social_media {
-	text-align: center;
-	font-weight: bold;
-	margin: 20px;
-
-
-}
-
-.block-footer .social_media img{
-	width: 20px;
-	height: 20px;
-
-}
-
-.block-footer .footer_right a{
-	color: white;
-}
-
-.footer_right{
-	margin: 20px;
-	text-align: right;
-}
-
-.footer_right p{
-	font-size: 12px;
-}
-
-</style>
 
 
 

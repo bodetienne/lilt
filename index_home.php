@@ -487,7 +487,7 @@ Upload upload-link
 	FOOTER
 ---------------------------------------------------->
 
-<?php include("footer.php"); ?>
+<?php //include("footer_lilt.php"); ?>
 
 
 
