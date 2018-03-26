@@ -23,8 +23,8 @@
 		 <div class="container">
 			 <div class="inner">
 				 <div class="vp vp-1">
-					 	<h3>"Fumes la vie avant qu'elle ne te fume."</h3>
-						<label for="file" class="label-file">Import file</label>
+					 	<h3>"Music can change the world because it can change people."</h3>
+						<label for="file" class="label-file">Import mp3 file</label>
 						<input id="file" class="input-file" accept=".mp3" type="file">
 					</div>
 
@@ -46,18 +46,18 @@
 								<ul class="select-tags" name="tag">
 									<li>Select a tag </li>
 									<ul class="tags">
-										<li>Pop </li>
-										<li>Rap </li>
-										<li>Reggae </li>
-										<li>Rock</li>
-										<li>Soul </li>
-										<li>No-tag </li>
+										<li> <a href="clicked.php"> Pop </a> </li>
+										<li> <a href="clicked.php">Rap </li>
+										<li> <a href="clicked.php"> Reggae </li>
+										<li> <a href="clicked.php"> Rock</li>
+										<li> <a href="clicked.php"> Soul </li>
+										<li> <a href="clicked.php"> No-tag </li>
 									</ul>
 								</ul>
 							</div>
-		
+
 						</div>
-						<input type="submit" id="submit">
+						<!-- <input type="submit" id="submit"> -->
 					</div>
 			</div>
 		</div>

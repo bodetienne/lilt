@@ -59,7 +59,7 @@
 							}
 
 							//faire en sorte que les chansons soient accessibles à tout le monde
-							
+
 
 
 							for ($i=0; $i<sizeof($leschansons); $i++){
@@ -70,8 +70,8 @@
 								$stmt -> execute();
 
 								$lesartistes = Array();
-								$tempo = $stmt -> fetch();
-								array_push($lesartistes, $tempo);
+								$temp = $stmt -> fetch();
+								array_push($lesartistes, $temp);
 
 
 								// echo "Je rentre dans la boucle et je suis à la ligne" . $i;
