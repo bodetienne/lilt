@@ -18,13 +18,183 @@ a {
 	text-decoration: none;
 }
 
+.container {
+	margin: 0;
+	padding: 0;
+	max-width: none;
+}
+
 /*-----------------------------------------------------------
 UPLOAD-CLICK
 -----------------------------------------------------------*/
+.container {
+	display: flex;
+	flex-direction: column;
+}
+
+.container .inner {
+	display: flex;
+	margin: auto;
+	flex-direction: column;
+}
+
+.container .vp {
+	display: flex;
+	flex-direction: column;
+	margin: auto;
+	width: 100%;
+	height: 100vh;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.container .vp-1 {
+	background-image: url("../Images/sing.jpg");
+	width: 100%;
+	flex-direction: column;
+	height: 80vh;
+}
+
+.container .vp-1 h3 {
+	font-size: 2rem;
+	margin: auto;
+	margin-top: 2rem;
+	color: white;
+	text-shadow: .1rem .1rem #e40750;
+}
+
+.container .vp-1 .label-file {
+	margin: auto;
+	border: none;
+	background: #31a29f;
+	padding: 1rem 3rem;
+  cursor: pointer;
+  color: black;
+  font-weight: bold;
+	font-size: 1.7rem;
+	border-radius: 4px;
+}
+
+.container .vp-1 .label-file:hover {
+	color: white;
+	background: #2f4f50;
+}
+
+.container .vp-1 .input-file {
+	display: none;
+}
+
+.container .vp-2 {
+	background-image: url('../Images/music-instruments-2887457_1280.jpg');
+	margin: auto;
+}
+
+.vp-2 .song {
+	margin: auto;
+	display: flex;
+}
+
+.vp-2 .song p,
+.vp-2 .song input {
+	margin: auto;
+	margin-left: 15vh
+}
+
+.vp-2 .song input {
+	border: none;
+	background: none;
+	width: 50vh;
+	border-bottom: 2px solid white;
+}
+
+.vp-2 .song p {
+	font-size: 2rem;
+	text-align: right;
+	width: 30rem;
+}
+
+.container .vp-3 {
+	background-image: url('../Images/people-2606347_1280.png');
+}
+
+.container .vp-3 .inner-vp-3 {
+	color: white;
+	font-size: 2rem;
+	margin: auto;
+	display: flex;
+}
+
+.vp-3 .inner-vp-3 p {
+	margin: auto;
+}
 
 
+.menu-tags ul {
+	margin: 0;
+	list-style-type:none;
+ 	text-align:center;
+	display: flex;
+	flex-direction: column;
+}
 
+.menu-tags .select-tags {
+	position: absolute;
+	margin: auto;
+	margin-left: 3rem;
+	background: #31a29f;
+	color: black;
+	font-size: 1.3rem;
+	border-radius: 4px;
+}
 
+.menu-tags .select-tags li {
+	padding: .3rem 4rem;
+}
+
+.menu-tags li {
+	margin:auto;
+}
+
+.menu-tags .tags li:hover {
+	background: #2f4f50;
+	color: white;
+	display: block;
+}
+
+.menu-tags .tags{
+	display: none;
+}
+
+.menu-tags .tags li {
+	border-top: 1px solid #2f4f50;
+	padding: .3rem 4rem;
+	background: white;
+	cursor: pointer;
+}
+
+.menu-tags .select-tags:hover .tags {
+	display: block;
+}
+
+.container .vp-3 input {
+	margin: auto;
+	border: none;
+	padding: 1rem 3rem;
+	font-weight: bold;
+	font-size: 1.7rem;
+	color: white;
+	background: #2f4f50;
+	border-radius: 4px;
+}
+
+.container .vp-3 input:hover  {
+	border: none;
+	padding: 1rem 3rem;
+  font-weight: bold;
+	font-size: 1.7rem;
+	background: #31a29f;
+	color: black;
+}
 
 /*-----------------------------------------------------------
 CLICKED
