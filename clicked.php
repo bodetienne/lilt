@@ -12,6 +12,10 @@
 		session_start();
 		include("header.php");
 		$connexionStr=new PDO("mysql:host=localhost;dbname=lilt;charset=utf8",'root','');
+		if (!isset($_SESSION['id'])){
+			echo "Veuillez vous connecter pour consulter les playlist";
+		} else {
+			$idUser = $_SESSION['id'];
 		$nom = $connexionStr->query("SELECT * FROM utilisateur WHERE idUtilisateur=" . $_SESSION['id']);
 		while ($donnees = $nom ->fetch()){
 		?>
@@ -33,65 +37,66 @@
 			';
 
 
-			$idUser = $_SESSION['id'];
-		/* requette permettant d'insérer les infos dans la tab artiste*/
+				//
+				// try {
+					/* requette permettant d'insérer les infos dans la tab artiste*/
+					$nomArtiste = $_POST['artist'];
+					$idArtiste = "SELECT `idArtiste` FROM `artiste` WHERE `nomArtiste`=\"$nomArtiste\" AND `idUtilisateur`='$idUser'"; //vérifie si l'artiste rentré existe
 
-			try {
-				$nomArtiste = $_POST['artist'];
-				$idArtiste = "SELECT `idArtiste` FROM `artiste` WHERE `nomArtiste`=\"$nomArtiste\" AND `idUtilisateur`='$idUser'"; //vérifie si l'artiste rentré existe
-
-				$stmt = $connexion-> prepare($idArtiste);
-				$stmt -> execute();
-				$temp = $stmt-> fetch();
-
-				if ($temp != false) {
-				//si l'artiste existe, il ne se passe rien
-
-				} else {
-					//si il n'existe pas, on créer l'artiste
-					$createArtist = "INSERT INTO artiste (nomArtiste, idUtilisateur) VALUES ('" .  $nomArtiste .  "', '" . $idUser . "')";
-					$stmt = $connexion-> prepare($createArtist);
+					$stmt = $connexion-> prepare($idArtiste);
 					$stmt -> execute();
 					$temp = $stmt-> fetch();
-					if($temp != false) {
-						echo "vous êtes désormais un artiste";
+
+					if ($temp != false) {
+					//si l'artiste existe, il ne se passe rien
+
 					} else {
-						echo "Il y a une erreur au moment de la création de votre identifiant d'artiste";
+						//si il n'existe pas, on créer l'artiste
+						$createArtist = "INSERT INTO artiste (nomArtiste, idUtilisateur) VALUES ('" .  $nomArtiste .  "', '" . $idUser . "')";
+						$stmt = $connexion-> prepare($createArtist);
+						$stmt -> execute();
+						$temp = $stmt-> fetch();
+						if($temp != false) {
+							echo "vous êtes désormais un artiste";
+						} else {
+							echo "Il y a une erreur au moment de la création de votre identifiant d'artiste";
+						}
+					}
+
+					/* requette permettant de recup l'id artiste*/
+					$recupIdArtiste = "SELECT `idArtiste` FROM `artiste` WHERE `nomArtiste`= '$nomArtiste' ";
+					$stmt = $connexion-> prepare($recupIdArtiste);
+					$stmt -> execute();
+					$temp = $stmt-> fetch();
+
+					if ($temp != false){
+						echo "On a l'id de l'artiste";
+					} else {
+						echo "Nous n'avons pas pu récupérer l'id de l'artiste";
+					}
+
+					/* requette permettant d'insérer les valeurs écrites et recup dans la tab chanson */
+					$cheminUpload = "lecteur/music/" . $_POST["mp3-file"];
+					$insertInto = "INSERT INTO chanson (nomChanson, tag, fichierMp3, idArtiste)
+					VALUES ('" .  $_POST['name'] .  "', '" . $_POST['tag'] ."' , '" . $cheminUpload ."' , '" . $idArtiste . "')";
+					$stmt = $connexion-> prepare($insertInto);
+					$stmt -> execute();
+					$temp = $stmt-> fetch();
+
+					if ($temp != false){
+						echo "L'import a réussi";
+					} else {
+						echo "Echec de l'import.";
 					}
 				}
-
-				/* requette permettant de recup l'id artiste*/
-				$recupIdArtiste = "SELECT `idArtiste` FROM `artiste` WHERE `nomArtiste`= '$nomArtiste' ";
-				$stmt = $connexion-> prepare($recupIdArtiste);
-				$stmt -> execute();
-				$temp = $stmt-> fetch();
-
-				if ($temp != false){
-					echo "On a l'id de l'artiste";
-				} else {
-					echo "Nous n'avons pas pu récupérer l'id de l'artiste";
-				}
-
-				/* requette permettant d'insérer les valeurs écrites et recup dans la tab chanson */
-				$cheminUpload = "lecteur/music/" . $_POST["mp3-file"];
-				$insertInto = "INSERT INTO chanson (nomChanson, tag, fichierMp3, idArtiste)
-				VALUES ('" .  $_POST['name'] .  "', '" . $_POST['tag'] ."' , '" . $cheminUpload ."' , '" . $idArtiste . "')";
-				$stmt = $connexion-> prepare($insertInto);
-				$stmt -> execute();
-				$temp = $stmt-> fetch();
-
-				if ($temp != false){
-					echo "L'import a réussi";
-				} else {
-					echo "Echec de l'import.";
-				}
-			} catch(Exception $e) {
-				echo '<p> Erreur n° : ' . $e->getCode() . ' : ' . $e->getMessage(). '</p>';
-				echo '<p>Dans '. $e->getFile(). '('. $e->getLine() .')';
-				echo "<pre>";
-				var_dump ($e -> getTrace());
-				echo "</pre>";
-			}
+			// }
+			// 	catch(Exception $e) {
+			// 	echo '<p> Erreur n° : ' . $e->getCode() . ' : ' . $e->getMessage(). '</p>';
+			// 	echo '<p>Dans '. $e->getFile(). '('. $e->getLine() .')';
+			// 	echo "<pre>";
+			// 	var_dump ($e -> getTrace());
+			// 	echo "</pre>";
+			// }
 		}
 
 		?>

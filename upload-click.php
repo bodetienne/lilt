@@ -21,33 +21,45 @@
 
 	<form action="clicked.php" method="POST"> <!--envoie du formulaire en méthode post-->
 		 <div class="container">
-			 <div class="inner-upload">
-					<div class="song song-name">
-						<input type="text" name="name" placeholder="Give a name to your song" class="text-input"> <!--name permet de récupérer la valeur avec la méthode POST-->
-					</div>
-					<div class="song song-name">
-						<input type="text" name="artist" placeholder="Give your artist name" class="text-input"> <!--name permet de récupérer la valeur avec la méthode POST-->
-					</div>
-					<!-- <div class="song song-duree">
-						<input type="time" step="2" name="duree" placeholder="Give the duration of your song" class="duree-input">
-					</div> -->
-					<div class="import-mp3 song">
-						<input type="file" name="mp3-file" class="btn-import" accept=".mp3"/>
+			 <div class="inner">
+				 <div class="vp vp-1">
+					 	<h3>"Fumes la vie avant qu'elle ne te fume."</h3>
+						<label for="file" class="label-file">Import file</label>
+						<input id="file" class="input-file" accept=".mp3" type="file">
 					</div>
 
-					<div class="song">
-						<SELECT name="tag" size="1" class="select-tags">
-							<OPTION selected disabled>Add a tag
-							<OPTION>Rock
-							<OPTION>Rap
-							<OPTION>Soul
-							<OPTION>Pop
-							<OPTION>Reggae
-							<OPTION>No tag
-						</SELECT>
+					<div class="vp vp-2">
+						<div class="song song-name">
+							<p> Name your song </p>
+							<input type="text" name="name"  class="text-input"> <!--name permet de récupérer la valeur avec la méthode POST-->
+						</div>
+						<div class="song artist-name">
+							<p> Give us your artist name </p>
+							<input type="text" name="artist"  class="text-input"> <!--name permet de récupérer la valeur avec la méthode POST-->
+						</div>
 					</div>
+
+					<div class="vp vp-3">
+						<div class="inner-vp-3">
+							<p> What kind of music make you ? </p>
+							<div class="menu-tags">
+								<ul class="select-tags" name="tag">
+									<li>Select a tag </li>
+									<ul class="tags">
+										<li>Pop </li>
+										<li>Rap </li>
+										<li>Reggae </li>
+										<li>Rock</li>
+										<li>Soul </li>
+										<li>No-tag </li>
+									</ul>
+								</ul>
+							</div>
+		
+						</div>
 						<input type="submit" id="submit">
-				</div>
+					</div>
+			</div>
 		</div>
 	</form>
 
