@@ -18,15 +18,7 @@
 <body>
 
 <?php
-	$connexionStr=new PDO("mysql:host=localhost;dbname=lilt;charset=utf8",'root','');
-	$nom = $connexionStr->query("SELECT * FROM utilisateur WHERE idUtilisateur=" . $_SESSION['id']);
 
-	$id=$donnees['idUtilisateur'];
-	$pseudo=$donnees['nom_utilisateur'];
-	$email=$donnees['email_utilisateur'];
-	$mdp=$donnees['mdp_utilisateur'];
-
-	while ($donnees = $nom ->fetch()){
 ?>
 
 	<!-- The Modal -->
@@ -44,10 +36,10 @@
 		<h3>Personal informations</h3>
      		<form method="post" action="modif.php" >
 				<label for="nom_utilisateur">Username</label>
-				<input type="text" name="nom_utilisateur" id="nom_utilisateur" value="<?php $pseudo ?>" placeholder="<?php echo $pseudo?>" maxlength="32">
+				<input type="text" name="nom_utilisateur" id="nom_utilisateur" value="<?php $pseudo ?>" placeholder="<?php echo $donnees['nom_utilisateur']?>" maxlength="32">
 				</br>
 				<label for="email">E-mail</label>
-				<input type="text" name="email_utilisateur" id="adresse_email" value="<?php $email ?>" placeholder="<?php echo $email ?>" maxlength="128">
+				<input type="text" name="email_utilisateur" id="adresse_email" value="<?php $email ?>" placeholder="<?php echo $donnees['email_utilisateur'] ?>" maxlength="128">
 				</br>
 	  			<label for="pass">New password</label>
 	  			<input type="password" name="mdp_utilisateur" value="<?php $mdp ?>" id="mot_de_passe" maxlength="40">
@@ -56,8 +48,19 @@
 
 
 		<h3>Your profile</h3>
-     		 	<label for="icone"> Your profile picture (JPG) | max 15 Ko </label>
-				<input type="file" name="avatar" id="avatar" accept="image/jpg">
+
+				<label for="citation"> Citation</label>
+				<input type="text" name="citation" id="citation" placeholder="<?php echo $donnees['citation']?>">
+				</br>
+				<label for="age"> Age </label>
+				<input type="number" name="age" id="age" max="110" min="0" placeholder="<?php echo $donnees['age']?>" >
+				</br>
+				<label for="description">Description</label>
+				<input type="text" name="description" placeholder="<?php echo $donnees['description']?>" >
+				</br>
+
+				<label for="icone"> Your profile picture (JPG) | max 15 Ko </label>
+				<input type="file" name="avatar" id="avatar" accept="image/jpg" >
     </div>
     <div class="modal-footer">
       <input type="submit" class="submit" value="Let's go" id='<?php echo $id ?>'/>
@@ -69,8 +72,6 @@
 
 
 <?php
-}
-$nom->closeCursor();
 
 ?>
 

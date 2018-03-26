@@ -72,6 +72,8 @@
 .photosCompoPlaylist{
 	display: flex;
 	overflow: hidden;
+	margin-left: 150px;
+  margin-bottom: 90px;
 }
 
 .photosCompoPlaylist img{
@@ -87,6 +89,10 @@
   top: 250px;
 	color: white;
 	text-shadow: 4px 5px black;
+}
+
+.photosCompoPlaylist #playlistProfile, h1:nth-of-type(2){
+  margin-left: 115px;
 }
 
 @media all and (max-width: 980px){
@@ -179,12 +185,15 @@ a:hover{
 .modal-body label,input{
 	margin: 20px 19px;
 }
+
+
+
 .modal-body input{
 	position: absolute;
 	width: 70%;
 }
 
-.modal-body input:nth-of-type(4){
+.modal-body input:nth-of-type(7){
 	margin-left: 0;
 }
 .modal-body label{

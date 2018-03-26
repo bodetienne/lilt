@@ -27,10 +27,14 @@
 
 <?php
 session_start();
-include("header.php");
 $connexionStr=new PDO("mysql:host=localhost;dbname=lilt;charset=utf8",'root','');
 $nom = $connexionStr->query("SELECT * FROM utilisateur WHERE idUtilisateur=" . $_SESSION['id']);
-while ($donnees = $nom ->fetch()){
+
+$donnees = $nom->fetch();
+
+//print_r($donnees);
+include("header.php");
+
 ?>
 
 
@@ -45,6 +49,7 @@ while ($donnees = $nom ->fetch()){
 	<div class="info">
 		<h2>
 			<?php
+			//echo "SELECT * FROM utilisateur WHERE idUtilisateur=" . $_SESSION['id'];
 			echo $donnees['nom_utilisateur'];
 
 
@@ -55,14 +60,14 @@ while ($donnees = $nom ->fetch()){
 			<img src="Images/Icon/settings.png" alt="settings" id="parametres">
 			<?php include('modification_profil.php')?>
 		</div>
-		<p> "Nothing's gonna change my world" </p>
+		<p> "<?php echo $donnees['citation']; ?>" </p>
 		<p> 104 | followers 20 | following </p>
 
 	</div>
 	<div class="about_me">
 		<h3>About me</h3>
-		<p>22 yo</p>
-		<p>Play piano and sing sometimes</p>
+		<p><?php echo $donnees['age']; ?> yo</p>
+		<p><?php echo $donnees['description']; ?></p>
 	</div>
 </div>
 
@@ -80,7 +85,7 @@ while ($donnees = $nom ->fetch()){
 		<a href="composition.php"><h1>My compositions</h1><img src="Images/Rectangle.png" alt="djembé" width="800" height="400"></a>
 	</div>
 	<div class="inner">
-		<a href="#"><h1>My playlists</h1><img src="Images/Rectangle 7.png" alt="ipod" width="800" height="400"></a>
+		<a href="#"><h1 id="playlistProfile">My playlists</h1><img src="Images/Rectangle 7.png" alt="ipod" width="800" height="400"></a>
 	</div>
 </div>
 
@@ -128,7 +133,6 @@ window.onclick = function(event) {
 
 
 <?php
-}
 $nom->closeCursor();
  include("footer.php");
 
