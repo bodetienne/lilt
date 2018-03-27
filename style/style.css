@@ -85,19 +85,21 @@ UPLOAD-CLICK
 }
 
 .container .vp-2 {
-	background-image: url('../Images/music-instruments-2887457_1280.jpg');
+	background-image: url('../Images/musician.jpg');
 	margin: auto;
+	background-attachment: fixed;
 }
 
 .vp-2 .song {
 	margin: auto;
 	display: flex;
+	margin-left: 35vh;
 }
 
 .vp-2 .song p,
 .vp-2 .song input {
 	margin: auto;
-	margin-left: 15vh
+	margin-left: 10vh
 }
 
 .vp-2 .song input {
@@ -111,6 +113,11 @@ UPLOAD-CLICK
 	font-size: 2rem;
 	text-align: right;
 	width: 30rem;
+	font-weight: bold;
+}
+
+.vp-2 .artist-name {
+	margin-top: 5vh;
 }
 
 .container .vp-3 {
@@ -240,100 +247,66 @@ CLICKED
 PLAYLIST (LECTEUR)
 -----------------------------------------------------------*/
 
-.grand-container{
+.select-tags {
 	display: flex;
 }
 
-.title{
-	width: 100%;
-	font-size: 3.4rem;
-	text-shadow: 0.1rem 0.1rem #e40750;
+.select-tags form{
+	margin: auto;
+	margin-bottom: 1rem;
 }
 
-.inner{
-	display: flex;
-	width: 100%;
+.select-tags button {
+	background: none;
+	border: .1rem solid #68b8a5;
+	border-radius: 4px;
+	padding: .5rem 2rem;
+	font-size: 1rem;
 }
 
-.list{
-	display: flex;
-	margin: 0 auto;
-	border: .1rem solid #4b4b4b;
-	width: 80rem;
-}
-
-audio {
-	background: #000000;
-}
-
-#playlist{
-	width: 100%;
-}
-
-#playlist li {
-	list-style-type:none;
-	margin: 0 auto 0 auto;
-	padding-top: .5rem;
-	padding-bottom: .5rem;
-	border-bottom: .05rem solid #4b4b4b;
-	display: flex;
-	justify-content: space-between;
-}
-
-#playlist > li > a {
-	color: #4b4b4b;
-	margin: 0 auto;
-	width: 100%;
-	padding-left: 1rem;
-}
-
-
-#playlist > li:hover{
-	background: #e40750;
-}
-
-#playlist > li > a:hover {
+.select-tags button:hover {
+	background: #68b8a5;
 	color: white;
 }
 
-.song {
-	border-bottom: none;
-}
-
-.song .submit-playlist {
-	border: none;
-	background: none;
-	padding: 1rem;
-	color: #4b4b4b;
-	font-size: 1.3rem;
-}
-
-.song .submit-playlist:hover {
-	color: #e40750;
-}
-
-.play-logo {
-	width: 1.5rem;
-	height: 1.5rem;
-	margin-right: .5rem;
-}
-
-p .duree-column {
-	float: right;
-}
-
-.lecteur {
-	color: #4b4b4b;
-	margin-left: 2rem;
+.grand-container .title-container {
 	display: flex;
+	flex-direction: column;
+	background-image: url('../Images/music-2902891_1280.jpg');
+	background-attachment: fixed;
+	height: 20vh;
+	margin-bottom: 2rem;
 }
 
-.lecteur span  {
+.grand-container .title {
 	margin: auto;
-	margin-left: 0;
-
+	color: white;
+	font-size: 2.6rem;
 }
 
+.grand-container .inner {
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+}
+
+.grand-container .inner .big-player {
+	display: flex;
+	width: 100%;
+	background: #F0F0F0;
+	border-bottom: .11rem solid #e40750;
+}
+
+.grand-container .big-player .song-name,
+.grand-container .big-player .artist-name,
+.grand-container .big-player .mp3-name {
+	margin: auto;
+	margin-top: 2rem;
+}
+
+.grand-container .big-player .song-name {
+	width: 15rem;
+}
 
 /**********Others*************/
 .choice{

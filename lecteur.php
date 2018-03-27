@@ -17,30 +17,31 @@
 
 
 	<div class="song select-tags">
-		<form method="POST">
-			<SELECT name="tag" size="1" class="select-tags">
-				<OPTION selected disabled>Select your playlist
-				<OPTION>Rock
-				<OPTION>Rap
-				<OPTION>Soul
-				<OPTION>Pop
-				<OPTION>Reggae
-				<OPTION>No tag
-			</SELECT>
-			<button type="submit" class="submit-playlist"> Listen Music </button>
+			<form method="POST">
+				<div class="inner-select">
+					<SELECT name="tag" size="1" >
+						<OPTION selected disabled>Select your playlist
+						<OPTION>Rock
+						<OPTION>Rap
+						<OPTION>Soul
+						<OPTION>Pop
+						<OPTION>Reggae
+						<OPTION>No tag
+					</SELECT>
+					<button type="submit" class="submit-playlist"> Listen Music </button>
+				</div>
 			</form>
 	</div>
 
 
-<?php
-
-	require 'PDO/includes/pdo.php';
+		<?php require 'PDO/includes/pdo.php';
 
 	echo'
 	<div class="grand-container">
-		<h2 class="title">' . $_POST["tag"] . '</h2>';
-		echo '<div class="inner">
-			<div class="list">';
+		<div class="title-container">
+		<h2 class="title">' . $_POST["tag"] . '</h2>
+		</div>';
+		echo '<div class="inner">';
 
 
 						$tag = $_POST["tag"];
@@ -77,15 +78,16 @@
 								// echo "Je rentre dans la boucle et je suis à la ligne" . $i;
 								echo "<div class='big-player'>";
 									echo "<div class='song-name song-name-" . $i . "''>" . $leschansons[$i] -> nomChanson . "</div>";
-									echo "<div class='artist-name artist-name-" . $i . "''>" . $lesartistes[0] -> nomArtiste . "</div>";
+									echo "<div class='artist-name artist-name-" . $i . "'By '> " . $lesartistes[0] -> nomArtiste . "</div>";
 									echo "<div class='mp3-name mp3-name-" . $i . "''>
 																<audio controls='controls' preload='metadata'>
 															  <source src='". $leschansons[$i] -> fichierMp3 . "' type='audio/mp3' />
 															  Votre navigateur n'est pas compatible
 																</audio>
-												</div>";
+												</div>
+										</div>";
 												//mp3 est le seul format à pouvoir être lu sur IE, chrome, Firefox, Safari et Opera
-								echo "</div>";
+								// echo "</div>";
 							}
 
 
