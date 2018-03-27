@@ -13,10 +13,10 @@
 		include("header.php");
 		$connexionStr=new PDO("mysql:host=localhost;dbname=lilt;charset=utf8",'root','');
 		if (!isset($_SESSION['id'])){
-			echo "Veuillez vous connecter pour consulter les playlist";
+			echo "Veuillez vous connecter pour importer une musique";
 		} else {
 			$idUser = $_SESSION['id'];
-		$nom = $connexionStr->query("SELECT * FROM utilisateur WHERE idUtilisateur=" . $_SESSION['id']);
+		$nom = $connexionStr->query("SELECT * FROM utilisateur WHERE idUtilisateur='" . $_SESSION['id'] . "'");
 		while ($donnees = $nom ->fetch()){
 		?>
 
@@ -40,6 +40,7 @@
 				//
 				// try {
 					/* requette permettant d'insérer les infos dans la tab artiste*/
+					$idUser = $_SESSION['id'];
 					$nomArtiste = $_POST['artist'];
 					$idArtiste = "SELECT `idArtiste` FROM `artiste` WHERE `nomArtiste`=\"$nomArtiste\" AND `idUtilisateur`='$idUser'"; //vérifie si l'artiste rentré existe
 
@@ -47,11 +48,15 @@
 					$stmt -> execute();
 					$temp = $stmt-> fetch();
 
+					// var_dump($temp);
+					$idArtiste = $temp->idArtiste;
+					// echo('<br> Id artiste = ' . $idArtiste . "<br/>");
 					if ($temp != false) {
 					//si l'artiste existe, il ne se passe rien
 
 					} else {
 						//si il n'existe pas, on créer l'artiste
+
 						$createArtist = "INSERT INTO artiste (nomArtiste, idUtilisateur) VALUES ('" .  $nomArtiste .  "', '" . $idUser . "')";
 						$stmt = $connexion-> prepare($createArtist);
 						$stmt -> execute();
@@ -70,24 +75,28 @@
 					$temp = $stmt-> fetch();
 
 					if ($temp != false){
-						echo "On a l'id de l'artiste";
+						// echo "On a l'id de l'artiste";
 					} else {
-						echo "Nous n'avons pas pu récupérer l'id de l'artiste";
+						// echo "Nous n'avons pas pu récupérer l'id de l'artiste";
 					}
 
 					/* requette permettant d'insérer les valeurs écrites et recup dans la tab chanson */
 					$cheminUpload = "lecteur/music/" . $_POST["mp3-file"];
+					// echo "Chemin d'upload<br/>";
+					// echo $cheminUpload;
 					$insertInto = "INSERT INTO chanson (nomChanson, tag, fichierMp3, idArtiste)
 					VALUES ('" .  $_POST['name'] .  "', '" . $_POST['tag'] ."' , '" . $cheminUpload ."' , '" . $idArtiste . "')";
+					// echo "InserInto query<br/>";
+					// echo $insertInto . "<br/>";
 					$stmt = $connexion-> prepare($insertInto);
 					$stmt -> execute();
-					$temp = $stmt-> fetch();
+					//$temp = $stmt-> fetch();
 
-					if ($temp != false){
-						echo "L'import a réussi";
-					} else {
-						echo "Echec de l'import.";
-					}
+					// if ($temp != false){
+					// 	echo "L'import a réussi";
+					// } else {
+					// 	echo "Echec de l'import.";
+					// }
 				}
 			// }
 			// 	catch(Exception $e) {
