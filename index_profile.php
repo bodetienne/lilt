@@ -33,7 +33,7 @@ $nom = $connexionStr->query("SELECT * FROM utilisateur WHERE idUtilisateur=" . $
 $donnees = $nom->fetch();
 
 //print_r($donnees);
-include("header.php");
+include("header_lilt.php");
 
 ?>
 
@@ -134,7 +134,7 @@ window.onclick = function(event) {
 
 <?php
 $nom->closeCursor();
- //include("footer_lilt.php");
+ include("footer_lilt.php");
 
 ?>
 

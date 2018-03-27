@@ -1,0 +1,25 @@
+.photo_profile img{
+	width: 230px;
+	height: 230px;
+	border-radius: 131px;
+	overflow: hidden;
+	padding: 4px;
+	margin: 50px 50px 0px 15px;
+	box-shadow: 5px 5px 2px 1px grey;
+}
+
+.informations {
+  color: white;
+	text-align: left;
+	padding: 15px 0px 15px 50px;
+	background-color: #3c3d41;
+}
+.informations p:last-child{
+	color: #e40750;
+}
+
+.informations .imgSettings img{
+	width: 40px;
+	float: right;
+	margin-right: 50px;
+}

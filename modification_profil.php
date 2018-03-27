@@ -5,9 +5,8 @@
 	<meta charset="utf-8">
 	<title>Modification profil Lilt</title>
 
-	<link rel="stylesheet" href="vendors/Bootstrap/vendors/bootstrap/css/bootstrap.min.css">
-	<link rel="stylesheet" href="style/style_profile.css">
-	<link rel="stylesheet" href="style/style_home2.css">
+	<link rel="stylesheet" href="../style/main.css">
+
 
 	<script src="js/jquery.min.js"></script>
 	<script src="js/emmajs.js"></script>

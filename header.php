@@ -39,7 +39,7 @@
 	</div>
 
 	<div class="id-content">
-		<a href="index_profile.php"><img src="Images/Icon/user.png" alt="logo site" class="id-photo"></a>
+		<a href="profil.php"><img src="Images/Icon/user.png" alt="logo site" class="id-photo"></a>
 		<p class="id-name"><a href="index_profile.php">
 
 		</a>
