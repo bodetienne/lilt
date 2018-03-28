@@ -30,6 +30,10 @@
             <form action="verification_connexion.php" method="post">
                 <h1>Connexion</h1>
 
+								<div class="error">
+									Looks like either your email address or password were incorrect.<span id='gras'> Wanna try again?</span>
+								</div>
+
                 <label><b>Username</b></label>
                 <input type="text" placeholder="Give your username" name="nom_utilisateur" required>
 

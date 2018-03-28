@@ -27,7 +27,7 @@
 /*	CONNEXION	*/
 body{
     background-color:#68B8A5;
-	font-family: "Raleway Regular", "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", "sans-serif"; 
+	font-family: "Raleway Regular", "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", "sans-serif";
 }
 #container_connexion{
     width:400px;
@@ -101,7 +101,7 @@ input[type=submit]:hover {
 
 .link_home{
 	margin-top: 50px;
-	
+
 }
 
 .link_home a{
@@ -112,4 +112,19 @@ input[type=submit]:hover {
 	padding: 20px;
 	box-shadow: 10px 10px 20px 2px black;
 	border-radius: 10px 5% / 20px;
+}
+
+
+.error{
+	border: solid 2px;
+	background-color: antiquewhite;
+	font-size: 17px;
+	text-align: center;
+	text-align: justify;
+	padding: 28px;
+	margin-bottom: 1em;
+}
+
+.error #gras{
+	font-weight: bold;
 }

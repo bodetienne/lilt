@@ -1,0 +1,199 @@
+
+.container.gallery-container h3{
+    display: table-column;
+    position: absolute;
+    z-index: 1;
+    color: white;
+    top: 2%;
+    left: 8%;
+    text-transform: uppercase;
+    font-size: 44px;
+    text-shadow: 2px 2px 2px black;
+}
+
+.container.gallery-container .row > div:nth-of-type(2) h3{
+  color: white;
+  text-shadow: 2px 2px 2px black;
+  text-align: center;
+  top: 12px;
+  left: 142px;
+}
+.container.gallery-container .row > div:nth-of-type(3) h3{
+  top: 76%;
+  left: 25%;
+}
+.container.gallery-container  .row > div:nth-of-type(4) h3{
+  font-size: 92px;
+  top: 9%;
+}
+.container.gallery-container .row > div:nth-of-type(5) h3{
+  top: 68%;
+  left: 18%;
+  font-size: 59px;
+}
+.container.gallery-container  .row > div:nth-of-type(6) h3{
+}
+.container.gallery-container {
+    background-color: #fff;
+    color: #35373a;
+    min-height: 100vh;
+    padding: 30px 50px;
+    width: 100%;
+}
+
+.gallery-container h1 {
+    text-align: center;
+    margin-top: 50px;
+    font-family: 'Droid Sans', sans-serif;
+    font-weight: bold;
+    font-size: 50px;
+}
+
+.gallery-container p.page-description {
+    text-align: center;
+    margin: 25px auto;
+    font-size: 20px;
+    color: #999;
+}
+
+/* .tz-gallery {
+    padding: 40px;
+} */
+
+/* Override bootstrap column paddings */
+.tz-gallery .row > div {
+    padding: 2px;
+}
+
+.tz-gallery .lightbox img {
+    width: 100%;
+    border-radius: 0;
+    position: relative;
+}
+
+.tz-gallery .lightbox:before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -13px;
+    margin-left: -13px;
+    opacity: 0;
+    color: #fff;
+    font-size: 26px;
+    font-family: 'Glyphicons Halflings';
+    content: '\e003';
+    pointer-events: none;
+    z-index: 9000;
+    transition: 0.4s;
+}
+
+
+.tz-gallery .lightbox:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    background-color: rgba(204, 219, 220, 0.75);
+    content: '';
+    transition: 0.4s;
+}
+
+.tz-gallery .lightbox:hover:after,
+.tz-gallery .lightbox:hover:before {
+    opacity: 1;
+}
+
+.baguetteBox-button {
+    background-color: transparent !important;
+}
+
+@media(max-width: 768px) {
+    body {
+        padding: 0;
+    }
+}
+
+
+/*	SEARCH BAR	*/
+
+
+.searchbar {
+  text-align: center;
+  width: 100%;
+  margin-bottom: 3%;
+  background-color: lightgray;
+  padding: 30px;
+}
+
+
+.searchbar #search-bar, input [type=text] {
+    width: 130px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url("../Images/Icon/magnifying-glass.png");
+	  background-size: 20px;
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding: 12px 510px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+
+    /* margin-top peut etre a mettre que pour le # */
+    width: 50%;
+}
+
+ .searchbar #search-bar, input[type=text]:focus {
+    width: 50%;
+}
+
+
+
+/*	SEARCH BUTTON	*/
+
+.button {
+  border-radius: 4px;
+  background-color: #e40750;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 20px;
+  padding: 10px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  overflow: visible;
+}
+
+.button:hover{
+	background: #68B8A5;
+}
+
+.research-bar .button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+	padding-right: 25px;
+
+}
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}

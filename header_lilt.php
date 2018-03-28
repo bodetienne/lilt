@@ -32,7 +32,7 @@
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav navbar-right">
                         <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">PLAYLISTS <span class="caret"></span></a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="playlists.php">PLAYLISTS <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="#">Page 1-1</a></li>
                                 <li><a href="#">Page 1-2</a></li>
@@ -40,7 +40,7 @@
                             </ul>
                         </li>
                         <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">CHARTS<span class="caret"></span></a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="charts.php">CHARTS<span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="#">Page 1-1</a></li>
                                 <li><a href="#">Page 1-2</a></li>

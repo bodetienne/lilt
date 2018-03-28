@@ -5,12 +5,12 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>Charts</title>
+	<title>Playlists</title>
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
-	<link rel="stylesheet" href="style/fluid-gallery.css">
+	<link rel="stylesheet" href="style/playlists.css">
 
 
 
@@ -24,16 +24,14 @@
 
 <div class="container gallery-container">
 
-    <h1>#CHARTS</h1>
+    <h1>#PLAYLISTS</h1>
 
-    <p class="page-description text-center">Let's sing in the shower ! </p>
+    <p class="page-description text-center"> Your favourite playlists just right there ! </p>
 
-
-		<div class="searchbar">
-			<input type="text" name="search" id="search-bar">
-			<button class="button"><span> Search ! </span></button>
-		</div>
-
+    <div class="searchbar">
+      <input type="text" name="search" id="search-bar">
+      <button class="button"><span> Search ! </span></button>
+    </div>
 
     <div class="tz-gallery">
 
@@ -41,8 +39,8 @@
 
             <div class="col-sm-12 col-md-4">
                 <a class="lightbox" href="#">
-									<h3>Hits of the moment</h3>
-                  <img src="Images/tatou.jpeg" alt="Bridge">
+									<h3>Best hits of Pharrel</h3>
+                  <img src="Images/pharrel.jpeg" alt="Bridge">
                 </a>
             </div>
             <div class="col-sm-6 col-md-4">
@@ -53,8 +51,8 @@
             </div>
             <div class="col-sm-6 col-md-4">
                 <a class="lightbox" href="#">
-									<h3>Electro</h3>
-                  <img src="Images/dj.jpg" alt="Tunnel">
+									<h3>Party songs</h3>
+                  <img src="Images/yo.jpeg" alt="Tunnel">
                 </a>
             </div>
             <div class="col-sm-12 col-md-8">
@@ -65,8 +63,8 @@
             </div>
             <div class="col-sm-6 col-md-4">
                 <a class="lightbox" href="#">
-									<h3>Pop </h3>
-                  <img src="Images/cassettes.jpeg" alt="Coast">
+									<h3>Sad songs</h3>
+                  <img src="Images/violon.jpeg" alt="Coast">
                 </a>
             </div>
             <div class="col-sm-6 col-md-4">
