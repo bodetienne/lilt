@@ -135,58 +135,8 @@ UPLOAD-CLICK
 	margin: auto;
 }
 
-.menu-tags ul {
-	margin: 0;
-	list-style-type:none;
- 	text-align:center;
-	display: flex;
-	flex-direction: column;
-}
-
-.menu-tags .select-tags {
-	position: absolute;
-	margin: auto;
-	margin-left: 3rem;
-	background: #31a29f;
+.container .menu-tags select option {
 	color: black;
-	font-size: 1.3rem;
-	border-radius: 4px;
-}
-
-.menu-tags .select-tags li {
-	padding: .3rem 4rem;
-}
-
-.menu-tags li {
-	margin:auto;
-}
-
-.menu-tags .tags li:hover,
-.menu-tags .tags li:hover a{
-	background: #2f4f50;
-	color: white;
-	display: block;
-}
-
-.menu-tags .tags{
-	display: none;
-}
-
-.menu-tags .tags li {
-	border-top: 1px solid #2f4f50;
-	padding: .3rem 4rem;
-	background: white;
-	cursor: pointer;
-}
-
-.vp-3 .tags a {
-	text-decoration: none;
-	color: black
-}
-
-
-.menu-tags .select-tags:hover .tags {
-	display: block;
 }
 
 .container .vp-3 input {
