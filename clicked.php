@@ -57,7 +57,7 @@
 					} else {
 						//si il n'existe pas, on créer l'artiste
 
-						$createArtist = "INSERT INTO artiste (nomArtiste, idUtilisateur) VALUES ('" .  $nomArtiste .  "', '" . $idUser . "')";
+						$createArtist = "INSERT INTO artiste (nomArtiste, idUtilisateur) VALUES (\"" .  $nomArtiste .  "\", '" . $idUser . "')";
 						$stmt = $connexion-> prepare($createArtist);
 						$stmt -> execute();
 						$temp = $stmt-> fetch();
@@ -69,7 +69,7 @@
 					}
 
 					/* requette permettant de recup l'id artiste*/
-					$recupIdArtiste = "SELECT `idArtiste` FROM `artiste` WHERE `nomArtiste`= '$nomArtiste' ";
+					$recupIdArtiste = "SELECT `idArtiste` FROM `artiste` WHERE `nomArtiste`= \"$nomArtiste \" ";
 					$stmt = $connexion-> prepare($recupIdArtiste);
 					$stmt -> execute();
 					$temp = $stmt-> fetch();
@@ -85,7 +85,7 @@
 					// echo "Chemin d'upload<br/>";
 					// echo $cheminUpload;
 					$insertInto = "INSERT INTO chanson (nomChanson, tag, fichierMp3, idArtiste)
-					VALUES ('" .  $_POST['name'] .  "', '" . $_POST['tag'] ."' , '" . $cheminUpload ."' , '" . $idArtiste . "')";
+					VALUES ('" .  $_POST['name'] .  "', '" . $_POST['tag'] ."' , \"" . $cheminUpload ."\" , '" . $idArtiste . "')";
 					// echo "InserInto query<br/>";
 					// echo $insertInto . "<br/>";
 					$stmt = $connexion-> prepare($insertInto);

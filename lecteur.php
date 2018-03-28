@@ -103,6 +103,7 @@
 			</div>
 		</div>
 	</div>';
+	include('footer_lilt.php');
 	?>
 
 </body>

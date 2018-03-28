@@ -15,7 +15,7 @@
 
 <!-- HEADER	-->
 
-	<?php include('header.php');	?>
+	<?php include('header_lilt.php');	?>
 
 <!--	CONTENTS 	-->
 
@@ -63,7 +63,7 @@
 		</div>
 	</form>
 
-	<?php include("footer.php"); ?>
+	<?php include("footer_lilt.php"); ?>
 
 
 
