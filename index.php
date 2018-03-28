@@ -16,6 +16,7 @@
   <link href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
   <link rel="stylesheet" href="style/gallery-grid.css">
+	<link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
 
 
 </head>
@@ -26,6 +27,9 @@
 <!-- VIDEO & SEARCHBAR  -->
   <div class="homepage-hero-module">
       <div class="video-container">
+				<div class="Welcome">
+					<h1>Welcome on Lilt !</h1>
+				</div>
         <div class="searchbar">
           <input type="text" name="search" id="search-bar">
           <button class="button"><span> Search ! </span></button>

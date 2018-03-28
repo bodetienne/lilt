@@ -1,6 +1,22 @@
 
 /*	SEARCH BAR	*/
+body{
+	font-family: 'Montserrat', sans-serif;
+}
+.Welcome {
+	position: absolute;
+	z-index: 11;
+}
 
+.Welcome h1{
+	font-family: 'Droid Sans', sans-serif;
+	color: white;
+	position: relative;
+	left: 64rem;
+	top: 17rem;
+	font-size: 65px;
+	text-shadow: 5px 4px 2px black;
+}
 
 .searchbar {
 	text-align: center;

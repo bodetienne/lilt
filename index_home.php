@@ -9,6 +9,7 @@
 
 	<link rel="stylesheet" href="Bootstrap/vendors/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="style/style_home2.css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
@@ -42,6 +43,9 @@
 ----------------------------------------------------->
 
 <div class="searchbar">
+	<div class="Welcome">
+		<h1>Welcome on Lilt !</h1>
+	</div>
 	<input type="text" name="search" id="search-bar">
 	<button class="button"><span> Search ! </span></button>
 </div>
