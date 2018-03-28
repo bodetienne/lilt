@@ -27,18 +27,18 @@ a {
 /*-----------------------------------------------------------
 UPLOAD-CLICK
 -----------------------------------------------------------*/
-.container {
+form .container {
 	display: flex;
 	flex-direction: column;
 }
 
-.container .inner {
+form .container .inner {
 	display: flex;
 	margin: auto;
 	flex-direction: column;
 }
 
-.container .vp {
+form .container .vp {
 	display: flex;
 	flex-direction: column;
 	margin: auto;
@@ -48,22 +48,22 @@ UPLOAD-CLICK
 	background-position: center;
 }
 
-.container .vp-1 {
+form .container .vp-1 {
 	background-image: url("../Images/sing.jpg");
 	width: 100%;
 	flex-direction: column;
-	height: 80vh;
+	height: 100vh;
 }
 
-.container .vp-1 h3 {
+form .container .vp-1 h3 {
 	font-size: 2rem;
 	margin: auto;
-	margin-top: 2rem;
+	margin-top: 6rem;
 	color: white;
 	text-shadow: .1rem .1rem #e40750;
 }
 
-.container .vp-1 .label-file {
+form .container .vp-1 .label-file {
 	margin: auto;
 	border: none;
 	background: #31a29f;
@@ -75,22 +75,22 @@ UPLOAD-CLICK
 	border-radius: 4px;
 }
 
-.container .vp-1 .label-file:hover {
+form .container .vp-1 .label-file:hover {
 	color: white;
 	background: #2f4f50;
 }
 
-.container .vp-1 .input-file {
+form .container .vp-1 .input-file {
 	display: none;
 }
 
-.container .vp-2 {
+form .container .vp-2 {
 	background-image: url('../Images/musician.jpg');
 	margin: auto;
 	background-attachment: fixed;
 }
 
-.vp-2 .song {
+form .vp-2 .song {
 	margin: auto;
 	display: flex;
 	margin-left: 35vh;
@@ -107,6 +107,8 @@ UPLOAD-CLICK
 	background: none;
 	width: 50vh;
 	border-bottom: 2px solid white;
+	font-size: 2rem;
+	color: black;
 }
 
 .vp-2 .song p {
@@ -114,6 +116,7 @@ UPLOAD-CLICK
 	text-align: right;
 	width: 30rem;
 	font-weight: bold;
+	color: white;
 }
 
 .vp-2 .artist-name {
@@ -133,10 +136,14 @@ UPLOAD-CLICK
 
 .vp-3 .inner-vp-3 p {
 	margin: auto;
+	font-size: 2rem;
 }
 
-.container .menu-tags select option {
+.container .menu-tags select  {
 	color: black;
+	margin-left: 6rem;
+	font-size: 1.5rem;
+	padding: 0.2rem 1.5rem;
 }
 
 .container .vp-3 input {
@@ -162,6 +169,44 @@ UPLOAD-CLICK
 /*-----------------------------------------------------------
 CLICKED
 -----------------------------------------------------------*/
+.error-container {
+	display: flex;
+}
+
+.error-container .error-empty {
+	display: flex;
+	background-image: url('../Images/slt.jpg');
+	background-repeat: no-repeat;
+	flex-direction: column;
+	height: 65vh;
+	margin: auto;
+	padding: 0 40rem;
+}
+
+.error-empty .error-message {
+	margin: auto;
+	font-size: 1.8rem;
+	color: white;
+}
+
+.error-empty .go-back {
+	margin: auto;
+}
+
+.error-empty .go-back a {
+	text-decoration: none;
+	color: white;
+	font-size: 2rem;
+	background: #e40851;
+	padding: 0.5rem 2rem;
+	border-radius: 4px;
+}
+
+.error-empty .go-back a:hover {
+	background: #31a29f;
+	padding: 0.8rem 2.3rem;
+}
+
 .big{
 	display: flex;
 	flex-direction: column;
