@@ -63,7 +63,7 @@ echo('Query = ' . 'SELECT idUtilisateur FROM utilisateur WHERE nom_utilisateur="
 			session_start();
 
 			$_SESSION['id'] = $resultat[0];
-	    header("location: ../index_home.php");
+	    header("location: ../index.php");
 			echo "Vous êtes connecté ! idd = " . $resultat[0] . " / session = " . $_SESSION['id'];
 	 	}
 		else{

@@ -18,12 +18,12 @@
 	        <div class="container">
 	            <div class="row">
 	                <div class="col-sm-3">
-	                    <h2 class="logo"><a href="#"> <img src="Images/Icon/logo.png"></img> </a></h2>
+	                    <h2 class="logo"><a href="index.php"> <img src="Images/Icon/logo.png"></img> </a></h2>
 	                </div>
 	                <div class="col-sm-2">
 	                    <h5>Get started</h5>
 	                    <ul>
-	                        <li><a href="index_home.php">Home</a></li>
+	                        <li><a href="index.php">Home</a></li>
 	                        <li><a href="#">Sign up</a></li>
 	                        <li><a href="#">Downloads</a></li>
 	                    </ul>

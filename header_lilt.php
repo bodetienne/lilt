@@ -14,7 +14,7 @@
     <div class="header-nightsky">
         <nav class="navbar navbar-default">
             <div class="container">
-                <a class="navbar-brand" href="index_home.php"> <img src="Images/Icon/logo-lilt.png" alt="logo-header" class="imgLogo"> </a>
+                <a class="navbar-brand" href="index.php"> <img src="Images/Icon/logo-lilt.png" alt="logo-header" class="imgLogo"> </a>
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                         <span class="icon-bar"></span>

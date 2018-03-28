@@ -96,7 +96,7 @@ while ($donnees = $nom ->fetch()){
 
 
 
-						header("location: index_profile.php");
+						header("location: profil.php");
 		        //echo 'Modifi&eacute;';
 
 			$nom->closeCursor();
