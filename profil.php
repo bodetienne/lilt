@@ -69,7 +69,7 @@ include("header_lilt.php")
                   </a>
               </div>
               <div class="col-sm-4 col-md-2">
-                  <a class="lightbox" href="#">
+                  <a class="lightbox" href="playlists.php">
                       <img src="Images/My_playlists.png" alt="Bridge">
                   </a>
               </div>
