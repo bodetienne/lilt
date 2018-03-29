@@ -8,6 +8,7 @@
 
 	<link rel="stylesheet" href="vendors/Bootstrap/Bootstrap-Grid/vendors/bootsrap/css/bootstrap-grid.css">
 	<link rel="stylesheet" href="style/style.css">
+	<link rel="stylesheet" href="style/selectPlaylists.css">
 </head>
 
 <body>
@@ -20,12 +21,25 @@
 			$tag = "No tag";
 		}
 	?>
+	<div class="container gallery-container">
+
+
+	<h1>#PLAYLISTS</h1>
+
+	<p class="page-description text-center"> Your favourite playlists just right there ! </p>
+
+	<div class="searchbar">
+		<input type="text" name="search" id="search-bar">
+		<button class="button"><span> Search ! </span></button>
+	</div>
+
+</div>
 
 
 	<div class="song select-tags">
 			<form method="POST">
 				<div class="inner-select">
-					<SELECT name="tag" size="1" >
+					<SELECT name="tag" size="1" id="selectOptions">
 						<option >Playlists</option>
 		        <option >Pop</option>
 		        <option >Best new hits</option>

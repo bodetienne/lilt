@@ -108,7 +108,7 @@
 							 }
 						}
 
-						//echo $nameLink;
+						echo $name;
 						/* requette permettant d'insérer les valeurs écrites et recup dans la tab chanson */
 						// $cheminUpload = "lecteur/music/" . $name;
 						// echo "Chemin d'upload<br/>";
