@@ -113,7 +113,7 @@
 						   } else {
 
 							 }
-						}
+						} 
 
 						echo $name;
 						/* requette permettant d'insérer les valeurs écrites et recup dans la tab chanson */
