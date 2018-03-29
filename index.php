@@ -1,3 +1,5 @@
+
+
 <html>
 <head>
 
@@ -18,11 +20,11 @@
   <link rel="stylesheet" href="style/gallery-grid.css">
 	<link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
 
-
 </head>
 
 <body>
-  <?php include("header_lilt.php") ?>
+  <?php include("header_lilt.php")?>
+
 
 <!-- VIDEO & SEARCHBAR  -->
   <div class="homepage-hero-module">

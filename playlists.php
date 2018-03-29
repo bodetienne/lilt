@@ -38,19 +38,20 @@
         <div class="row">
 
             <div class="col-sm-12 col-md-4">
-                <a class="lightbox" href="#">
+                <a class="lightbox" href="lecteur.php">
 									<h3>Best hits of Pharrel</h3>
                   <img src="Images/pharrel.jpeg" alt="Bridge">
                 </a>
             </div>
             <div class="col-sm-6 col-md-4">
-                <a class="lightbox" href="#">
+                <a class="lightbox" href="lecteur.php">
 									<h3>Future hits</h3>
                   <img src="Images/rockMan.jpeg" alt="Park">
-                </a>
+								</a>	
             </div>
+
             <div class="col-sm-6 col-md-4">
-                <a class="lightbox" href="#">
+                <a class="lightbox" href="lecteur.php">
 									<h3>Party songs</h3>
                   <img src="Images/yo.jpeg" alt="Tunnel">
                 </a>

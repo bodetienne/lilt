@@ -101,8 +101,8 @@
 
 						// print_r($_FILES);
 						if (isset($_FILES['mp3-file'])) {
-						    // print_r($_FILES);
-								//echo "salut";
+						     print_r($_FILES);
+								echo "Get file";
 						   if ($_FILES['mp3-file']['error'] == UPLOAD_ERR_OK) {
 						       $tmp_name = $_FILES["mp3-file"]["tmp_name"];
 						       // basename() peut empêcher les attaques "filesystem traversal";
@@ -113,7 +113,9 @@
 						   } else {
 
 							 }
-						} 
+						}
+						var_dump($_FILES);
+
 
 						echo $name;
 						/* requette permettant d'insérer les valeurs écrites et recup dans la tab chanson */
@@ -122,7 +124,7 @@
 						// echo $cheminUpload;
 						$insertInto = "INSERT INTO chanson (nomChanson, tag, fichierMp3, idArtiste)
 						VALUES (\"" .  $_POST['name'] .  "\", \"" . $_POST['tag'] ."\" , \"" . $nameLink ."\" , '" . $idArtiste . "')";
-						// echo $insertInto;
+						 echo $insertInto;
 						// echo "InserInto query<br/>";
 						// echo $insertInto . "<br/>";
 						$stmt = $connexion-> prepare($insertInto);
