@@ -19,13 +19,13 @@
 
 <!--	CONTENTS 	-->
 
-	<form action="clicked.php" method="POST"> <!--envoie du formulaire en méthode post-->
+	<form action="clicked.php" enctype="multipart/form-data" method="POST"> <!--envoie du formulaire en méthode post-->
 		 <div class="container">
 			 <div class="inner">
 				 <div class="vp vp-1">
 					 	<h3>"Music can change the world because it can change people."</h3>
 						<label for="file" class="label-file">Import mp3 file</label>
-						<input id="file" class="input-file" name ="mp3-file" accept=".mp3" type="file">
+						<input type="file" id="file" class="input-file" name ="mp3-file" accept=".mp3">
 					</div>
 
 					<div class="vp vp-2">

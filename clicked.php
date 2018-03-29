@@ -13,7 +13,7 @@
 		include("header_lilt.php");
 		$connexionStr=new PDO("mysql:host=localhost;dbname=lilt;charset=utf8",'root','');
 		if (!isset($_SESSION['id'])){
-			echo "You have to be connected to check informations";
+			echo "You have to be connected to check import a song";
 		} else {
 			$idUser = $_SESSION['id'];
 		$nom = $connexionStr->query("SELECT * FROM utilisateur WHERE idUtilisateur='" . $_SESSION['id'] . "'");
@@ -23,11 +23,10 @@
 	<!--	CONTENTS 	-->
 
 		<?php
-		var_dump($_POST);
-		var_dump($_FILES);
+
 			require 'PDO/includes/pdo.php';
 
-			if (empty($_POST['mp3-file']) || empty($_POST['name']) || empty($_POST['artist']) || empty($_POST['tag']) ){
+			if (empty($_POST['name']) || empty($_POST['artist']) || empty($_POST['tag']) ){
 				echo "<div class='error-container'>";
 					echo "<div class=error-empty>";
 						echo "<p class='error-message'>Please fill all the informations to upload your song</p>";
@@ -63,59 +62,66 @@
 						// echo('<br> Id artiste = ' . $idArtiste . "<br/>");
 						if ($temp != false) {
 						//si l'artiste existe, il ne se passe rien
-							// $idArtiste = $temp->idArtiste;
+							$idArtiste = $temp->idArtiste;
+
 						} else {
 							//si il n'existe pas, on créer l'artiste
 
 
-							$createArtist = "INSERT INTO artiste (nomArtiste, idUtilisateur) VALUES (\"" .  $nomArtiste .  "\", '" . $idUser . "')";
+							$createArtist = "INSERT INTO artiste (nomArtiste, idUtilisateur) VALUES (\"" .  $nomArtiste .  "\",  " . $idUser . ")";
 							$stmt = $connexion-> prepare($createArtist);
-							echo $createArtist;
+							// echo $createArtist;
 							$stmt -> execute();
-							if($temp != false) {
-								echo "vous êtes désormais un artiste";
-							} else {
-								echo "Il y a une erreur au moment de la création de votre identifiant d'artiste";
-							}
-						}
+						// 	if($temp != false) {
+						// 		//artiste créer
+						// 	} else {
+						// 		//artiste nin créer
+						// 	}
+						// }
 
 						/* requette permettant de recup l'id artiste*/
-						$recupIdArtiste = "SELECT `idArtiste` FROM `artiste` WHERE `nomArtiste`= \"$nomArtiste \" ";
-						$stmt = $connexion-> prepare($recupIdArtiste);
+						$idArtiste = "SELECT `idArtiste` FROM `artiste` WHERE `nomArtiste`= \"$nomArtiste\" AND `idUtilisateur`='$idUser'";
+						$stmt = $connexion-> prepare($idArtiste);
 						$stmt -> execute();
 						$temp = $stmt-> fetch();
 
 						if ($temp != false){
 							// echo "On a l'id de l'artiste";
+							$idArtiste = $temp->idArtiste;
 						} else {
 							// echo "Nous n'avons pas pu récupérer l'id de l'artiste";
 						}
 
-						print_r($_FILES);
-						foreach ($_FILES["mp3-file"]["error"] as $key => $error) {
-						    print_r($_FILES);
-						   if ($error == UPLOAD_ERR_OK) {
-						       $tmp_name = $_FILES["mp3-file"]["tmp_name"][$key];
+						// print_r($_FILES);
+						if (isset($_FILES['mp3-file'])) {
+						    // print_r($_FILES);
+								//echo "salut";
+						   if ($_FILES['mp3-file']['error'] == UPLOAD_ERR_OK) {
+						       $tmp_name = $_FILES["mp3-file"]["tmp_name"];
 						       // basename() peut empêcher les attaques "filesystem traversal";
 						       // une autre validation/néttoyage du nom de fichier peux être appropriée
-						       $name = basename($_FILES["mp3-file"]["name"][$key]);
+						       $name = basename($_FILES["mp3-file"]["name"]);
 						       move_uploaded_file($tmp_name, "lecteur/music/$name");
-						   }
+									 $nameLink= "lecteur/music/" . $name;
+						   } else {
+
+							 }
 						}
 
-						echo $name;
+						//echo $nameLink;
 						/* requette permettant d'insérer les valeurs écrites et recup dans la tab chanson */
-						$cheminUpload = "lecteur/music/" . $name;
+						// $cheminUpload = "lecteur/music/" . $name;
 						// echo "Chemin d'upload<br/>";
 						// echo $cheminUpload;
 						$insertInto = "INSERT INTO chanson (nomChanson, tag, fichierMp3, idArtiste)
-						VALUES ('" .  $_POST['name'] .  "', '" . $_POST['tag'] ."' , \"" . $cheminUpload ."\" , '" . $idArtiste . "')";
+						VALUES (\"" .  $_POST['name'] .  "\", \"" . $_POST['tag'] ."\" , \"" . $nameLink ."\" , '" . $idArtiste . "')";
+						// echo $insertInto;
 						// echo "InserInto query<br/>";
 						// echo $insertInto . "<br/>";
 						$stmt = $connexion-> prepare($insertInto);
 						$stmt -> execute();
-						//$temp = $stmt-> fetch();
-
+						// $temp = $stmt-> fetch();
+						//
 						// if ($temp != false){
 						// 	echo "L'import a réussi";
 						// } else {
@@ -132,6 +138,7 @@
 				// }
 			}
 		}
+	}
 
 		include('footer_lilt.php');
 

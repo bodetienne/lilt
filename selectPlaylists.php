@@ -19,6 +19,7 @@
 
 <body>
 <?php
+require 'PDO/includes/pdo.php';
 session_start();
 $connexionStr=new PDO("mysql:host=localhost;dbname=lilt;charset=utf8",'root','');
 $nom = $connexionStr->query("SELECT * FROM chanson");
@@ -41,24 +42,59 @@ include("header_lilt.php");
     </div>
 
     <div class="custom-select" style="width:200px;">
-      <select>
-        <option value="0">Playlists</option>
-        <option value="1">Pop</option>
-        <option value="2">Best new hits</option>
-        <option value="3">The best of Pharrel</option>
-        <option value="4">Sad Songs</option>
-        <option value="5">Rap</option>
-        <option value="6">Future hits</option>
-        <option value="7">Party Songs</option>
-        <option value="8">Top USA</option>
-        <option value="9">Roadtrip</option>
-        <option value="10">Top World</option>
-      </select>
+			<form method="POST">
+				<select name="tag" size ="1">
+	        <option >Playlists</option>
+	        <option >Pop</option>
+	        <option >Best new hits</option>
+	        <option>The best of Pharrel</option>
+	        <option >Sad Songs</option>
+	        <option>Rap</option>
+	        <option >Future hits</option>
+	        <option >Party Songs</option>
+	        <option >Top USA</option>
+	        <option >Roadtrip</option>
+	        <option >Top World</option>
+	      </select>
+				<button type="submit" class="submit-playlist"> Listen Music </button>
+			</form>
     </div>
 
 </div>
 
+<?php
 
+$tag = $_POST["tag"];
+try {
+
+	$query_select = "SELECT * FROM `chanson` WHERE `tag`='$tag'";
+	$stmt = $connexion->prepare($query_select);
+	$stmt -> execute();
+
+	$leschansons = Array();
+	$temp  = $stmt->fetch();
+
+	while($temp != false){
+			array_push($leschansons, $temp);
+			$temp  = $stmt->fetch();
+	}
+
+	//faire en sorte que les chansons soient accessibles à tout le monde
+
+
+
+	for ($i=0; $i<sizeof($leschansons); $i++){
+
+		//récupérer nom artiste à partir de l'id
+		$query_artiste = "SELECT * FROM artiste WHERE idArtiste= '" . $leschansons[$i] -> idArtiste ."'";
+		$stmt = $connexion -> prepare($query_artiste);
+		$stmt -> execute();
+
+		$lesartistes = Array();
+		$temp = $stmt -> fetch();
+		array_push($lesartistes, $temp);
+
+?>
 
 <!-- Lecteurs -->
 <div class="lecteur_compo">
@@ -67,7 +103,7 @@ include("header_lilt.php");
     <li>
     <div class="innerCompo">
 
-      <p> <?php echo $donnees['nomChanson']; ?> | <?php echo "Sam Smith" ?>
+      <p> <?php echo  $leschansons[$i] -> nomChanson; ?> | <?php echo $lesartistes[0] -> nomArtiste ?>
       </p>
 
       <script src="vendors/audiojs/audio.min.js"></script>
@@ -75,11 +111,24 @@ include("header_lilt.php");
 
 
       <div class="CompoMedia">
-        <audio src="lecteur/music/Bruno Mars - When I Was Your Man.mp3" preload="auto" />
+        <?php echo "<audio src= '" . $leschansons[$i] -> fichierMp3 . "' preload='metadata' />"; ?>
         <img src="Images/Icon/fast-forward2.png" alt="precedent"><img src="Images/Icon/fast-forward1.png" alt="suivant">
       </div>
 
+<?php
 
+}
+
+
+} catch(Exception $e) {
+echo '<p> Erreur n° : ' . $e->getCode() . ' : ' . $e->getMessage(). '</p>';
+echo '<p>Dans '. $e->getFile(). '('. $e->getLine() .')';
+echo "<pre>";
+var_dump ($e -> getTrace());
+echo "</pre>";
+}
+
+?>
 
 
 
