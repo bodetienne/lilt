@@ -55,6 +55,10 @@ include("header_lilt.php");
 	        <option >Top USA</option>
 	        <option >Roadtrip</option>
 	        <option >Top World</option>
+	        <option >Rock</option>
+	        <option >Soul</option>
+	        <option >Reggae</option>
+	        <option >No tag</option>
 	      </select>
 				<button type="submit" class="submit-playlist"> Listen Music </button>
 			</form>
@@ -94,30 +98,31 @@ try {
 		$temp = $stmt -> fetch();
 		array_push($lesartistes, $temp);
 
-?>
 
-<!-- Lecteurs -->
-<div class="lecteur_compo">
+
+//Lecteurs
+echo '<div class="lecteur_compo">
   <ul>
 
     <li>
     <div class="innerCompo">
 
-      <p> <?php echo  $leschansons[$i] -> nomChanson; ?> | <?php echo $lesartistes[0] -> nomArtiste ?>
-      </p>
+      <p> '; ?><?php echo  $leschansons[$i] -> nomChanson; ?> | <?php echo $lesartistes[0] -> nomArtiste ?>
+      <?php	echo '</p>'; ?>
 
       <script src="vendors/audiojs/audio.min.js"></script>
       <script>  audiojs.events.ready(function() {var as = audiojs.createAll();});</script>
 
 
-      <div class="CompoMedia">
-        <?php echo "<audio src= '" . $leschansons[$i] -> fichierMp3 . "' preload='metadata' />"; ?>
-        <img src="Images/Icon/fast-forward2.png" alt="precedent"><img src="Images/Icon/fast-forward1.png" alt="suivant">
-      </div>
+      <?php echo '<div class="CompoMedia">'; ?>
+        <?php echo "<audio src= \"" . $leschansons[$i] -> fichierMp3 . "\" preload='metadata' />"; ?>
+        <?php echo "<img src=\"Images/Icon/fast-forward2.png\" alt='precedent'><img src='Images/Icon/fast-forward1.png' alt='suivant'>
+      </div>";
 
+}?>
 <?php
 
-}
+
 
 
 } catch(Exception $e) {
