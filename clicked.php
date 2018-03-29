@@ -53,17 +53,24 @@
 						$idUser = $_SESSION['id'];
 						$nomArtiste = $_POST['artist'];
 						$idArtiste = "SELECT `idArtiste` FROM `artiste` WHERE `nomArtiste`=\"$nomArtiste\" AND `idUtilisateur`='$idUser'"; //vérifie si l'artiste rentré existe
+						$idArtistePlagiat = "SELECT `idArtiste` FROM `artiste` WHERE `nomArtiste`=\"$nomArtiste\" AND `idUtilisateur`!='$idUser'"; //vérifie si l'artiste rentré existe
 
 						$stmt = $connexion-> prepare($idArtiste);
 						$stmt -> execute();
 						$temp = $stmt-> fetch();
 
+						// $stmt1 = $connexion-> prepare($idArtistePlagiat);
+						// $stmt -> execute();
+						// $temp1 = $stmt-> fetch();
 						// var_dump($temp);
 						// echo('<br> Id artiste = ' . $idArtiste . "<br/>");
-						if ($temp != false) {
+						if ($temp !== false) {
 						//si l'artiste existe, il ne se passe rien
 							$idArtiste = $temp->idArtiste;
 
+						// } else if($temp1 != false) {
+						// 	echo "Please choose another artist name, this one is already used";
+						// 	var_dump($temp1);
 						} else {
 							//si il n'existe pas, on créer l'artiste
 
@@ -88,7 +95,7 @@
 						if ($temp != false){
 							// echo "On a l'id de l'artiste";
 							$idArtiste = $temp->idArtiste;
-						} else {
+						} else{
 							// echo "Nous n'avons pas pu récupérer l'id de l'artiste";
 						}
 
