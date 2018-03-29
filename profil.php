@@ -42,9 +42,9 @@ include("header_lilt.php")
         <span class="avatar"><img src="images/avatar.jpg" alt="" /></span>
         <h1>			<?php	echo $donnees['nom_utilisateur'];?></h1>
         <ul class="icons">
-          <li><a href="#" class="icon style2 fa-twitter"><span class="label">Twitter</span></a></li>
-          <li><a href="#" class="icon style2 fa-facebook"><span class="label">Facebook</span></a></li>
-          <li><a href="#" class="icon style2 fa-instagram"><span class="label">Instagram</span></a></li>
+          <li><a href="<?php	echo $donnees['twitter'];?>" class="icon style2 fa-twitter"><span class="label">Twitter</span></a></li>
+          <li><a href="<?php	echo $donnees['facebook'];?>" class="icon style2 fa-facebook"><span class="label">Facebook</span></a></li>
+          <li><a href="<?php	echo $donnees['instagram'];?>" class="icon style2 fa-instagram"><span class="label">Instagram</span></a></li>
           <li><a href="#" class="icon style2 fa-500px"><span class="label">500px</span></a></li>
           <li><a href="#" class="icon style2 fa-envelope-o"><span class="label">Email</span></a></li>
         </ul>

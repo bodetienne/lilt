@@ -92,6 +92,46 @@ while ($donnees = $nom ->fetch()){
 			}
 
 
+
+			$req = $bdd->prepare('UPDATE utilisateur SET facebook = :facebook WHERE idUtilisateur=' . $_SESSION['id'].'.');
+
+			if(!empty($_POST['facebook'])){
+				$query = 'UPDATE utilisateur SET facebook = "' . $_POST['facebook'] . '" WHERE idUtilisateur="' . $_SESSION['id'] .'"';
+				$req = $bdd->prepare($query);
+	echo('Query = ' . $query . "<br>");
+				if (!$req->execute()) {
+					echo 'Erreur';
+				}
+			}
+
+
+
+						$req = $bdd->prepare('UPDATE utilisateur SET instagram = :instagram WHERE idUtilisateur=' . $_SESSION['id'].'.');
+
+						if(!empty($_POST['instagram'])){
+							$query = 'UPDATE utilisateur SET instagram = "' . $_POST['instagram'] . '" WHERE idUtilisateur="' . $_SESSION['id'] .'"';
+							$req = $bdd->prepare($query);
+				echo('Query = ' . $query . "<br>");
+							if (!$req->execute()) {
+								echo 'Erreur';
+							}
+						}
+
+						
+
+			$req = $bdd->prepare('UPDATE utilisateur SET twitter = :twitter WHERE idUtilisateur=' . $_SESSION['id'].'.');
+
+			if(!empty($_POST['twitter'])){
+				$query = 'UPDATE utilisateur SET twitter = "' . $_POST['twitter'] . '" WHERE idUtilisateur="' . $_SESSION['id'] .'"';
+				$req = $bdd->prepare($query);
+	echo('Query = ' . $query . "<br>");
+				if (!$req->execute()) {
+					echo 'Erreur';
+				}
+			}
+
+
+
 }
 
 

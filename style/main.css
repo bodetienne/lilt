@@ -387,7 +387,7 @@
 		    height: 100%; /* Full height */
 		    overflow: overlay; /* Enable scroll if needed */ */
 		    background-color: rgb(0,0,0); /* Fallback color */
-		    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+		    background-color: rgba(0,0,0,0.7); /* Black w/ opacity */
 		}
 
 		/* Modal Content */
@@ -455,9 +455,10 @@
 		.modal-body input{
 			position: absolute;
 			width: 70%;
+			margin-top: 2rem;
 		}
 
-		.modal-body input:nth-of-type(7){
+		.modal-body input:nth-of-type(10){
 			margin-left: 0;
 		}
 		.modal-body label{
@@ -465,7 +466,7 @@
 			width: 13%;
 		}
 		.modal-body label:last-of-type{
-			width: 30%;
+			width: 13.5%;
 		}
 		.modal-footer {
 		    padding: 2px 16px;
@@ -493,4 +494,16 @@
 		/*--------------------------------------*/
 .modal-body form {
 	text-align: left;
+}
+
+#myModal {
+	overflow: scroll;
+}
+
+.networksLinks input{
+	padding-right: 30rem;
+	margin: 2rem auto;
+}
+.networksLinks .subNetworks{
+	padding-right: inherit;
 }

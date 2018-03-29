@@ -16,10 +16,6 @@
 
 <body>
 
-<?php
-
-?>
-
 	<!-- The Modal -->
 <div id="myModal" class="modal">
 
@@ -58,25 +54,37 @@
 				<input type="text" name="description" placeholder="<?php echo $donnees['description']?>" >
 				</br>
 
+		<h3>Your networks</h3>
+
+			<div class="networksLinks">
+
+				<label for="fb">Facebook</label>
+				<input type="text" name="facebook" placeholder="<?php echo $donnees['facebook']?>">
+					</br>
+				<label for="insta">Instagram</label>
+				<input type="text" name="instagram" placeholder="<?php echo $donnees['instagram']?>">
+					</br>
+				<label for="twitter">Twitter</label>
+				<input type="text" name="twitter" placeholder="<?php echo $donnees['twitter']?>">
+
+			</div>
+
 				<label for="icone"> Your profile picture (JPG) | max 15 Ko </label>
 				<input type="file" name="avatar" id="avatar" accept="image/jpg" >
+			</br>
     </div>
     <div class="modal-footer">
       <input type="submit" class="submit" value="Let's go" id='<?php echo $id ?>'/>
 			</form>
     </div>
+
+
+
+
+
+
   </div>
-
 </div>
-
-
-<?php
-
-?>
-
-<!------------------------------------>
-<?php /*include('footer.php')*/ ?>
-<!------------------------------------>
 
 
 </body>
