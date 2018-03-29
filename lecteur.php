@@ -92,7 +92,7 @@
 								// echo "Je rentre dans la boucle et je suis à la ligne" . $i;
 								echo "<div class='big-player'>";
 									echo "<div class='song-name song-name-" . $i . "'>" . $leschansons[$i] -> nomChanson . "</div>";
-									echo "<div class='artist-name artist-name-" . $i . "> " . $lesartistes[0] -> nomArtiste . "</div>";
+									echo "<div class='artist-name artist-name-" . $i . "'> " . $lesartistes[0] -> nomArtiste . "</div>";
 									echo "<div class='mp3-name mp3-name-" . $i . "''>
 																<audio controls='controls' preload='metadata'>
 															  <source src=\" ". $leschansons[$i] -> fichierMp3 . "\" type='audio/mp3' />
