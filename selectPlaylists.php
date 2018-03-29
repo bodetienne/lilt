@@ -106,9 +106,15 @@ echo '<div class="lecteur_compo">
 
     <li>
     <div class="innerCompo">
+<<<<<<< HEAD
 
       <p> '; ?><?php echo  $leschansons[$i] -> nomChanson; ?> | <?php echo $lesartistes[0] -> nomArtiste ?>
       <?php	echo '</p>'; ?>
+=======
+			<span class="avatar"><img src="images/avatar.jpg" alt="" /></span>
+      <p> <?php echo $donnees['nomChanson']; ?> | <?php echo "Sam Smith" ?>
+      </p>
+>>>>>>> e389245f4667902636e16d0db7f6f74ffc60b0b5
 
       <script src="vendors/audiojs/audio.min.js"></script>
       <script>  audiojs.events.ready(function() {var as = audiojs.createAll();});</script>
