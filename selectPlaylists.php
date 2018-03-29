@@ -66,7 +66,7 @@ include("header_lilt.php");
 
     <li>
     <div class="innerCompo">
-
+			<span class="avatar"><img src="images/avatar.jpg" alt="" /></span>
       <p> <?php echo $donnees['nomChanson']; ?> | <?php echo "Sam Smith" ?>
       </p>
 
