@@ -297,10 +297,11 @@ PLAYLIST (LECTEUR)
 }
 
 .grand-container .inner .big-player {
+	color: white;
 	display: flex;
 	width: 100%;
-	background: #F0F0F0;
-	border-bottom: .11rem solid #e40750;
+	background: #3c3d41;
+	border-bottom: 0.5rem solid white;
 }
 
 .grand-container .big-player .song-name,
@@ -309,9 +310,22 @@ PLAYLIST (LECTEUR)
 	margin: auto;
 	margin-top: 2rem;
 }
+.grand-container .big-player .song-name{
+	font-size: 28px;
+  border-right: 2px solid white;
+  padding-right: 10%;
+  margin-right: 0;
+}
+.grand-container .big-player .artist-name{
+	font-size: 30px;}
 
-.grand-container .big-player .song-name {
-	width: 15rem;
+.grand-container .big-player .mp3-name{
+	margin-left: 0;
+}
+
+
+.big-player{
+	padding: 2rem;
 }
 
 /**********Others*************/

@@ -31,10 +31,10 @@
 		<img src="Images/Icon/search.png" alt="search" class="search2">
 	</div>
 
-	<div class="button_box2">
-		<form class="form-wrapper-2 cf">
-		<input type="text" placeholder="Search everything you want " required>
-		<button type="submit"> Search </button>
+	<div class="searchbar">
+		<form class="searchbar" action="php/search.php" method="post">
+			<input type="text" name="search" id="search-bar" required>
+			<input type="submit" class="button" value="Search !"></input>
 		</form>
 	</div>
 

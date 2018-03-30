@@ -19,6 +19,11 @@
     color: #999;
 }
 
+.big-player input{
+  width: 4%;
+  height: 2%;
+  margin-right: 7%;
+}
 
 @media(max-width: 768px) {
     body {

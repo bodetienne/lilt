@@ -11,7 +11,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
 	<link rel="stylesheet" href="style/playlists.css">
-	<script type="text/javascript" src="js/playlists.js"></script>
+
 
 
 </head>
@@ -35,46 +35,47 @@
 
     <div class="tz-gallery">
 
-	        <div class="row">
+        <div class="row">
 
-	            <div id="Rap" class="col-sm-12 col-md-4">
-									<a class="lightbox" href="#">
-										<h3>Rap</h3>
-	                  <img src="Images/pharrel.jpeg" alt="Bridge">
-	                </a>
-	            </div>
-	            <div id="Rock" class="col-sm-6 col-md-4">
-								<a class="lightbox" href="#">
-										<h3>Rock</h3>
-	                  <img src="Images/rockMan.jpeg" alt="Park">
-	                </a>
-	            </div>
-	            <div id="Pop" class="col-sm-6 col-md-4">
-	                <a class="lightbox" href="#">
-										<h3>Pop</h3>
-	                  <img src="Images/yo.jpeg" alt="Tunnel">
-	                </a>
-	            </div>
-	            <div id="Reggae" class="col-sm-12 col-md-8">
-	                <a class="lightbox" href="#">
-										<h3>Reggae</h3>
-	                  <img src="Images/studio.jpg" alt="Traffic">
-	                </a>
-	            </div>
-	            <div id="No-tag" class="col-sm-6 col-md-4">
-	                <a class="lightbox" href="#">
-										<h3>No tag</h3>
-	                  <img src="Images/violon.jpeg" alt="Coast">
-	                </a>
-	            </div>
-	            <div id="Soul" class="col-sm-6 col-md-4">
-	                <a class="lightbox" href="#">
-											<h3> Soul</h3>
-	                    <img src="Images/man.jpeg" alt="">
-	                </a>
-	            </div>
+            <div class="col-sm-12 col-md-4">
+                <a class="lightbox" href="lecteur.php">
+									<h3>Best hits of Pharrel</h3>
+                  <img src="Images/pharrel.jpeg" alt="Bridge">
+                </a>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="lecteur.php">
+									<h3>Future hits</h3>
+                  <img src="Images/rockMan.jpeg" alt="Park">
+								</a>	
+            </div>
 
-	        </div>
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="lecteur.php">
+									<h3>Party songs</h3>
+                  <img src="Images/yo.jpeg" alt="Tunnel">
+                </a>
+            </div>
+            <div class="col-sm-12 col-md-8">
+                <a class="lightbox" href="#">
+									<h3>Top USA</h3>
+                  <img src="Images/studio.jpg" alt="Traffic">
+                </a>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="#">
+									<h3>Sad songs</h3>
+                  <img src="Images/violon.jpeg" alt="Coast">
+                </a>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <a class="lightbox" href="#">
+										<h3> Roadtrip </h3>
+                    <img src="Images/man.jpeg" alt="">
+                </a>
+            </div>
+
+        </div>
 
     </div>
 

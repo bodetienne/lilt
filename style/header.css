@@ -203,11 +203,11 @@ font-style: italic;
 .form-wrapper-2{
   color: #08415C;
 }
-.button_box2 .form-wrapper-2 button{
+.button_box2 .form-wrapper-2 input{
   height: 50px;
 }
 
-.form-wrapper-2 button {
+.form-wrapper-2 submit{
 overflow: visible;
 position: relative;
 float: right;
@@ -224,15 +224,18 @@ border-radius: 0 3px 3px 0;
 text-shadow: 0 -1px 0 rgba(0, 0 ,0, .3);
 }
 
+/* .button_box2 .input_submit input{
+  background-color:#e40750;
+} */
 
-.form-wrapper-2 button:hover{
+.form-wrapper-2 .input_submit: hover{
 background: #68B8A5;
 }
-.form-wrapper-2 button:active,
-.form-wrapper-2 button:focus{
+.form-wrapper-2 .input_submit submit:active,
+.form-wrapper-2 .input_submit submit:focus{
 background: #e40750;
 }
-.form-wrapper-2 button:before {
+.form-wrapper-2 input:before {
 content: '';
 position: absolute;
 border-width: 8px 8px 8px 0;
@@ -241,10 +244,10 @@ border-color: transparent #e40750 transparent;
 top: 12px;
 left: -6px;
 }
-.form-wrapper-2 button:hover:before{
+.form-wrapper-2 input:hover:before{
 border-right-color: #e40750;
 }
-.form-wrapper-2 button:focus:before{
+.form-wrapper-2 input:focus:before{
 border-right-color: #e40750;
 }
 
