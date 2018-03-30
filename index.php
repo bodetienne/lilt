@@ -33,8 +33,10 @@
 					<h1>Welcome on Lilt !</h1>
 				</div>
         <div class="searchbar">
-          <input type="text" name="search" id="search-bar">
-          <button class="button"><span> Search ! </span></button>
+					<form class="searchbar" action="php/search.php" method="post">
+          	<input type="text" name="search" id="search-bar" required>
+          	<input type="submit" class="button" value="Search !"></input>
+					</form>
         </div>
           <div class="filter"></div>
           <video autoplay loop class="fillWidth">
