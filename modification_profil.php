@@ -70,7 +70,7 @@
 			</div>
 
 				<label for="icone"> Your profile picture (JPG) | max 15 Ko </label>
-				<input type="file" name="avatar" id="avatar" accept="image/jpg" >
+				<input type="file" name="avatar" id="avatar" accept="image/JPG" >
 			</br>
     </div>
     <div class="modal-footer">
