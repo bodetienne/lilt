@@ -33,7 +33,7 @@
 					<h1>Welcome on Lilt !</h1>
 				</div>
         <div class="searchbar">
-					<form class="searchbar" action="php/search.php" method="post">
+					<form class="searchbar" action="search.php" method="post">
           	<input type="text" name="search" id="search-bar" required>
           	<input type="submit" class="button" value="Search !"></input>
 					</form>

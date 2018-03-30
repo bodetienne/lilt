@@ -1,0 +1,58 @@
+.EntireTableau h3{
+  text-align: center;
+  margin-top: 50px;
+  font-family: 'Droid Sans', sans-serif;
+  font-weight: bold;
+  font-size: 50px;
+}
+
+table{
+margin-left: 32%;
+}
+
+.tableau{
+width: 25%;
+max-width: 50%;
+position: absolute;
+}
+
+tbody{
+position: fixed;
+margin: auto 5rem;
+border: solid;
+padding: 1rem;
+}
+
+tr{
+  position: relative;
+}
+
+td{
+  padding: 0 7rem;
+  border-bottom: solid;
+}
+
+td:nth-of-type(1),
+td:nth-of-type(2){
+  background-color: #08415C;
+    padding: 0 7rem;
+  /* padding-bottom: 3rem; */
+}
+
+.ligneDeResult td{
+  background-color: white;
+  border-right-color: powderblue;
+  font-size: 18px;
+    padding-bottom: 3rem;
+}
+
+.EntireTableau h4{
+  padding-left: 4rem;
+  color: white;
+  font-family: 'Droid Sans', sans-serif;
+  padding: 0 4rem;
+}
+
+.ligneDeResult{
+
+}
