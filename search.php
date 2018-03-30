@@ -60,7 +60,7 @@ $query->execute();
 
 
    <?php
-    include("footer_lilt.php");
+    // include("footer_lilt.php");
  ?>
 
 

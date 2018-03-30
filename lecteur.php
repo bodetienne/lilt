@@ -56,6 +56,8 @@
 		        <option >Soul</option>
 		        <option >Reggae</option>
 		        <option >No tag</option>
+						<option ><strong>#Contest</strong></option>
+
 					</SELECT>
 					<button type="submit" class="submit-playlist"> Listen Music </button>
 				</div>
