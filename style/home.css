@@ -247,3 +247,29 @@ body{
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
+
+.upload-a-song {
+	background-image: url('../Images/vinyle.jpg');
+	background-attachment: fixed;
+	height: 50vh;
+	display: flex;
+	background-size: 100%;
+}
+
+.upload-a-song h3 {
+	color: white;
+	font-size: 2.3rem;
+	margin: auto;
+}
+
+.upload-a-song h3:hover {
+	font-size: 2.8rem;
+}
+
+a .upload-a-song {
+	text-decoration: none;
+}
+
+a:hover .upload-a-song {
+	text-decoration: none;
+}

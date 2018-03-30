@@ -465,6 +465,13 @@
   			</div>
   		</a>
 
+<!-- UPLOAD A SONG -->
+
+<a href="upload-click.php">
+	<div class="upload-a-song">
+		<h3> Upload your song here </h3>
+	</div>
+</a>
 
 <!-- #CONTEST -->
 

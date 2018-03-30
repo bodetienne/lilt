@@ -53,6 +53,7 @@ form .container .vp-1 {
 	width: 100%;
 	flex-direction: column;
 	height: 100vh;
+	background-size: 100%;
 }
 
 form .container .vp-1 h3 {
@@ -88,6 +89,8 @@ form .container .vp-2 {
 	background-image: url('../Images/musician.jpg');
 	margin: auto;
 	background-attachment: fixed;
+	background-size: 100%;
+
 }
 
 form .vp-2 .song {
@@ -125,6 +128,8 @@ form .vp-2 .song {
 
 .container .vp-3 {
 	background-image: url('../Images/people-2606347_1280.png');
+	background-size: 100%;
+
 }
 
 .container .vp-3 .inner-vp-3 {
