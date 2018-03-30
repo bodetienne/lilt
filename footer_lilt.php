@@ -31,9 +31,9 @@
 	                <div class="col-sm-2">
 	                    <h5>About us</h5>
 	                    <ul>
-	                        <li><a href="#">Company Information</a></li>
 	                        <li><a href="#">Contact us</a></li>
-	                        <li><a href="#">Reviews</a></li>
+	                        <li><a href="mentions-légales.html">Legal Notice</a></li>
+	                        <li><a href="confidentialite.php">Privacy Policy</a></li>
 	                    </ul>
 	                </div>
 	                <div class="col-sm-2">
