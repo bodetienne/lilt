@@ -53,6 +53,7 @@ form .container .vp-1 {
 	width: 100%;
 	flex-direction: column;
 	height: 100vh;
+	background-size: 100%;
 }
 
 form .container .vp-1 h3 {
@@ -88,6 +89,8 @@ form .container .vp-2 {
 	background-image: url('../Images/musician.jpg');
 	margin: auto;
 	background-attachment: fixed;
+	background-size: 100%;
+
 }
 
 form .vp-2 .song {
@@ -125,6 +128,8 @@ form .vp-2 .song {
 
 .container .vp-3 {
 	background-image: url('../Images/people-2606347_1280.png');
+	background-size: 100%;
+
 }
 
 .container .vp-3 .inner-vp-3 {
@@ -242,6 +247,8 @@ CLICKED
 PLAYLIST (LECTEUR)
 -----------------------------------------------------------*/
 
+/* Modification du css aussi dans lecteur dans selectPlaylists.css */
+
 .select-tags {
 	display: flex;
 }
@@ -251,14 +258,12 @@ PLAYLIST (LECTEUR)
 	margin-bottom: 1rem;
 }
 
-.select-tags button {
-	background: none;
-	border: .1rem solid #68b8a5;
-	border-radius: 4px;
-	padding: .5rem 2rem;
-	font-size: 1rem;
+.select-tags select{
+	background-color: #CCDBDC;
+	width: 35rem;
+	height: 5rem;
+	font-size: 19px;
 }
-
 .select-tags button:hover {
 	background: #68b8a5;
 	color: white;
@@ -267,16 +272,22 @@ PLAYLIST (LECTEUR)
 .grand-container .title-container {
 	display: flex;
 	flex-direction: column;
-	background-image: url('../Images/music-2902891_1280.jpg');
+	background-image: url(../Images/bakelite-1595847_1280.jpg);
 	background-attachment: fixed;
-	height: 20vh;
-	margin-bottom: 2rem;
+  height: 20vh;
+  margin-bottom: 2rem;
+  background-repeat: no-repeat;
+  background-size: 100%;
 }
 
 .grand-container .title {
+	padding: 2rem;
 	margin: auto;
 	color: white;
-	font-size: 2.6rem;
+	text-shadow: 3px 3px 3px black;
+	font-size: 4.6rem;
+	text-transform: uppercase;
+	background-color: rgba(0, 0, 0, 0.7);
 }
 
 .grand-container .inner {

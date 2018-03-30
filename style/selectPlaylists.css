@@ -108,20 +108,23 @@
   opacity: 1;
   right: 0;
 }
-.custom-select
+.select-tags
 {
-  margin-left: 39rem;
   margin-bottom: 4rem;
 }
-.custom-select select{
+#selectOptions{
   background-color: #CCDBDC;
-  padding: 5%;
   width: 35rem;
   height: 5rem;
   font-size: 19px;
 }
+.select-tags button {
+	background-color: #CCDBDC;
+	height: 5rem;
+	font-size: 19px;
+}
 
-.custom-select option:focus{
+.select-tags option:focus{
   background-color: #e40750;
 }
 

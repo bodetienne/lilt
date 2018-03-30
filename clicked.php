@@ -52,28 +52,30 @@
 						/* requette permettant d'insérer les infos dans la tab artiste*/
 						$idUser = $_SESSION['id'];
 						$nomArtiste = $_POST['artist'];
-						$idArtiste = "SELECT `idArtiste` FROM `artiste` WHERE `nomArtiste`=\"$nomArtiste\" AND `idUtilisateur`='$idUser'"; //vérifie si l'artiste rentré existe
-						$idArtistePlagiat = "SELECT `idArtiste` FROM `artiste` WHERE `nomArtiste`=\"$nomArtiste\" AND `idUtilisateur`!='$idUser'"; //vérifie si l'artiste rentré existe
+						$idArtiste  = "SELECT `idArtiste` FROM `artiste` WHERE `nomArtiste`=\"$nomArtiste\" AND `idUtilisateur`='$idUser'"; //vérifie si l'artiste rentré existe
+						$idArtistePlagiat = "SELECT `idArtiste` FROM `artiste` WHERE `nomArtiste`=\"$nomArtiste\" AND `idUtilisateur`!='$idUser'"; //vérifie si l'artiste rentré existe avec un autre idUser
 
 						$stmt = $connexion-> prepare($idArtiste);
 						$stmt -> execute();
 						$temp = $stmt-> fetch();
 
-						// $stmt1 = $connexion-> prepare($idArtistePlagiat);
-						// $stmt -> execute();
-						// $temp1 = $stmt-> fetch();
-						// var_dump($temp);
-						// echo('<br> Id artiste = ' . $idArtiste . "<br/>");
-						if ($temp !== false) {
-						//si l'artiste existe, il ne se passe rien
-							$idArtiste = $temp->idArtiste;
+						$stmt1 = $connexion-> prepare($idArtistePlagiat);
+						$stmt -> execute();
+						$temp1 = $stmt1-> fetch();
 
-						// } else if($temp1 != false) {
+						// echo('<br> Id artiste = ' . $idArtiste . "<br/>");
+						if ($temp != false) {
+						//si l'artiste existe, il ne se passe rien
+						$idArtiste = $temp->idArtiste;
+
+						// } else if($temp1 != false ) {
 						// 	echo "Please choose another artist name, this one is already used";
 						// 	var_dump($temp1);
-						} else {
-							//si il n'existe pas, on créer l'artiste
+						// 	echo "</br> passage 2";
 
+
+						} else  {
+						//si il n'existe pas, on créer l'artiste
 
 							$createArtist = "INSERT INTO artiste (nomArtiste, idUtilisateur) VALUES (\"" .  $nomArtiste .  "\",  " . $idUser . ")";
 							$stmt = $connexion-> prepare($createArtist);
@@ -115,7 +117,7 @@
 							 }
 						}
 
-						//echo $nameLink;
+						// echo $name;
 						/* requette permettant d'insérer les valeurs écrites et recup dans la tab chanson */
 						// $cheminUpload = "lecteur/music/" . $name;
 						// echo "Chemin d'upload<br/>";
