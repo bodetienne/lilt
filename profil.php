@@ -39,7 +39,7 @@ include("header_lilt.php")
           <img src="Images/Icon/settings.png" alt="settings" id="parametres">
           <?php include('modification_profil.php')?>
         </div>
-        <span class="avatar"><img src="images/avatar.jpg" alt="" /></span>
+        <span class="avatar"><img src="<?php echo $donnees['avatar']; ?>" alt="" /></span>
         <h1>			<?php	echo $donnees['nom_utilisateur'];?></h1>
         <ul class="icons">
           <li><a href="<?php	echo $donnees['twitter'];?>" class="icon style2 fa-twitter"><span class="label">Twitter</span></a></li>

@@ -140,15 +140,15 @@ while ($donnees = $nom ->fetch()){
 
 
 if (isset($_FILES['avatar'])) {
-	echo $_FILES['avatar'];
-		 print_r($_FILES);
+	//echo $_FILES['avatar'];
+		 //print_r($_FILES);
 		echo "Get file";
 	 if ($_FILES['avatar']['error'] == UPLOAD_ERR_OK) {
 			 $tmp_name = $_FILES["avatar"]["tmp_name"];
 			 // basename() peut empêcher les attaques "filesystem traversal";
 			 // une autre validation/nettoyage du nom de fichier peux être appropriée
 			 $name = basename($_FILES["avatar"]["name"]);
-			 move_uploaded_file($tmp_name, "Images/image-profil/$name");
+			 move_uploaded_file($tmp_name, "Images/image-profil/" . $name);
 			 $nameLink= "Images/image-profil/" . $name;
 	 } else {
 
@@ -162,10 +162,10 @@ if (isset($_FILES['avatar'])) {
 
 			$req = $bdd->prepare('UPDATE utilisateur SET avatar = :avatar WHERE idUtilisateur=' . $_SESSION['id'].'.');
 
-			if(!empty($_POST['avatar'])){
+			if(!empty($_FILES['avatar'])){
 				$query = 'UPDATE utilisateur SET avatar = "' . $nameLink . '" WHERE idUtilisateur="' . $_SESSION['id'] .'"';
 				$req = $bdd->prepare($query);
-	//echo('Query = ' . $query . "<br>");
+				echo('</br>Query = ' . $query . "<br>");
 				if (!$req->execute()) {
 					echo 'Erreur';
 				}
@@ -175,7 +175,7 @@ if (isset($_FILES['avatar'])) {
 }
 
 
-						//header("location: profil.php");
+						header("location: profil.php");
 		        //echo 'Modifi&eacute;';
 
 			$nom->closeCursor();
