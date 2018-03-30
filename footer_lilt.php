@@ -32,7 +32,7 @@
 	                    <h5>About us</h5>
 	                    <ul>
 	                        <li><a href="#">Contact us</a></li>
-	                        <li><a href="mentions-légales.html">Legal Notice</a></li>
+	                        <li><a href="mentions-légales.php">Legal Notice</a></li>
 	                        <li><a href="confidentialite.php">Privacy Policy</a></li>
 	                    </ul>
 	                </div>
