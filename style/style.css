@@ -358,3 +358,69 @@ PLAYLIST (LECTEUR)
 .select-tags{
 	color: #4b4b4b;
 }
+
+
+/*-----------------------------------------------------------
+Mentions légales
+-----------------------------------------------------------*/
+
+.mentions-container {
+	display: flex;
+	background: #68b8a5;
+}
+
+.mentions-container .mentions-inner {
+	width: 70%;
+	background: white;
+	padding: 3rem; 3rem;
+	margin: 3rem auto;
+	border-radius: 10px;
+}
+
+.mentions-container .mentions-inner h2 {
+	text-align: center;
+	margin-bottom: 3rem;
+	color: #e40750;
+	font-size: 3rem;
+}
+
+.mentions-container .mentions-inner p {
+	text-align: justify;
+}
+
+.mentions-container .mentions-inner a {
+	color: black;
+}
+
+
+/*-----------------------------------------------------------
+Politique de Confidentialité
+-----------------------------------------------------------*/
+
+.confid-container {
+	display: flex;
+	background: #68b8a5;
+}
+
+.confid-container .confid-inner{
+	width: 70%;
+	background: white;
+	padding: 3rem; 3rem;
+	margin: 3rem auto;
+	border-radius: 10px;
+}
+
+.confid-container .confid-inner h2 {
+	text-align: center;
+	margin-bottom: 3rem;
+	color: #e40750;
+	font-size: 3rem;
+}
+
+.confid-container .confid-inner p {
+	text-align: justify;
+}
+
+.confid-container .confid-inner a {
+	color: black;
+}
