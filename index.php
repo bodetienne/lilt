@@ -1,3 +1,5 @@
+
+
 <html>
 <head>
 
@@ -18,11 +20,11 @@
   <link rel="stylesheet" href="style/gallery-grid.css">
 	<link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
 
-
 </head>
 
 <body>
-  <?php include("header_lilt.php") ?>
+  <?php include("header_lilt.php")?>
+
 
 <!-- VIDEO & SEARCHBAR  -->
   <div class="homepage-hero-module">
@@ -31,8 +33,10 @@
 					<h1>Welcome on Lilt !</h1>
 				</div>
         <div class="searchbar">
-          <input type="text" name="search" id="search-bar">
-          <button class="button"><span> Search ! </span></button>
+					<form class="searchbar" action="search.php" method="post">
+          	<input type="text" name="search" id="search-bar" required>
+          	<input type="submit" class="button" value="Search !"></input>
+					</form>
         </div>
           <div class="filter"></div>
           <video autoplay loop class="fillWidth">
