@@ -1,6 +1,8 @@
 <?php
 		// Connexion à la base de données
 session_start();
+
+require 'PDO/includes/pdo.php';
 $connexionStr=new PDO("mysql:host=localhost;dbname=lilt;charset=utf8",'root','');
 $nom = $connexionStr->query("SELECT * FROM utilisateur WHERE idUtilisateur=" . $_SESSION['id']);
 while ($donnees = $nom ->fetch()){
@@ -135,6 +137,8 @@ while ($donnees = $nom ->fetch()){
 
 
 // print_r($_FILES);
+
+
 if (isset($_FILES['avatar'])) {
 	echo $_FILES['avatar'];
 		 print_r($_FILES);
@@ -159,7 +163,7 @@ if (isset($_FILES['avatar'])) {
 			$req = $bdd->prepare('UPDATE utilisateur SET avatar = :avatar WHERE idUtilisateur=' . $_SESSION['id'].'.');
 
 			if(!empty($_POST['avatar'])){
-				$query = 'UPDATE utilisateur SET avatar = "' . $_POST['avatar'] . '" WHERE idUtilisateur="' . $_SESSION['id'] .'"';
+				$query = 'UPDATE utilisateur SET avatar = "' . $nameLink . '" WHERE idUtilisateur="' . $_SESSION['id'] .'"';
 				$req = $bdd->prepare($query);
 	//echo('Query = ' . $query . "<br>");
 				if (!$req->execute()) {
