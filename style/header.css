@@ -289,14 +289,17 @@ margin-top: 1rem;
 }
 
 
-
+.searchbarHeader{
+  padding-top: 2rem;
+}
 .searchbarHeaderForm {
-  width: 60rem;
+  width: 46rem;
+  display: inline-flex;
 }
 
 .searchbarHeaderForm #search-bar{
     width: 30rem;
-    margin-top: 4%;
+    margin-top: 1%;
     margin-left: 20%;
     height: 2.9rem;
 }

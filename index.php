@@ -479,7 +479,7 @@
   <div class="contenu_contest">
     <h1> #Contest </h1>
     <p> Show us your talent thanks to the #Contest !</p>
-    <button class="button_contest">For more informations ></button>
+    <a href="infoContest.php"><button class="button_contest">For more informations ></button></a>
   </div>
 </div>
 

@@ -51,7 +51,7 @@ while ($donnees = $nom ->fetch()){
 			if(!empty($_POST['mdp_utilisateur'])){
 				$query = 'UPDATE utilisateur SET mdp_utilisateur = "' . $hashpass . '" WHERE idUtilisateur="' . $_SESSION['id'] .'"';
 				$req = $bdd->prepare($query);
-	echo('Query = ' . $query . "<br>");
+				echo('Query = ' . $query . "<br>");
 				if (!$req->execute()) {
 					echo 'Erreur';
 				}
@@ -85,7 +85,7 @@ while ($donnees = $nom ->fetch()){
 			if(!empty($_POST['description'])){
 				$query = 'UPDATE utilisateur SET description = "' . $_POST['description']. '" WHERE idUtilisateur="' . $_SESSION['id'] .'"';
 				$req = $bdd->prepare($query);
-	echo('Query = ' . $query . "<br>");
+				echo('Query = ' . $query . "<br>");
 				if (!$req->execute()) {
 					echo 'Erreur';
 				}
@@ -98,7 +98,7 @@ while ($donnees = $nom ->fetch()){
 			if(!empty($_POST['facebook'])){
 				$query = 'UPDATE utilisateur SET facebook = "' . $_POST['facebook'] . '" WHERE idUtilisateur="' . $_SESSION['id'] .'"';
 				$req = $bdd->prepare($query);
-	echo('Query = ' . $query . "<br>");
+				echo('Query = ' . $query . "<br>");
 				if (!$req->execute()) {
 					echo 'Erreur';
 				}
@@ -117,7 +117,7 @@ while ($donnees = $nom ->fetch()){
 							}
 						}
 
-						
+
 
 			$req = $bdd->prepare('UPDATE utilisateur SET twitter = :twitter WHERE idUtilisateur=' . $_SESSION['id'].'.');
 
@@ -131,12 +131,45 @@ while ($donnees = $nom ->fetch()){
 			}
 
 
+//  On met dans un fichier image profil //
+
+
+var_dump($_FILES);
+if (isset($_FILES['avatar'])) {
+		echo "Get file";
+	 if ($_FILES['avatar']['error'] == UPLOAD_ERR_OK) {
+			 $tmp_name = $_FILES["avatar"]["tmp_name"];
+			 // basename() peut empêcher les attaques "filesystem traversal";
+			 // une autre validation/nettoyage du nom de fichier peux être appropriée
+			 $name = basename($_FILES["avatar"]["name"]);
+			 move_uploaded_file($tmp_name, "Images/image-profil/" . $name);
+			 $nameLink= "Images/image-profil/" . $name;
+	 } else {
+
+	 }
+}
+
+
+// -------------------------------//
+
+			var_dump($_FILES);
+
+			$req = $bdd->prepare('UPDATE utilisateur SET avatar = :avatar WHERE idUtilisateur=' . $_SESSION['id'].'.');
+
+			if(!empty($_POST['avatar'])){
+				$query = 'UPDATE utilisateur SET avatar = "' . $nameLink . '" WHERE idUtilisateur="' . $_SESSION['id'] .'"';
+				$req = $bdd->prepare($query);
+	//echo('Query = ' . $query . "<br>");
+				if (!$req->execute()) {
+					echo 'Erreur';
+				}
+			}
+
 
 }
 
 
-
-						header("location: profil.php");
+						//header("location: profil.php");
 		        //echo 'Modifi&eacute;';
 
 			$nom->closeCursor();
