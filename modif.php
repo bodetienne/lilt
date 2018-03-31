@@ -1,6 +1,8 @@
 <?php
 		// Connexion à la base de données
 session_start();
+
+require 'PDO/includes/pdo.php';
 $connexionStr=new PDO("mysql:host=localhost;dbname=lilt;charset=utf8",'root','');
 $nom = $connexionStr->query("SELECT * FROM utilisateur WHERE idUtilisateur=" . $_SESSION['id']);
 while ($donnees = $nom ->fetch()){
@@ -133,9 +135,12 @@ while ($donnees = $nom ->fetch()){
 
 //  On met dans un fichier image profil //
 
+// print_r($_FILES);
 
-var_dump($_FILES);
+
 if (isset($_FILES['avatar'])) {
+	//echo $_FILES['avatar'];
+		 //print_r($_FILES);
 		echo "Get file";
 	 if ($_FILES['avatar']['error'] == UPLOAD_ERR_OK) {
 			 $tmp_name = $_FILES["avatar"]["tmp_name"];
@@ -146,13 +151,14 @@ if (isset($_FILES['avatar'])) {
 			 $nameLink= "Images/image-profil/" . $name;
 	 } else {
 
-	 }
+
 }
+
 
 
 // -------------------------------//
 
-			var_dump($_FILES);
+			// var_dump($_FILES);
 
 			$req = $bdd->prepare('UPDATE utilisateur SET avatar = :avatar WHERE idUtilisateur=' . $_SESSION['id'].'.');
 
@@ -160,11 +166,11 @@ if (isset($_FILES['avatar'])) {
 				$query = 'UPDATE utilisateur SET avatar = "' . $nameLink . '" WHERE idUtilisateur="' . $_SESSION['id'] .'"';
 				$req = $bdd->prepare($query);
 	//echo('Query = ' . $query . "<br>");
-				if (!$req->execute()) {
-					echo 'Erreur';
-				}
-			}
 
+
+
+
+}
 
 }
 
