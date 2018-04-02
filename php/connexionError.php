@@ -15,8 +15,10 @@
 ---------------------------------------->
 
 	<div class="header_connexion">
-		<img src="../Images/Icon/logo-Lilt.png"alt='logoLilt'>
-		<p> Listen, Intone, Like and Tune.</p>
+		<a href="../index.php">
+			<img src="../Images/Icon/logo-Lilt.png"alt='logoLilt'>
+		</a>
+			<p> Listen, Intone, Like and Tune.</p>
 	</div>
 
 
