@@ -17,6 +17,8 @@
 	top:20%;
 }
 
+
+
 #header h1{
 	margin-bottom: 30px;
 	text-transform: uppercase;
@@ -350,12 +352,14 @@
 			padding: 0.5em;
 			border: solid 1px rgba(255, 255, 255, 0.25);
 			background-color: rgba(255, 255, 255, 0.075);
+			min-height: 16rem;
 		}
 
 			#header .avatar img {
 				border-radius: 100%;
 				display: block;
 				width: 10em;
+				min-height: 16rem;
 			}
 
 		@media screen and (max-width: 1280px) {
