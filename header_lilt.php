@@ -21,11 +21,11 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <div class="button_box2">
-                      <form class="form-wrapper-2 cf">
-                      <input type="text" placeholder="Search everything you want " required>
-                      <button type="submit"> Search </button>
-                      </form>
+                    <div class="searchbarHeader">
+            					<form class="searchbarHeaderForm" action="search.php" method="post">
+                      	<input type="text" name="search" id="search-bar" required>
+                      	<input type="submit" class="button2" value="Search !"></input>
+            					</form>
                     </div>
                 </div>
 

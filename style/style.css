@@ -53,6 +53,7 @@ form .container .vp-1 {
 	width: 100%;
 	flex-direction: column;
 	height: 100vh;
+	background-size: 100%;
 }
 
 form .container .vp-1 h3 {
@@ -88,6 +89,8 @@ form .container .vp-2 {
 	background-image: url('../Images/musician.jpg');
 	margin: auto;
 	background-attachment: fixed;
+	background-size: 100%;
+
 }
 
 form .vp-2 .song {
@@ -125,12 +128,18 @@ form .vp-2 .song {
 
 .container .vp-3 {
 	background-image: url('../Images/people-2606347_1280.png');
+	background-size: 100%;
 }
 
 .container .vp-3 .inner-vp-3 {
 	color: white;
 	font-size: 2rem;
 	margin: auto;
+	display: flex;
+	flex-direction: column;
+}
+
+.vp-3 .inner-vp-3 .menu-tags {
 	display: flex;
 }
 
@@ -144,6 +153,19 @@ form .vp-2 .song {
 	margin-left: 6rem;
 	font-size: 1.5rem;
 	padding: 0.2rem 1.5rem;
+}
+
+.inner-vp-3 .check-contest {
+	margin: auto;
+	margin-top: 5rem;
+}
+
+.inner-vp-3 .check-contest input {
+	padding: 2rem;
+}
+
+.inner-vp-3 .check-contest span {
+	color: #e40750;
 }
 
 .container .vp-3 input {
@@ -165,6 +187,7 @@ form .vp-2 .song {
 	background: #31a29f;
 	color: black;
 }
+
 
 /*-----------------------------------------------------------
 CLICKED
@@ -352,4 +375,109 @@ PLAYLIST (LECTEUR)
 
 .select-tags{
 	color: #4b4b4b;
+}
+
+
+/*-----------------------------------------------------------
+Mentions légales
+-----------------------------------------------------------*/
+
+.mentions-container {
+	display: flex;
+	background: #68b8a5;
+}
+
+.mentions-container .mentions-inner {
+	width: 70%;
+	background: white;
+	padding: 3rem; 3rem;
+	margin: 3rem auto;
+	border-radius: 10px;
+}
+
+.mentions-container .mentions-inner h2 {
+	text-align: center;
+	margin-bottom: 3rem;
+	color: #e40750;
+	font-size: 3rem;
+}
+
+.mentions-container .mentions-inner p {
+	text-align: justify;
+}
+
+.mentions-container .mentions-inner a {
+	color: black;
+}
+
+
+/*-----------------------------------------------------------
+Politique de Confidentialité
+-----------------------------------------------------------*/
+
+.confid-container {
+	display: flex;
+	background: #68b8a5;
+}
+
+.confid-container .confid-inner{
+	width: 70%;
+	background: white;
+	padding: 3rem; 3rem;
+	margin: 3rem auto;
+	border-radius: 10px;
+}
+
+.confid-container .confid-inner h2 {
+	text-align: center;
+	margin-bottom: 3rem;
+	color: #e40750;
+	font-size: 3rem;
+}
+
+.confid-container .confid-inner p {
+	text-align: justify;
+}
+
+.confid-container .confid-inner a {
+	color: black;
+}
+
+/*-----------------------------------------------------------
+#Contest (informations)
+-----------------------------------------------------------*/
+.contest-container .contest-inner {
+	display: flex;
+	flex-direction: column;
+}
+
+.contest-container .contest-inner .big-title {
+	margin: 2rem auto;
+}
+
+.contest-container .contest-inner .explications{
+	margin: 2rem;
+	text-align: justify;
+}
+
+.contest-container .contest-inner .title {
+	margin-left: 2rem;
+	margin-bottom: 3rem;
+}
+
+.contest-inner .explications p {
+	font-size: 1.6rem;
+}
+
+.contest-inner .upload-a-song {
+	background-image: url('../Images/bg.jpg');
+	background-size: 100%;
+}
+
+.contest-inner .upload-a-song:hover {
+	text-decoration: none;
+}
+
+.contest-inner .upload-a-song h3 {
+	color: #e40750;
 }

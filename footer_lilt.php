@@ -31,9 +31,9 @@
 	                <div class="col-sm-2">
 	                    <h5>About us</h5>
 	                    <ul>
-	                        <li><a href="#">Company Information</a></li>
 	                        <li><a href="#">Contact us</a></li>
-	                        <li><a href="#">Reviews</a></li>
+	                        <li><a href="mentions-légales.php">Legal Notice</a></li>
+	                        <li><a href="confidentialite.php">Privacy Policy</a></li>
 	                    </ul>
 	                </div>
 	                <div class="col-sm-2">
@@ -46,9 +46,9 @@
 	                </div>
 	                <div class="col-sm-3">
 	                    <div class="social-networks">
-	                        <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-	                        <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
-	                        <a href="#" class="google"><i class="fa fa-google-plus"></i></a>
+	                        <a href="https://twitter.com/lilt_musique" class="twitter"  target="_blank"><i class="fa fa-twitter"></i></a>
+	                        <a href="https://www.facebook.com/Lilt.musique/" class="facebook" target="_blank"><i class="fa fa-facebook"></i></a>
+	                        <a href="#" class="google" target="_blank"><i class="fa fa-google-plus"></i></a>
 	                    </div>
 	                    <button type="button" class="btn btn-default">Contact us</button>
 	                </div>

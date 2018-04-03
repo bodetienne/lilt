@@ -1,5 +1,3 @@
-
-
 <html>
 <head>
 
@@ -33,8 +31,10 @@
 					<h1>Welcome on Lilt !</h1>
 				</div>
         <div class="searchbar">
-          <input type="text" name="search" id="search-bar">
-          <button class="button"><span> Search ! </span></button>
+					<form class="searchbar" action="search.php" method="post">
+          	<input type="text" name="search" id="search-bar" required>
+          	<input type="submit" class="button" value="Search !"></input>
+					</form>
         </div>
           <div class="filter"></div>
           <video autoplay loop class="fillWidth">
@@ -465,6 +465,13 @@
   			</div>
   		</a>
 
+<!-- UPLOAD A SONG -->
+
+<a href="upload-click.php">
+	<div class="upload-a-song">
+		<h3> Upload your song here </h3>
+	</div>
+</a>
 
 <!-- #CONTEST -->
 
@@ -472,7 +479,7 @@
   <div class="contenu_contest">
     <h1> #Contest </h1>
     <p> Show us your talent thanks to the #Contest !</p>
-    <button class="button_contest">For more informations ></button>
+    <a href="infoContest.php"><button class="button_contest">For more informations ></button></a>
   </div>
 </div>
 

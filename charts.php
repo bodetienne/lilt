@@ -28,10 +28,11 @@
 
     <p class="page-description text-center">Let's sing in the shower ! </p>
 
-
 		<div class="searchbar">
-			<input type="text" name="search" id="search-bar">
-			<button class="button"><span> Search ! </span></button>
+			<form class="searchbar" action="search.php" method="post">
+				<input type="text" name="search" id="search-bar" required>
+				<input type="submit" class="button" value="Search !"></input>
+			</form>
 		</div>
 
 

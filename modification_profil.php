@@ -29,7 +29,7 @@
     </div>
     <div class="modal-body">
 		<h3>Personal informations</h3>
-     		<form method="post" action="modif.php" >
+     		<form method="post" action="modif.php"  enctype="multipart/form-data">
 				<label for="nom_utilisateur">Username</label>
 				<input type="text" name="nom_utilisateur" id="nom_utilisateur" value="<?php $pseudo ?>" placeholder="<?php echo $donnees['nom_utilisateur']?>" maxlength="32">
 				</br>
@@ -69,8 +69,8 @@
 
 			</div>
 
-				<label for="icone"> Your profile picture (JPG) | max 15 Ko </label>
-				<input type="file" name="avatar" id="avatar" accept="image/jpg" >
+				<label for="file"> Your profile picture (JPG) | max 15 Ko </label>
+				<input type="file" name="avatar" id="avatar" accept="image/JPG" >
 			</br>
     </div>
     <div class="modal-footer">

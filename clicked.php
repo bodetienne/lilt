@@ -52,28 +52,30 @@
 						/* requette permettant d'insérer les infos dans la tab artiste*/
 						$idUser = $_SESSION['id'];
 						$nomArtiste = $_POST['artist'];
-						$idArtiste = "SELECT `idArtiste` FROM `artiste` WHERE `nomArtiste`=\"$nomArtiste\" AND `idUtilisateur`='$idUser'"; //vérifie si l'artiste rentré existe
-						$idArtistePlagiat = "SELECT `idArtiste` FROM `artiste` WHERE `nomArtiste`=\"$nomArtiste\" AND `idUtilisateur`!='$idUser'"; //vérifie si l'artiste rentré existe
+						$idArtiste  = "SELECT `idArtiste` FROM `artiste` WHERE `nomArtiste`=\"$nomArtiste\" AND `idUtilisateur`='$idUser'"; //vérifie si l'artiste rentré existe
+						$idArtistePlagiat = "SELECT `idArtiste` FROM `artiste` WHERE `nomArtiste`=\"$nomArtiste\" AND `idUtilisateur`!='$idUser'"; //vérifie si l'artiste rentré existe avec un autre idUser
 
 						$stmt = $connexion-> prepare($idArtiste);
 						$stmt -> execute();
 						$temp = $stmt-> fetch();
 
-						// $stmt1 = $connexion-> prepare($idArtistePlagiat);
-						// $stmt -> execute();
-						// $temp1 = $stmt-> fetch();
-						// var_dump($temp);
-						// echo('<br> Id artiste = ' . $idArtiste . "<br/>");
-						if ($temp !== false) {
-						//si l'artiste existe, il ne se passe rien
-							$idArtiste = $temp->idArtiste;
+						$stmt1 = $connexion-> prepare($idArtistePlagiat);
+						$stmt -> execute();
+						$temp1 = $stmt1-> fetch();
 
-						// } else if($temp1 != false) {
+						// echo('<br> Id artiste = ' . $idArtiste . "<br/>");
+						if ($temp != false) {
+						//si l'artiste existe, il ne se passe rien
+						$idArtiste = $temp->idArtiste;
+
+						// } else if($temp1 != false ) {
 						// 	echo "Please choose another artist name, this one is already used";
 						// 	var_dump($temp1);
-						} else {
-							//si il n'existe pas, on créer l'artiste
+						// 	echo "</br> passage 2";
 
+
+						} else  {
+						//si il n'existe pas, on créer l'artiste
 
 							$createArtist = "INSERT INTO artiste (nomArtiste, idUtilisateur) VALUES (\"" .  $nomArtiste .  "\",  " . $idUser . ")";
 							$stmt = $connexion-> prepare($createArtist);
@@ -114,15 +116,22 @@
 
 							 }
 						}
-						var_dump($_FILES);
+						// var_dump($_FILES);
 
+						// echo $name;
 
-						echo $name;
+						/* requette permettant de vérifier si la musique participe au #Contest */
+						// if ($_POST['contest'] != 0){
+						// 	$contest = $_POST['contest'];
+						// } else {
+						// 	$contest = " ";
+						// }
+
 						/* requette permettant d'insérer les valeurs écrites et recup dans la tab chanson */
 						// $cheminUpload = "lecteur/music/" . $name;
 						// echo "Chemin d'upload<br/>";
 						// echo $cheminUpload;
-						$insertInto = "INSERT INTO chanson (nomChanson, tag, fichierMp3, idArtiste)
+						$insertInto = "INSERT INTO chanson (nomChanson, tag, fichierMp3, idArtiste,)
 						VALUES (\"" .  $_POST['name'] .  "\", \"" . $_POST['tag'] ."\" , \"" . $nameLink ."\" , '" . $idArtiste . "')";
 						 echo $insertInto;
 						// echo "InserInto query<br/>";
@@ -152,3 +161,6 @@
 		include('footer_lilt.php');
 
 		?>
+	</body>
+
+</html>

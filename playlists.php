@@ -28,10 +28,12 @@
 
     <p class="page-description text-center"> Your favourite playlists just right there ! </p>
 
-    <div class="searchbar">
-      <input type="text" name="search" id="search-bar">
-      <button class="button"><span> Search ! </span></button>
-    </div>
+		<div class="searchbar">
+			<form class="searchbar" action="search.php" method="post">
+				<input type="text" name="search" id="search-bar" required>
+				<input type="submit" class="button" value="Search !"></input>
+			</form>
+		</div>
 
     <div class="tz-gallery">
 
@@ -47,7 +49,7 @@
                 <a class="lightbox" href="lecteur.php">
 									<h3>Future hits</h3>
                   <img src="Images/rockMan.jpeg" alt="Park">
-								</a>	
+								</a>
             </div>
 
             <div class="col-sm-6 col-md-4">

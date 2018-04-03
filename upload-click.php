@@ -41,9 +41,9 @@
 
 					<div class="vp vp-3">
 						<div class="inner-vp-3">
-							<p> What kind of music make you ? </p>
-							<div class="menu-tags">
 
+							<div class="menu-tags">
+										<p> What kind of music make you ? </p>
 										<select name="tag" >
 											<option disabled selected> Select a tag </option>
 											<option value="Pop">Pop</option>
@@ -52,10 +52,13 @@
 										  <option value="Rock">Rock</option>
 										 	<option value="Soul">Soul </option>
 										  <option value="No tag">No tag </option>
+										  <option value="Contest"><strong>#Contest</strong></option>
 										</select>
-
 							</div>
-
+							<!-- <div class="check-contest">
+								<input type="checkbox" id="check-contest" name="contest" value="contest">
+    						<label for="check-contest">Add this song to the <span> #</span>Contest</label>
+							</div> -->
 						</div>
 						<input type="submit" id="submit">
 					</div>
