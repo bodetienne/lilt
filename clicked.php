@@ -9,9 +9,11 @@
 	<body>
 
 		<?php
+ 		include("sql-Identification.php");
+
 		session_start();
 		include("header_lilt.php");
-		$connexionStr=new PDO("mysql:host=localhost;dbname=lilt;charset=utf8",'root','');
+		$connexionStr=new PDO("mysql:host=localhost;dbname=lilt;charset=utf8", $name, $password);
 		if (!isset($_SESSION['id'])){
 			echo "You have to be connected to import a song";
 		} else {

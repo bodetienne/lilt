@@ -15,13 +15,14 @@
 
 
 	<?php include('header_lilt.php');
+	include('sql-Identification.php');
 
+	session_start();
 	if (!isset($_SESSION['id'])){
 		echo "You have to be connected to listen music";
 	} else {
 		$idUser = $_SESSION['id'];
 
-	session_start();
 		if (isset($_POST['tag'])){
 			$tag = $_POST["tag"];
 		} else {
@@ -74,6 +75,98 @@
 
 		<?php require 'PDO/includes/pdo.php';
 
+		/* Fonctions Teo */
+
+		/**
+		* By Teo
+		* Obtient le nombre de like d'une chanson
+		*
+		* @param    int  $song la chanson demandée
+		* @return      int le nombre de likes
+		*
+		*/
+		function getNumberLikes($song, $connexion){
+			$query = "SELECT jaime FROM chanson WHERE idChanson = " . $song;
+			$stmt = $connexion->prepare($query);
+			$stmt -> execute();
+
+			$likes = $stmt->fetch();
+			$likes = explode(",", $likes->jaime);
+			return(sizeof($likes));
+		}
+
+		/**
+		* By Teo
+		* Obtient un tableau d'id utilisateurs
+		*
+		* @param    int  $song la chanson demandée
+		* @return      array le nombre de likes
+		*
+		*/
+		function getLikesIDs($song){
+
+		}
+
+		/**
+		* By Teo
+		* Check si l'utilisateur à déjà liké
+		*
+		* @param    int  $song la chanson demandée
+		*		 	int  $user l'id de l'utilisateur courant
+		*		 	PDOConnection $connection la connection PDO à la BDD
+		* @return      boolean true si déjà liké
+		*
+		*/
+		function userLiked($song, $user, $connection){
+			$query = "SELECT jaime FROM chanson WHERE idChanson = " . $song;
+
+			//echo('<br>// Exe userLiked with params song = (' . $song . ') || user = (' . $user . ') || query = ' . $query .' //<br>');
+
+			$stmt = $connection->prepare($query);
+			$stmt -> execute();
+
+
+			$likes = $stmt->fetch();
+			//var_dump($likes);
+			$likes = explode(",", $likes->jaime);
+			//echo('<br>Result query : <br>');
+			//echo('<br><strong>L"user ' . $user . ' / ');
+			//var_dump($likes);
+			//echo('</strong><br/>');
+
+			$output = false;
+
+			foreach ($likes as $key => $element){
+				if($element == $user){
+					$output = true;
+				}
+			}
+
+			return($output);
+		}
+
+
+
+		/**
+		* Non fonctionnel
+		* By Teo
+		* Execute une query SQL et renvoi 1 seule résultat
+		*
+		* @param    query  $query la query SQL à executer
+		*			PDOConnection $connection la connection PDO à la BDD
+		* @return      	boolean false si aucun résultat
+		*				strClass ou Array si résultat
+		*
+		*/
+		function exeSQL($query, $connection){
+			echo('<br>// Exe exeSQL with params query = (' . $query . ') || connection = (');
+			var_dump($connection); echo(') //<br>');
+
+			$stmt = $connection->prepare($query);
+			$stmt -> execute();
+			return($stmt->fetch);
+		}
+
 	echo'
 	<div class="grand-container">
 		<div class="title-container">
@@ -115,14 +208,21 @@
 								$temp = $stmt -> fetch();
 								array_push($lesartistes, $temp);
 
-								/*echo('<br>query artiste : ' . $query_artiste);
-								echo('<br>"les artiste" : ');
-								var_dump($lesartistes);
-								echo('<br>"les artiste" index ' . $i . ' : ');
-								var_dump($lesartistes[$i]);
-								echo('<br>La chanson courante : ' . $leschansons[$i]->idChanson);
-								echo('<br>Connexion PDO : ');
-								var_dump($connexion);*/
+								// echo('<br>query artiste : ' . $query_artiste);
+								// echo('<br>"les artiste" : ');
+								// var_dump($lesartistes);
+								// echo('<br>"les artiste" index ' . $i . ' : ');
+								// var_dump($lesartistes[$i]);
+								// echo('<br>La chanson courante : ' . $leschansons[$i]->idChanson);
+								// echo('<br>Connexion PDO : ');
+								// var_dump($connexion);
+
+
+
+
+
+
+
 
 								//Check song like
 								$song_is_liked = userLiked($leschansons[$i]->idChanson, $_SESSION['id'], $connexion);
@@ -147,7 +247,7 @@
 												</div>
 												" . $html_song_like . "
 												<span id=\"song_number" . $i . "\" style=\" display: none;\">" . $leschansons[$i]->idChanson . "</span></p>
-												<p class=\"number\"><span>" . $nbrlikes . "</span></p>
+												 <p class=\"number\"></p>
 
 												<!-- Permet d\'ouvrir le menu-->
 										</div>";
@@ -172,103 +272,6 @@
 
 	</div>';
 
-
-
-
-
-
-
-	/* Fonctions Teo */
-
-	/**
-	* By Teo
-	* Obtient le nombre de like d'une chanson
-	*
-	* @param    int  $song la chanson demandée
-	* @return      int le nombre de likes
-	*
-	*/
-	function getNumberLikes($song, $connexion){
-		$query = "SELECT jaime FROM chanson WHERE idChanson = " . $song;
-		$stmt = $connexion->prepare($query);
-		$stmt -> execute();
-
-		$likes = $stmt->fetch();
-		$likes = explode(",", $likes->jaime);
-		return(sizeof($likes));
-	}
-
-	/**
-	* By Teo
-	* Obtient un tableau d'id utilisateurs
-	*
-	* @param    int  $song la chanson demandée
-	* @return      array le nombre de likes
-	*
-	*/
-	function getLikesIDs($song){
-
-	}
-
-	/**
-	* By Teo
-	* Check si l'utilisateur à déjà liké
-	*
-	* @param    int  $song la chanson demandée
-			 	int  $user l'id de l'utilisateur courant
-			 	PDOConnection $connection la connection PDO à la BDD
-	* @return      boolean true si déjà liké
-	*
-	*/
-	function userLiked($song, $user, $connection){
-		$query = "SELECT jaime FROM chanson WHERE idChanson = " . $song;
-
-		//echo('<br>// Exe userLiked with params song = (' . $song . ') || user = (' . $user . ') || query = ' . $query .' //<br>');
-
-		$stmt = $connection->prepare($query);
-		$stmt -> execute();
-
-
-		$likes = $stmt->fetch();
-		//var_dump($likes);
-		$likes = explode(",", $likes->jaime);
-		//echo('<br>Result query : <br>');
-		//echo('<br><strong>L"user ' . $user . ' / ');
-		//var_dump($likes);
-		//echo('</strong><br/>');
-
-		$output = false;
-
-		foreach ($likes as $key => $element){
-			if($element == $user){
-				$output = true;
-			}
-		}
-
-		return($output);
-	}
-
-
-
-	/**
-	* Non fonctionnel
-	* By Teo
-	* Execute une query SQL et renvoi 1 seule résultat
-	*
-	* @param    query  $query la query SQL à executer
-				PDOConnection $connection la connection PDO à la BDD
-	* @return      	boolean false si aucun résultat
-					strClass ou Array si résultat
-	*
-	*/
-	function exeSQL($query, $connection){
-		echo('<br>// Exe exeSQL with params query = (' . $query . ') || connection = (');
-		var_dump($connection); echo(') //<br>');
-
-		$stmt = $connection->prepare($query);
-		$stmt -> execute();
-		return($stmt->fetch);
-	}
 	?>
 
 

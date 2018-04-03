@@ -23,7 +23,8 @@
 <body>
 <?php
 session_start();
-$connexionStr=new PDO("mysql:host=localhost;dbname=lilt;charset=utf8",'root','');
+include('sql-Identification.php');
+$connexionStr=new PDO("mysql:host=localhost;dbname=lilt;charset=utf8",$name,$paswword);
 $nom = $connexionStr->query("SELECT * FROM utilisateur WHERE idUtilisateur=" . $_SESSION['id']);
 
 $donnees = $nom->fetch();

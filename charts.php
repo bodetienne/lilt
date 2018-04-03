@@ -18,6 +18,7 @@
 
 <body>
 <?php include("header_lilt.php");?>
+<?php include("sql-Identification.php");?>
 
 
 
@@ -42,37 +43,37 @@
 
             <div class="col-sm-12 col-md-4">
                 <a class="lightbox" href="#">
-									<h3>Hits of the moment</h3>
+									<h3>Rap</h3>
                   <img src="Images/tatou.jpeg" alt="Bridge">
                 </a>
             </div>
             <div class="col-sm-6 col-md-4">
                 <a class="lightbox" href="#">
-									<h3>Future hits</h3>
+									<h3>Rock</h3>
                   <img src="Images/rockMan.jpeg" alt="Park">
                 </a>
             </div>
             <div class="col-sm-6 col-md-4">
                 <a class="lightbox" href="#">
-									<h3>Electro</h3>
+									<h3>Pop</h3>
                   <img src="Images/dj.jpg" alt="Tunnel">
                 </a>
             </div>
             <div class="col-sm-12 col-md-8">
                 <a class="lightbox" href="#">
-									<h3>Top USA</h3>
+									<h3>Reggae</h3>
                   <img src="Images/studio.jpg" alt="Traffic">
                 </a>
             </div>
             <div class="col-sm-6 col-md-4">
                 <a class="lightbox" href="#">
-									<h3>Pop </h3>
+									<h3>Pop</h3>
                   <img src="Images/cassettes.jpeg" alt="Coast">
                 </a>
             </div>
             <div class="col-sm-6 col-md-4">
                 <a class="lightbox" href="#">
-										<h3> Roadtrip </h3>
+										<h3>Soul </h3>
                     <img src="Images/man.jpeg" alt="">
                 </a>
             </div>

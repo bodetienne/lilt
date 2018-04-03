@@ -2,8 +2,9 @@
 		// Connexion à la base de données
 session_start();
 
-require 'PDO/includes/pdo.php';
-$connexionStr=new PDO("mysql:host=localhost;dbname=lilt;charset=utf8",'root','');
+include('sql-Identification.php');
+
+$connexionStr=new PDO("mysql:host=localhost;dbname=lilt;charset=utf8",$name, $password);
 $nom = $connexionStr->query("SELECT * FROM utilisateur WHERE idUtilisateur=" . $_SESSION['id']);
 while ($donnees = $nom ->fetch()){
 		     try

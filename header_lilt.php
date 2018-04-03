@@ -23,7 +23,7 @@
                     </button>
                     <div class="searchbarHeader">
             					<form class="searchbarHeaderForm" action="search.php" method="post">
-                      	<input type="text" name="search" id="search-bar" required>
+                      	<input type="text" name="search" id="search-bar" required style="color: black">
                       	<input type="submit" class="button2" value="Search !"></input>
             					</form>
                     </div>

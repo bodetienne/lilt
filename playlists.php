@@ -66,13 +66,13 @@
             </div>
             <div class="col-sm-6 col-md-4">
                 <a class="lightbox" href="#">
-									<h3>Sad songs</h3>
+									<h3>Roadtrip</h3>
                   <img src="Images/violon.jpeg" alt="Coast">
                 </a>
             </div>
             <div class="col-sm-6 col-md-4">
                 <a class="lightbox" href="#">
-										<h3> Roadtrip </h3>
+										<h3>Sad Songs </h3>
                     <img src="Images/man.jpeg" alt="">
                 </a>
             </div>
