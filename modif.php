@@ -53,7 +53,7 @@ while ($donnees = $nom ->fetch()){
 			if(!empty($_POST['mdp_utilisateur'])){
 				$query = 'UPDATE utilisateur SET mdp_utilisateur = "' . $hashpass . '" WHERE idUtilisateur="' . $_SESSION['id'] .'"';
 				$req = $bdd->prepare($query);
-	echo('Query = ' . $query . "<br>");
+				echo('Query = ' . $query . "<br>");
 				if (!$req->execute()) {
 					echo 'Erreur';
 				}
@@ -87,7 +87,7 @@ while ($donnees = $nom ->fetch()){
 			if(!empty($_POST['description'])){
 				$query = 'UPDATE utilisateur SET description = "' . $_POST['description']. '" WHERE idUtilisateur="' . $_SESSION['id'] .'"';
 				$req = $bdd->prepare($query);
-	echo('Query = ' . $query . "<br>");
+				echo('Query = ' . $query . "<br>");
 				if (!$req->execute()) {
 					echo 'Erreur';
 				}
@@ -100,7 +100,7 @@ while ($donnees = $nom ->fetch()){
 			if(!empty($_POST['facebook'])){
 				$query = 'UPDATE utilisateur SET facebook = "' . $_POST['facebook'] . '" WHERE idUtilisateur="' . $_SESSION['id'] .'"';
 				$req = $bdd->prepare($query);
-	echo('Query = ' . $query . "<br>");
+				echo('Query = ' . $query . "<br>");
 				if (!$req->execute()) {
 					echo 'Erreur';
 				}
@@ -135,7 +135,6 @@ while ($donnees = $nom ->fetch()){
 
 //  On met dans un fichier image profil //
 
-
 // print_r($_FILES);
 
 
@@ -152,30 +151,31 @@ if (isset($_FILES['avatar'])) {
 			 $nameLink= "Images/image-profil/" . $name;
 	 } else {
 
-	 }
+
 }
+
 
 
 // -------------------------------//
 
-
+			// var_dump($_FILES);
 
 			$req = $bdd->prepare('UPDATE utilisateur SET avatar = :avatar WHERE idUtilisateur=' . $_SESSION['id'].'.');
 
-			if(!empty($_FILES['avatar'])){
+			if(!empty($_POST['avatar'])){
 				$query = 'UPDATE utilisateur SET avatar = "' . $nameLink . '" WHERE idUtilisateur="' . $_SESSION['id'] .'"';
 				$req = $bdd->prepare($query);
-				echo('</br>Query = ' . $query . "<br>");
-				if (!$req->execute()) {
-					echo 'Erreur';
-				}
-			}
+	//echo('Query = ' . $query . "<br>");
+
+
 
 
 }
 
+}
 
-						header("location: profil.php");
+
+						//header("location: profil.php");
 		        //echo 'Modifi&eacute;';
 
 			$nom->closeCursor();

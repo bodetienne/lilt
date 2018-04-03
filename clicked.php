@@ -120,11 +120,18 @@
 
 						// echo $name;
 
+						/* requette permettant de vérifier si la musique participe au #Contest */
+						// if ($_POST['contest'] != 0){
+						// 	$contest = $_POST['contest'];
+						// } else {
+						// 	$contest = " ";
+						// }
+
 						/* requette permettant d'insérer les valeurs écrites et recup dans la tab chanson */
 						// $cheminUpload = "lecteur/music/" . $name;
 						// echo "Chemin d'upload<br/>";
 						// echo $cheminUpload;
-						$insertInto = "INSERT INTO chanson (nomChanson, tag, fichierMp3, idArtiste)
+						$insertInto = "INSERT INTO chanson (nomChanson, tag, fichierMp3, idArtiste,)
 						VALUES (\"" .  $_POST['name'] .  "\", \"" . $_POST['tag'] ."\" , \"" . $nameLink ."\" , '" . $idArtiste . "')";
 						 echo $insertInto;
 						// echo "InserInto query<br/>";

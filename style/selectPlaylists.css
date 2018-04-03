@@ -293,6 +293,21 @@ justify-content: space-evenly;
 	height: 30px;
 }
 
+#coeurPlein{
+	margin: auto;
+	margin-right: 10px;
+	width: 30px;
+	height: 30px;
+}
+
+.addFavorite {
+	margin: auto;
+	margin-right: 10px;
+	width: 30px;
+	height: 30px;
+	cursor: pointer;
+}
+
 
 
 

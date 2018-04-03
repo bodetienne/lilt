@@ -129,13 +129,17 @@ form .vp-2 .song {
 .container .vp-3 {
 	background-image: url('../Images/people-2606347_1280.png');
 	background-size: 100%;
-
 }
 
 .container .vp-3 .inner-vp-3 {
 	color: white;
 	font-size: 2rem;
 	margin: auto;
+	display: flex;
+	flex-direction: column;
+}
+
+.vp-3 .inner-vp-3 .menu-tags {
 	display: flex;
 }
 
@@ -149,6 +153,19 @@ form .vp-2 .song {
 	margin-left: 6rem;
 	font-size: 1.5rem;
 	padding: 0.2rem 1.5rem;
+}
+
+.inner-vp-3 .check-contest {
+	margin: auto;
+	margin-top: 5rem;
+}
+
+.inner-vp-3 .check-contest input {
+	padding: 2rem;
+}
+
+.inner-vp-3 .check-contest span {
+	color: #e40750;
 }
 
 .container .vp-3 input {
@@ -170,6 +187,7 @@ form .vp-2 .song {
 	background: #31a29f;
 	color: black;
 }
+
 
 /*-----------------------------------------------------------
 CLICKED
@@ -423,4 +441,43 @@ Politique de Confidentialité
 
 .confid-container .confid-inner a {
 	color: black;
+}
+
+/*-----------------------------------------------------------
+#Contest (informations)
+-----------------------------------------------------------*/
+.contest-container .contest-inner {
+	display: flex;
+	flex-direction: column;
+}
+
+.contest-container .contest-inner .big-title {
+	margin: 2rem auto;
+}
+
+.contest-container .contest-inner .explications{
+	margin: 2rem;
+	text-align: justify;
+}
+
+.contest-container .contest-inner .title {
+	margin-left: 2rem;
+	margin-bottom: 3rem;
+}
+
+.contest-inner .explications p {
+	font-size: 1.6rem;
+}
+
+.contest-inner .upload-a-song {
+	background-image: url('../Images/bg.jpg');
+	background-size: 100%;
+}
+
+.contest-inner .upload-a-song:hover {
+	text-decoration: none;
+}
+
+.contest-inner .upload-a-song h3 {
+	color: #e40750;
 }
