@@ -19,10 +19,10 @@
 <!---
 	CONTENTS
 ----------------------------------------------------------->
-	
+
 <h1> Join us ! </h1>
 
-<div class="logo_inscription"> <img src="../Images/Icon/logo Lilt.png"></div>
+<div class="logo_inscription"> <img src="../Images/Icon/logo-lilt.png"></div>
 
 
 <form method="post" action="traitement.php">
@@ -47,11 +47,6 @@
 		<p>
 			<label for="confirm_pass">Confirm your password</label>
 			<input type="password" id="confirm_pass" name="confirm_pass" maxlength="40" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" >
-		</p>
-
-		<p>
-			<label for="icone"> Your profile picture </label>
-			<input type="file" name="avatar" id="avatar" accept="image/jpg">
 		</p>
 		<p>
 			<input type="submit" value="Let's go"/>

@@ -108,7 +108,7 @@ while ($donnees = $nom ->fetch()){
 
 
 
-						$req = $bdd->prepare('UPDATE utilisateur SET instagram = :instagram WHERE idUtilisateur=' . $_SESSION['id'].'.');
+				$req = $bdd->prepare('UPDATE utilisateur SET instagram = :instagram WHERE idUtilisateur=' . $_SESSION['id'].'.');
 
 						if(!empty($_POST['instagram'])){
 							$query = 'UPDATE utilisateur SET instagram = "' . $_POST['instagram'] . '" WHERE idUtilisateur="' . $_SESSION['id'] .'"';
@@ -138,7 +138,7 @@ while ($donnees = $nom ->fetch()){
 // print_r($_FILES);
 
 
-if (isset($_FILES['avatar'])) {
+if (isset($_FILES['avatar'])){
 	//echo $_FILES['avatar'];
 		 //print_r($_FILES);
 		echo "Get file";
@@ -149,33 +149,27 @@ if (isset($_FILES['avatar'])) {
 			 $name = basename($_FILES["avatar"]["name"]);
 			 move_uploaded_file($tmp_name, "Images/image-profil/" . $name);
 			 $nameLink= "Images/image-profil/" . $name;
-	 } else {
+		 }else{
 
-
-}
-
-
+		 }
 
 // -------------------------------//
 
-			// var_dump($_FILES);
+			 var_dump($_POST);
 
 			$req = $bdd->prepare('UPDATE utilisateur SET avatar = :avatar WHERE idUtilisateur=' . $_SESSION['id'].'.');
 
-			if(!empty($_POST['avatar'])){
+			if(!empty($_FILES['avatar'])){
 				$query = 'UPDATE utilisateur SET avatar = "' . $nameLink . '" WHERE idUtilisateur="' . $_SESSION['id'] .'"';
+				echo($query);
 				$req = $bdd->prepare($query);
-	//echo('Query = ' . $query . "<br>");
+				$req->execute();
+	echo('Query = ' . $query . "<br>");
+			}
 
-
-
-
-}
-
-}
-
-
-						//header("location: profil.php");
+						header("location: profil.php");
+					}
+				}
 		        //echo 'Modifi&eacute;';
 
 			$nom->closeCursor();

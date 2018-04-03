@@ -51,6 +51,8 @@
 									  	<option value="Reggae">Reggae </option>
 										  <option value="Rock">Rock</option>
 										 	<option value="Soul">Soul </option>
+											<option value="No tag">Sad Songs </option>
+											<option value="No tag">Party Songs </option>
 										  <option value="No tag">No tag </option>
 										  <option value="Contest"><strong>#Contest</strong></option>
 										</select>

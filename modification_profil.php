@@ -74,7 +74,7 @@
 			</br>
     </div>
     <div class="modal-footer">
-      <input type="submit" class="submit" value="Let's go" id='<?php echo $id ?>'/>
+      <input type="submit" class="submit" value="Let's go"/>
 			</form>
     </div>
 
