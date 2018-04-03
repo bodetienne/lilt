@@ -1,4 +1,3 @@
-<!doctype html>
 <html>
 <head>
 	<meta charset="utf-8">
@@ -8,7 +7,7 @@
 	<script src="js/jquery.min.js"></script>
 	<link rel="stylesheet" href="vendors/Bootstrap/Bootstrap-Grid/vendors/bootsrap/css/bootstrap-grid.css">
 	<link rel="stylesheet" href="style/style.css">
-	
+
 	<link rel="stylesheet" href="style/selectPlaylists.css">
 </head>
 
@@ -16,7 +15,12 @@
 
 
 	<?php include('header_lilt.php');
-	
+
+	if (!isset($_SESSION['id'])){
+		echo "You have to be connected to listen music";
+	} else {
+		$idUser = $_SESSION['id'];
+
 	session_start();
 		if (isset($_POST['tag'])){
 			$tag = $_POST["tag"];
@@ -92,7 +96,7 @@
 									array_push($leschansons, $temp);
 									$temp  = $stmt->fetch();
 							}
-							
+
 							/*echo("<br>Les chansons : ");
 							var_dump($leschansons);*/
 
@@ -110,7 +114,7 @@
 								$lesartistes = Array();
 								$temp = $stmt -> fetch();
 								array_push($lesartistes, $temp);
-								
+
 								/*echo('<br>query artiste : ' . $query_artiste);
 								echo('<br>"les artiste" : ');
 								var_dump($lesartistes);
@@ -119,7 +123,7 @@
 								echo('<br>La chanson courante : ' . $leschansons[$i]->idChanson);
 								echo('<br>Connexion PDO : ');
 								var_dump($connexion);*/
-								
+
 								//Check song like
 								$song_is_liked = userLiked($leschansons[$i]->idChanson, $_SESSION['id'], $connexion);
 								$nbrlikes = getNumberLikes($leschansons[$i]->idChanson, $connexion);
@@ -128,9 +132,9 @@
 								} else {
 									$html_song_like = "<p><img id=\"like" . $i . "\" class=\"addFavorite likeheart\" src='Images/Icon/coeurVide.png' alt='coeurVide'>";
 								}
-								
-								
-								
+
+
+
 								// echo "Je rentre dans la boucle et je suis à la ligne" . $i;
 								echo "<div class='big-player'>";
 									echo "<div class='song-name song-name-" . $i . "'>" . $leschansons[$i] -> nomChanson . "</div>";
@@ -144,7 +148,7 @@
 												" . $html_song_like . "
 												<span id=\"song_number" . $i . "\" style=\" display: none;\">" . $leschansons[$i]->idChanson . "</span></p>
 												<p class=\"number\"><span>" . $nbrlikes . "</span></p>
-												
+
 												<!-- Permet d\'ouvrir le menu-->
 										</div>";
 												//mp3 est le seul format à pouvoir être lu sur IE, chrome, Firefox, Safari et Opera
@@ -168,9 +172,14 @@
 
 	</div>';
 
-	
+
+
+
+
+
+
 	/* Fonctions Teo */
-	
+
 	/**
 	* By Teo
 	* Obtient le nombre de like d'une chanson
@@ -180,15 +189,15 @@
 	*
 	*/
 	function getNumberLikes($song, $connexion){
-		$query = "SELECT jaime FROM chanson WHERE idChanson = " . $song;		
+		$query = "SELECT jaime FROM chanson WHERE idChanson = " . $song;
 		$stmt = $connexion->prepare($query);
 		$stmt -> execute();
-		
+
 		$likes = $stmt->fetch();
 		$likes = explode(",", $likes->jaime);
 		return(sizeof($likes));
 	}
-	
+
 	/**
 	* By Teo
 	* Obtient un tableau d'id utilisateurs
@@ -198,9 +207,9 @@
 	*
 	*/
 	function getLikesIDs($song){
-		
+
 	}
-	
+
 	/**
 	* By Teo
 	* Check si l'utilisateur à déjà liké
@@ -213,13 +222,13 @@
 	*/
 	function userLiked($song, $user, $connection){
 		$query = "SELECT jaime FROM chanson WHERE idChanson = " . $song;
-		
+
 		//echo('<br>// Exe userLiked with params song = (' . $song . ') || user = (' . $user . ') || query = ' . $query .' //<br>');
-		
+
 		$stmt = $connection->prepare($query);
 		$stmt -> execute();
-		
-		
+
+
 		$likes = $stmt->fetch();
 		//var_dump($likes);
 		$likes = explode(",", $likes->jaime);
@@ -227,20 +236,20 @@
 		//echo('<br><strong>L"user ' . $user . ' / ');
 		//var_dump($likes);
 		//echo('</strong><br/>');
-		
+
 		$output = false;
-		
+
 		foreach ($likes as $key => $element){
 			if($element == $user){
 				$output = true;
 			}
 		}
-		
+
 		return($output);
 	}
-	
-	
-	
+
+
+
 	/**
 	* Non fonctionnel
 	* By Teo
@@ -255,7 +264,7 @@
 	function exeSQL($query, $connection){
 		echo('<br>// Exe exeSQL with params query = (' . $query . ') || connection = (');
 		var_dump($connection); echo(') //<br>');
-		
+
 		$stmt = $connection->prepare($query);
 		$stmt -> execute();
 		return($stmt->fetch);
@@ -266,9 +275,9 @@
 
 	<script>
 		// ------- Menu Option Composition -------- //
-		
+
 		/* Teo */
-		
+
 		function sendQuery(query){
 			console.log('Function sendQuery');
 			console.log("query : " + query);
@@ -285,7 +294,7 @@
 			xhttp.open("GET",query , true);
 			xhttp.send();
 		}
-		
+
 		/* Teo */
 
 		// Get the modal
@@ -293,11 +302,11 @@
 		console.log(nbrsong + ' songs');
 
 		var ellikes = Array();
-		
+
 		for(var i = 0; i < nbrsong; i++){
 
 			ellikes.push($("#like"+i));
-			
+
 			ellikes[i].click(function(){
 				console.log("button like " + i);
 				console.log(event.target);
@@ -324,7 +333,7 @@
 					query = "function.php?action=unlike&song=" + song;
 					me.src = 'Images/Icon/coeurVide.png';
 					me.innerHTML = "Ajouter aux favoris";
-		
+
 					nbrlikes.html("" + countlikes--);
 					console.log(countlikes);
 				} else {
@@ -332,7 +341,7 @@
 					query = "function.php?action=like&song=" + song;
 					me.src = 'Images/Icon/coeurPlein.png';
 					me.innerHTML = "Retirer des favoris";
-					
+
 					nbrlikes.html(countlikes++);
 					console.log(countlikes);
 				}
@@ -340,20 +349,21 @@
 				console.log(query);
 				sendQuery(query);
 			});
-			
-		}
-		
-		console.log(ellikes);
-		
-		
-		
-		
-		
-	
 
-		
+		}
+
+		console.log(ellikes);
+
+
+
+
+
+
+
+
 	</script>
 	<?php
+	}
 	include('footer_lilt.php');
 	?>
 
