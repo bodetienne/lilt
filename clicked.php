@@ -13,7 +13,7 @@
 		include("header_lilt.php");
 		$connexionStr=new PDO("mysql:host=localhost;dbname=lilt;charset=utf8",'root','');
 		if (!isset($_SESSION['id'])){
-			echo "You have to be connected to check import a song";
+			echo "You have to be connected to import a song";
 		} else {
 			$idUser = $_SESSION['id'];
 		$nom = $connexionStr->query("SELECT * FROM utilisateur WHERE idUtilisateur='" . $_SESSION['id'] . "'");
@@ -26,7 +26,7 @@
 
 			require 'PDO/includes/pdo.php';
 
-			if (empty($_POST['name']) || empty($_POST['artist']) || empty($_POST['tag']) ){
+			if (empty($_POST['name']) || empty($_POST['artist']) || empty($_POST['tag'] || empty($_FILES['mp3-file'])) ){
 				echo "<div class='error-container'>";
 					echo "<div class=error-empty>";
 						echo "<p class='error-message'>Please fill all the informations to upload your song</p>";
@@ -48,7 +48,7 @@
 
 
 					//
-					// try {
+					try {
 						/* requette permettant d'insérer les infos dans la tab artiste*/
 						$idUser = $_SESSION['id'];
 						$nomArtiste = $_POST['artist'];
@@ -67,6 +67,7 @@
 						if ($temp != false) {
 						//si l'artiste existe, il ne se passe rien
 						$idArtiste = $temp->idArtiste;
+						// echo "</br>" . $idArtiste;
 
 						// } else if($temp1 != false ) {
 						// 	echo "Please choose another artist name, this one is already used";
@@ -79,7 +80,7 @@
 
 							$createArtist = "INSERT INTO artiste (nomArtiste, idUtilisateur) VALUES (\"" .  $nomArtiste .  "\",  " . $idUser . ")";
 							$stmt = $connexion-> prepare($createArtist);
-							// echo $createArtist;
+							// echo "</br>" . $createArtist;
 							$stmt -> execute();
 						// 	if($temp != false) {
 						// 		//artiste créer
@@ -93,6 +94,7 @@
 						$stmt = $connexion-> prepare($idArtiste);
 						$stmt -> execute();
 						$temp = $stmt-> fetch();
+						// echo "</br>" . $idArtiste;
 
 						if ($temp != false){
 							// echo "On a l'id de l'artiste";
@@ -101,10 +103,12 @@
 							// echo "Nous n'avons pas pu récupérer l'id de l'artiste";
 						}
 
+						}
+
 						// print_r($_FILES);
 						if (isset($_FILES['mp3-file'])) {
-						     print_r($_FILES);
-								echo "Get file";
+						    //  print_r($_FILES);
+								// echo "Get file";
 						   if ($_FILES['mp3-file']['error'] == UPLOAD_ERR_OK) {
 						       $tmp_name = $_FILES["mp3-file"]["tmp_name"];
 						       // basename() peut empêcher les attaques "filesystem traversal";
@@ -131,9 +135,9 @@
 						// $cheminUpload = "lecteur/music/" . $name;
 						// echo "Chemin d'upload<br/>";
 						// echo $cheminUpload;
-						$insertInto = "INSERT INTO chanson (nomChanson, tag, fichierMp3, idArtiste,)
+						$insertInto = "INSERT INTO chanson (nomChanson, tag, fichierMp3, idArtiste)
 						VALUES (\"" .  $_POST['name'] .  "\", \"" . $_POST['tag'] ."\" , \"" . $nameLink ."\" , '" . $idArtiste . "')";
-						 echo $insertInto;
+						 // echo $insertInto;
 						// echo "InserInto query<br/>";
 						// echo $insertInto . "<br/>";
 						$stmt = $connexion-> prepare($insertInto);
@@ -145,15 +149,15 @@
 						// } else {
 						// 	echo "Echec de l'import.";
 						// }
-					}
-				// }
-				// 	catch(Exception $e) {
-				// 	echo '<p> Erreur n° : ' . $e->getCode() . ' : ' . $e->getMessage(). '</p>';
-				// 	echo '<p>Dans '. $e->getFile(). '('. $e->getLine() .')';
-				// 	echo "<pre>";
-				// 	var_dump ($e -> getTrace());
-				// 	echo "</pre>";
-				// }
+
+				}
+					catch(Exception $e) {
+					echo '<p> Erreur n° : ' . $e->getCode() . ' : ' . $e->getMessage(). '</p>';
+					echo '<p>Dans '. $e->getFile(). '('. $e->getLine() .')';
+					echo "<pre>";
+					var_dump ($e -> getTrace());
+					echo "</pre>";
+				}
 			}
 		}
 	}
