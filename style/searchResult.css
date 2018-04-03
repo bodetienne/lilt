@@ -8,16 +8,17 @@
 
 table{
 margin-left: 22%;
+position: inherit;
 }
 
 .tableau{
 width: 25%;
 max-width: 50%;
-position: absolute;
+margin-bottom: 5rem;
 }
 
 tbody{
-position: fixed;
+
 margin: auto 5rem;
 border: solid;
 padding: 1rem;

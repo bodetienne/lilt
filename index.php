@@ -287,7 +287,7 @@
                  <a href="#"><img data-u="image" src="Images/dj.jpg" /></a>
             </div>
             <div data-p="43.75">
-                <a href="#"> <img data-u="image" src="Images/people-2563491_1280.jpg" /></a>
+                <a href="#"> <img data-u="image" src="Images/pharrel.jpeg" /></a>
             </div>
             <div data-p="43.75">
                 <a href="#"> <img data-u="image" src="Images/music-instruments-2887457_1280.jpg" /></a>
@@ -297,6 +297,7 @@
             </div>
             <div data-p="43.75">
                 <a href="#"> <img data-u="image" src="Images/b-g.jpg" /></a>
+                <a href="#"> <img data-u="image" src="Images/tatou.jpeg" /></a>
             </div>
             <div data-p="43.75">
                 <a href="#"> <img data-u="image" src="Images/elvis-presley-1482026_1280.jpg" /></a>
@@ -408,7 +409,7 @@
                  <a href="#"><img data-u="image" src="Images/dj.jpg" /></a>
             </div>
             <div data-p="43.75">
-                <a href="#"> <img data-u="image" src="Images/people-2563491_1280.jpg" /></a>
+                <a href="#"> <img data-u="image" src="Images/pharrel.jpeg" /></a>
             </div>
             <div data-p="43.75">
                 <a href="#"> <img data-u="image" src="Images/music-instruments-2887457_1280.jpg" /></a>
@@ -418,6 +419,7 @@
             </div>
             <div data-p="43.75">
                 <a href="#"> <img data-u="image" src="Images/b-g.jpg" /></a>
+                <a href="#"> <img data-u="image" src="Images/tatou.jpeg" /></a>
             </div>
             <div data-p="43.75">
                 <a href="#"> <img data-u="image" src="Images/elvis-presley-1482026_1280.jpg" /></a>

@@ -21,6 +21,7 @@ include('sql-Identification.php');
     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
     ));
 // Search from MySQL database table
+
 $search=$_POST['search'];
 $query = $pdo->prepare("select * from chanson where nomChanson LIKE '%$search%' OR tag LIKE '%$search%' OR fichierMp3 LIKE  '%$search%'  LIMIT 0 , 10");
 $query->bindValue(1, "%$search%", PDO::PARAM_STR);
