@@ -6,14 +6,16 @@ body{
 .Welcome {
 	position: absolute;
 	z-index: 11;
+	width:100vw;
+	display:flex;
+	top:40%;
 }
 
 .Welcome h1{
 	font-family: 'Droid Sans', sans-serif;
 	color: white;
-	position: relative;
-	left: 64rem;
-	top: 17rem;
+	margin: auto;
+	z-index: 11;
 	font-size: 65px;
 	text-shadow: 5px 4px 2px black;
 }

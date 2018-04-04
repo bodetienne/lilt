@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="style/header.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-</head>
+    <link rel="icon" type="image/png" href="Images/Icon/android-icon-36x36.png" /></head>
 
 <body>
     <div class="header-nightsky">
