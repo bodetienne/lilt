@@ -50,7 +50,7 @@ include("header_lilt.php")
           <li><a href="#" class="icon style2 fa-envelope-o"><span class="label">Email</span></a></li>
         </ul>
         <p> "<?php echo $donnees['citation']; ?>" </p>
-    		<p> 104 | followers 20 | following </p>
+    		<!-- <p> 104 | followers 20 | following </p> -->
         <div class="about_me">
           <!-- <h3>About me</h3> -->
           <p><?php echo $donnees['age']; ?> yo</p>
@@ -65,7 +65,7 @@ include("header_lilt.php")
 
           <div class="row">
               <div class="col-sm-4 col-md-2">
-                  <a class="lightbox" href="#">
+                  <a class="lightbox" href="lecteur.php">
                       <img src="Images/My_compositions.png" alt="compo">
                   </a>
               </div>

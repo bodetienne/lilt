@@ -29,6 +29,11 @@
 	margin-right: 4em;
 }
 
+#header  p:nth-of-type(1){
+    font-size: 26px;
+		color: #e40750;
+}
+
 #header p{
 	color: rgba(255, 255, 255, 0.65);
 	font-size: 20px;
@@ -38,9 +43,6 @@
 }
 
 
-#header  p:nth-of-type(1){
-    font-size: 26px;
-}
 #header .about_me p{
 	font-size: 16px;
 }

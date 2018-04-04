@@ -51,8 +51,8 @@
 									  	<option value="Reggae" <?php if(!empty($_GET['tag'])){if($_GET['tag'] == "Reggae"){echo('selected');}} ?>>Reggae </option>
 										  <option value="Rock" <?php if(!empty($_GET['tag'])){if($_GET['tag'] == "Rock"){echo('selected');}} ?>>Rock</option>
 										 	<option value="Soul" <?php if(!empty($_GET['tag'])){if($_GET['tag'] == "Soul"){echo('selected');}} ?>>Soul </option>
-											<option value="No tag" <?php if(!empty($_GET['tag'])){if($_GET['tag'] == "SadSongs"){echo('selected');}} ?>>Sad Songs </option>
-											<option value="No tag" <?php if(!empty($_GET['tag'])){if($_GET['tag'] == "PartySong"){echo('selected');}} ?>>Party Songs </option>
+											<option value="Sad Songs" <?php if(!empty($_GET['tag'])){if($_GET['tag'] == "SadSongs"){echo('selected');}} ?>>Sad Songs </option>
+											<option value="Party Songs" <?php if(!empty($_GET['tag'])){if($_GET['tag'] == "PartySong"){echo('selected');}} ?>>Party Songs </option>
 										  <option value="No tag" <?php if(!empty($_GET['tag'])){if($_GET['tag'] == "NoTag"){echo('selected');}} ?>>No tag </option>
 										  <option value="Contest"><strong>#Contest</strong></option>
 										</select>
