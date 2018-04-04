@@ -147,6 +147,17 @@
 .id-content .id-photo img{
   width: 40px;
 }
+@media(min-width:320px) and (max-width:1024px){
+  .id-photo img{
+    width:30px;
+  }
+
+  .id-content img:nth-of-type(2){
+    width: 30px;
+    margin-left: 30px;
+    height: 30px;
+  }
+}
 
 .id-content img:nth-of-type(2){
   width: 50px;

@@ -17,17 +17,21 @@
 	<?php include('header_lilt.php');
 	include('sql-Identification.php');
 
-	session_start();
+		session_start();
+			if (isset($_POST['tag'])){
+				$tag = $_POST["tag"];
+			} else {
+				if(isset($_GET['tag'])){
+					$tag = $_GET['tag'];
+				} else {
+					$tag = "No tag";
+				}
+			}
 	if (!isset($_SESSION['id'])){
 		echo "You have to be connected to listen music";
 	} else {
 		$idUser = $_SESSION['id'];
 
-		if (isset($_POST['tag'])){
-			$tag = $_POST["tag"];
-		} else {
-			$tag = "No tag";
-		}
 	?>
 	<div class="container gallery-container">
 
@@ -51,21 +55,21 @@
 				<div class="inner-select">
 					<SELECT name="tag" size="1" id="selectOptions">
 						<option disabled>Playlists</option>
-						<option >Playlists</option>
-		        <option >Pop</option>
-		        <!-- <option >Best new hits</option>
-		        <option>The best of Pharrel</option>
-		        <option >Sad Songs</option> -->
-		        <option>Rap</option>
-		        <!-- <option >Future hits</option>
-		        <option >Party Songs</option>
-		        <option >Top USA</option>
-		        <option >Roadtrip</option>
-		        <option >Top World</option> -->
-		        <option >Rock</option>
-		        <option >Soul</option>
-		        <option >Reggae</option>
-		        <option >No tag</option>
+						<option>Playlists</option>
+		        <option <?php if(!empty($_GET['tag'])){if($_GET['tag'] == "Pop"){echo('selected');}} ?>>Pop</option>
+		        <!-- <option >Best new hits</option> -->
+		        <!-- <option>The best of Pharrel</option> -->
+		        <option  <?php if(!empty($_GET['tag'])){if($_GET['tag'] == "SadSongs"){echo('selected');}} ?>>Sad Songs</option>
+		        <option  <?php if(!empty($_GET['tag'])){if($_GET['tag'] == "Rap"){echo('selected');}} ?> >Rap</option>
+		        <!-- <option >Future hits</option> -->
+		        <option  <?php if(!empty($_GET['tag'])){if($_GET['tag'] == "PartySong"){echo('selected');}} ?> >Party Songs</option>
+		        <!-- <option >Top USA</option> -->
+		        <option  <?php if(!empty($_GET['tag'])){if($_GET['tag'] == "Roadtrip"){echo('selected');}} ?>>Roadtrip</option>
+		        <!-- <option >Top World</option> -->
+		        <option  <?php if(!empty($_GET['tag'])){if($_GET['tag'] == "Rock"){echo('selected');}} ?> >Rock</option>
+		        <option  <?php if(!empty($_GET['tag'])){if($_GET['tag'] == "Soul"){echo('selected');}} ?> >Soul</option>
+		        <option  <?php if(!empty($_GET['tag'])){if($_GET['tag'] == "Reggae"){echo('selected');}} ?> >Reggae</option>
+		        <option  <?php if(!empty($_GET['tag'])){if($_GET['tag'] == "NoTag"){echo('selected');}} ?> >No tag</option>
 					</SELECT>
 					<button type="submit" class="submit-playlist"> Listen Music </button>
 				</div>

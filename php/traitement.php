@@ -106,7 +106,7 @@ if (mysqli_query($link, $sql)) {
     echo "New record created successfully";
 	header('Location: connexion.php');
 } else {
-    echo "Error: " . $sql . "<br>" . mysqli_error($link);
+    echo header('location:formulaire_inscription.php');
 
 }
 
