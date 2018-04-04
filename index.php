@@ -57,8 +57,6 @@
 
 
 
-
-
  <script src="js/jssor.slider-26.7.0.min.js" type="text/javascript"></script>
 
  <script type="text/javascript">
@@ -298,6 +296,7 @@
                 <a href="#"> <img data-u="image" src="Images/concert-768722_1280.jpg"/></a>
             </div>
             <div data-p="43.75">
+                <a href="#"> <img data-u="image" src="Images/b-g.jpg" /></a>
                 <a href="#"> <img data-u="image" src="Images/tatou.jpeg" /></a>
             </div>
             <div data-p="43.75">
@@ -419,6 +418,7 @@
                 <a href="#"> <img data-u="image" src="Images/concert-768722_1280.jpg"/></a>
             </div>
             <div data-p="43.75">
+                <a href="#"> <img data-u="image" src="Images/b-g.jpg" /></a>
                 <a href="#"> <img data-u="image" src="Images/tatou.jpeg" /></a>
             </div>
             <div data-p="43.75">

@@ -13,12 +13,11 @@
 </head>
 <?php
 include('header_lilt.php');
+include('sql-Identification.php');
 //load database connection
     $host = "localhost";
-    $user = "root";
-    $password = "";
     $database_name = "lilt";
-    $pdo = new PDO("mysql:host=$host;dbname=$database_name", $user, $password, array(
+    $pdo = new PDO("mysql:host=$host;dbname=$database_name", $name, $password, array(
     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
     ));
 // Search from MySQL database table

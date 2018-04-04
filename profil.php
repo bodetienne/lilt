@@ -23,6 +23,7 @@
 <body>
 <?php
 session_start();
+include('sql-Identification.php');
 $connexionStr=new PDO("mysql:host=localhost;dbname=lilt;charset=utf8",'root','');
 $nom = $connexionStr->query("SELECT * FROM utilisateur WHERE idUtilisateur=" . $_SESSION['id']);
 
@@ -40,7 +41,7 @@ include("header_lilt.php")
           <?php include('modification_profil.php')?>
         </div>
         <span class="avatar"><img src="<?php echo $donnees['avatar']; ?>" alt="" /></span>
-        <h1>			<?php	echo $donnees['nom_utilisateur'];?></h1>
+        <h1><?php	echo $donnees['nom_utilisateur'];?></h1>
         <ul class="icons">
           <li><a href="<?php	echo $donnees['twitter'];?>" class="icon style2 fa-twitter"><span class="label">Twitter</span></a></li>
           <li><a href="<?php	echo $donnees['facebook'];?>" class="icon style2 fa-facebook"><span class="label">Facebook</span></a></li>

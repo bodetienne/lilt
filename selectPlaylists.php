@@ -20,8 +20,9 @@
 <body>
 <?php
 require 'PDO/includes/pdo.php';
+include('sql-Identification.php');
 session_start();
-$connexionStr=new PDO("mysql:host=localhost;dbname=lilt;charset=utf8",'root','');
+$connexionStr=new PDO("mysql:host=localhost;dbname=lilt;charset=utf8",$name,$password);
 $nom = $connexionStr->query("SELECT * FROM chanson");
 
 $donnees = $nom->fetch();
